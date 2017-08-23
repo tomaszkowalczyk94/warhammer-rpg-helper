@@ -1,6 +1,7 @@
 package warhammerrpg.network;
 
 import warhammerrpg.network.exception.ClientConnectException;
+import warhammerrpg.network.request.RequestInterface;
 
 import java.io.IOException;
 
@@ -11,7 +12,7 @@ public class Client {
     public Client(String host, int port) throws ClientConnectException {
         client = new com.esotericsoftware.kryonet.Client();
         new Register().registerClasses(client.getKryo());
-
+        client.addListener(new ClientListener());
         client.start();
 
         try {
@@ -21,7 +22,9 @@ public class Client {
         }
     }
 
-    public void sendObject(Object object) {
-        client.sendTCP(object);
+    public void sendRequest(RequestInterface request) {
+        client.sendTCP(request);
     }
+
+
 }

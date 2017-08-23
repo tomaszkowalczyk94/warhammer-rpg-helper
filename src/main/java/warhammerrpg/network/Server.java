@@ -15,11 +15,7 @@ public class Server {
         server = new com.esotericsoftware.kryonet.Server();
         new Register().registerClasses(server.getKryo());
 
-        server.addListener(new Listener() {
-            public void received (Connection connection, Object object) {
-                System.out.println("coś odebrałem");
-            }
-        });
+        server.addListener(new ServerListener());
 
         server.start();
 

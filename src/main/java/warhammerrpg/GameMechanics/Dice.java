@@ -10,7 +10,7 @@ public class Dice {
         return generator.nextInt(10);
     }
 
-    public Integer twoDiceThrow(){
+    public Integer twoDicesThrow(){
         Random generator = new Random();
         return generator.nextInt(90)+10;
     }

@@ -15,14 +15,4 @@ public class Dice {
         return generator.nextInt(90)+10;
     }
 
-
-    /* test obiektu
-    public static void main(String args[])
-    {
-        Dice obj = new Dice();
-        System.out.println(obj.oneDiceThrow());
-        System.out.println(obj.twoDiceThrow());
-    }
-    */
-
 }

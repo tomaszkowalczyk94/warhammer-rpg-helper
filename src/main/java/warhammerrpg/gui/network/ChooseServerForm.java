@@ -1,10 +1,12 @@
 package warhammerrpg.gui.network;
 
+
 import warhammerrpg.network.Client;
 import warhammerrpg.network.Server;
 import warhammerrpg.network.exception.ClientConnectException;
 import warhammerrpg.network.exception.NetworkException;
 
+import javax.lang.model.type.NullType;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -36,6 +38,7 @@ public class ChooseServerForm {
                 try {
                     server.run(Integer.parseInt(portCreateText.getText()));
                     JOptionPane.showMessageDialog(panel, "Serwer uruchomiony");
+                    MasterGui obj = new MasterGui();
                 } catch (NetworkException e1) {
                     JOptionPane.showMessageDialog(panel, "Nie można uruchomić serwera", "błąd", JOptionPane.ERROR_MESSAGE);
                 } catch (NumberFormatException exception) {

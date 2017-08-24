@@ -19,8 +19,7 @@ public class Person {
     private String birthPlace;
     private String specialSigns;
 
-    //cechy
-    //  glowne
+
 
 
 

@@ -1,11 +1,12 @@
 package warhammerrpg.Person;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Person {
     private enum Breed { Brak,Człowiek,Elf,Krasnolud}
 
-    public Person(String name, Breed breed, String curProffesion, Integer age, String sex, String birthPlace) {
+    public Person(String name, Breed breed, String curProffesion, Integer age, String sex, String birthPlace, BigDecimal gold) {
         this.name = name;
         this.breed = breed;
         this.curProffesion = curProffesion;
@@ -35,6 +36,10 @@ public class Person {
         this.leftHand = 0;
         this.rightLeg = 0;
         this.leftLeg = 0;
+        this.gold = gold;
+        this.silver = BigDecimal.valueOf(0);
+        this.brass =  BigDecimal.valueOf(0);
+
     }
 
     //bohater
@@ -327,16 +332,47 @@ public class Person {
     }
 
 
+    ///pieniądze
+    private BigDecimal gold;
+    private BigDecimal silver;
+    private BigDecimal brass;  ///mosiądź
 
-    
-    /* test
+    public BigDecimal getGold() {
+        return gold;
+    }
+
+    public void setGold(BigDecimal gold) {
+        this.gold = gold;
+    }
+
+    public BigDecimal getSilver() {
+        return silver;
+    }
+
+    public void setSilver(BigDecimal silver) {
+        this.silver = silver;
+    }
+
+    public BigDecimal getBrass() {
+        return brass;
+    }
+
+    public void setBrass(BigDecimal brass) {
+        this.brass = brass;
+    }
+
+
+
+
+/* test obiektu
     public static void main(String args[])
     {
-        Person obj = new Person ("wojtek",Breed.Elf,"Mag",22,"M","Miejsce");
+        Person obj = new Person ("wojtek",Breed.Elf,"Mag",22,"M","Miejsce",BigDecimal.valueOf(200));
         System.out.println(obj.name);
         obj.setBody(32);
-        System.out.println(obj.getBody());
-        System.out.println(obj.getExpPresent());
+        System.out.println("Body="+obj.getBody());
+        System.out.println("Exp="+obj.getExpPresent());
+        System.out.println("Gold="+obj.getGold());
     }
-    */
+*/
 }

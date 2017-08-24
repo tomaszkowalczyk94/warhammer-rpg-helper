@@ -1,6 +1,7 @@
 package warhammerrpg.gui.network;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ChooseServerForm {
     public JPanel getPanel() {
@@ -22,4 +23,5 @@ public class ChooseServerForm {
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
+
 }

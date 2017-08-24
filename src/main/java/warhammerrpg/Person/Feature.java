@@ -6,6 +6,13 @@ public class Feature {
     private Integer devScheme;
     private Integer curVal;
 
+    public Feature(String featureName, Integer initialVal, Integer devScheme, Integer curVal) {
+        this.featureName = featureName;
+        this.initialVal = initialVal;
+        this.devScheme = devScheme;
+        this.curVal = curVal;
+    }
+
     public String getFeatureName() {
         return featureName;
     }

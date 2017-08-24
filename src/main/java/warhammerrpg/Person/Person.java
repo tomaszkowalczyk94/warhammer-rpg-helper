@@ -3,11 +3,47 @@ package warhammerrpg.Person;
 import java.math.BigInteger;
 
 public class Person {
+    private enum Breed { Brak,Człowiek,Elf,Krasnolud}
+
+    public Person(String name, Breed breed, String curProffesion, Integer age, String sex, String birthPlace) {
+        this.name = name;
+        this.breed = breed;
+        this.curProffesion = curProffesion;
+        this.prevProffesion = "";
+        this.age = age;
+        this.eyesColour = "";
+        this.hairColour = "";
+        this.starSign = "";
+        this.sex = sex;
+        this.weight = 0.0;
+        this.height = 0.0;
+        this.siblings = "";
+        this.birthPlace = birthPlace;
+        this.specialSigns = "";
+        this.gamerName = "";
+        this.gameNaster = "";
+        this.campaign = "";
+        this.campaignYear = 0;
+        this.expPresent = BigInteger.valueOf(0);
+        this.expAll =  BigInteger.valueOf(0);
+        this.move = 0;
+        this.attackRun = 0;
+        this.run = 0;
+        this.head = 0;
+        this.body = 0;
+        this.rightHand = 0;
+        this.leftHand = 0;
+        this.rightLeg = 0;
+        this.leftLeg = 0;
+    }
+
     //bohater
     private String name;
-    private String breed;
+    private Breed breed;
     private String curProffesion;
     private String prevProffesion;
+
+
 
     public String getName() {
         return name;
@@ -17,11 +53,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getBreed() {
+    public Breed getBreed() {
         return breed;
     }
 
-    public void setBreed(String breed) {
+    public void setBreed(Breed breed) {
         this.breed = breed;
     }
 
@@ -290,4 +326,15 @@ public class Person {
         this.leftLeg = leftLeg;
     }
 
+
+    /* test
+    public static void main(String args[])
+    {
+        Person obj = new Person ("wojtek",Breed.Elf,"Mag",22,"M","Miejsce");
+        System.out.println(obj.name);
+        obj.setBody(32);
+        System.out.println(obj.getBody());
+        System.out.println(obj.getExpPresent());
+    }
+    */
 }

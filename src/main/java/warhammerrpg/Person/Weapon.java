@@ -11,6 +11,15 @@ public class Weapon {
     private Integer reloadTime;
     private String weaponFeatures;
 
+    public Weapon(String name, Integer load, enumCategory category, Integer damage, Integer range, Integer reloadTime, String weaponFeatures) {
+        this.name = name;
+        this.load = load;
+        this.category = category;
+        this.damage = damage;
+        this.range = range;
+        this.reloadTime = reloadTime;
+        this.weaponFeatures = weaponFeatures;
+    }
 
     public String getName() {
         return name;

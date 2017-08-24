@@ -8,6 +8,13 @@ public class Armor {
     private Integer load;
     private String localization;
 
+    public Armor(ArmorType armorType, Integer armorPoints, Integer load, String localization) {
+        this.armorType = armorType;
+        this.armorPoints = armorPoints;
+        this.load = load;
+        this.localization = localization;
+    }
+
     public ArmorType getArmorType() {
         return armorType;
     }

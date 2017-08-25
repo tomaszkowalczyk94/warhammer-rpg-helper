@@ -24,6 +24,7 @@ public class ChooseServerForm {
                 try {
                     client = new Client(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()));
                     JOptionPane.showMessageDialog(panel, "Połączono");
+                    GamerGui gamerGui = new GamerGui();
                 } catch (ClientConnectException exception) {
                     JOptionPane.showMessageDialog(panel, "Nie można połączyć się z serwerem", "błąd", JOptionPane.ERROR_MESSAGE);
                 } catch (NumberFormatException exception) {
@@ -38,7 +39,7 @@ public class ChooseServerForm {
                 try {
                     server.run(Integer.parseInt(portCreateText.getText()));
                     JOptionPane.showMessageDialog(panel, "Serwer uruchomiony");
-                    MasterGui obj = new MasterGui();
+                    MasterGui masterGui = new MasterGui();
                 } catch (NetworkException e1) {
                     JOptionPane.showMessageDialog(panel, "Nie można uruchomić serwera", "błąd", JOptionPane.ERROR_MESSAGE);
                 } catch (NumberFormatException exception) {

@@ -60,7 +60,8 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Tekst tekst tekst"/>
+          <editable value="false"/>
+          <text value="Gracz X zmienił Y na Z"/>
         </properties>
       </component>
       <component id="65b9f" class="javax.swing.JTable" binding="table1" default-binding="true">

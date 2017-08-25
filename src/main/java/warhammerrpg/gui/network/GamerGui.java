@@ -14,7 +14,7 @@ public class GamerGui {
         frame.setVisible(true);
     }
 
-    /*
+
     ///do usuniecia gdy nie bedzie potrzebne
     public static void main(String args[]){
         JFrame frame = new JFrame("Gamer GUI Form");
@@ -23,5 +23,5 @@ public class GamerGui {
         frame.pack();
         frame.setVisible(true);
     }
-    */
+
 }

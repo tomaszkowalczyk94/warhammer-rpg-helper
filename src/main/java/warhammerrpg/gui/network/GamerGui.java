@@ -4,7 +4,8 @@ import warhammerrpg.Person.*;
 import javax.swing.*;
 
 public class GamerGui {
-    GamerGui(){
+    GamerGui()
+    {
         run();
     }
 

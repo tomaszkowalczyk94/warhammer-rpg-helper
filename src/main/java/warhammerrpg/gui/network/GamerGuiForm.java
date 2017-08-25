@@ -12,7 +12,6 @@ public class GamerGuiForm {
     private JPanel panel;
     private JButton saveChanges;
     private JTabbedPane tabbedPane1;
-    private JRadioButton radioButton1;
     private JTextField nameTextField;
     private JTextField breedTextField;
     private JTextField curProffesionTextField;
@@ -33,23 +32,48 @@ public class GamerGuiForm {
     private JTextField allExpTextField;
 
 
+    private JTable mainFeatureTab;
+    private JTable nonMainFeatureTab;
+    private JTable weaponsTab;
+
     public GamerGuiForm() {
         saveChanges.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Person person = new Person();
-                createPerson(person);
+                updatePerson(person);
 
             }
         });
     }
 
-    public void createPerson(Person person) {
-        basicValuesTest();
+
+
+    public void updatePerson(Person person) {
+        //basicValuesTest();
 
 
         person.setName(nameTextField.getText());
-        //@TODO Zaktualizować wszystkie elementy klasy Person (wpisać je tak jak ten powyżej)
+        person.setBreed(breedTextField.getText());
+        person.setCurProffesion(curProffesionTextField.getText());
+        person.setPrevProffesion(prevProffesionTextField.getText());
+
+        person.setAge(ageTextField.getText());
+        person.setSex(sexTextField.getText());
+        person.setWeight(weightTextField.getText());
+        person.setHeight(heightTextField.getText());
+        person.setEyesColour(eyesColourTextField.getText());
+        person.setHairColour(hairColourTextField.getText());
+        person.setStarSign(starSignTextField.getText());
+        person.setBirthPlace(birthPlaceTextField.getText());
+        person.setSpecialSigns(specialSignsTextPanel.getText());
+
+        person.setGold(goldTextField.getText());
+        person.setSilver(silverTextField.getText());
+        person.setBrass(brassTextField.getText());
+        person.setCurExp(curExpTextField.getText());
+        person.setAllExp(allExpTextField.getText());
+
         person.printPerson();
     }
 
@@ -66,6 +90,6 @@ public class GamerGuiForm {
     }
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
+
     }
 }

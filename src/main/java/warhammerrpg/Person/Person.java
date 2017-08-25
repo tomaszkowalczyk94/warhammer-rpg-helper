@@ -55,8 +55,8 @@ public class Person {
     private String hairColour;
     private String starSign;
     private String sex;
-    private Double weight;
-    private Double height;
+    private String weight;
+    private String height;
     private String siblings;
     private String birthPlace;
     private String specialSigns;
@@ -101,19 +101,19 @@ public class Person {
         this.sex = sex;
     }
 
-    public Double getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(Double weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public Double getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(Double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
@@ -183,27 +183,28 @@ public class Person {
     }
 
 
-
-
     ///Punkty Doswiadczenia
-    private BigInteger expPresent;
-    private BigInteger expAll;
+    private String curExp;
+    private String allExp;
 
-    public BigInteger getExpPresent() {
-        return expPresent;
+
+    public String getCurExp() {
+        return curExp;
     }
 
-    public void setExpPresent(BigInteger expPresent) {
-        this.expPresent = expPresent;
+    public void setCurExp(String curExp) {
+        this.curExp = curExp;
     }
 
-    public BigInteger getExpAll() {
-        return expAll;
+    public String getAllExp() {
+        return allExp;
     }
 
-    public void setExpAll(BigInteger expAll) {
-        this.expAll = expAll;
+    public void setAllExp(String allExp) {
+        this.allExp = allExp;
     }
+
+
 
 
 

@@ -11,6 +11,9 @@ public class GamerGuiForm {
     private JTextField breedTextField;
     private JTextField curProffesionTextField;
     private JTextField prevProffesionTextField;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
 
     public JPanel getPanel() {
         return panel;

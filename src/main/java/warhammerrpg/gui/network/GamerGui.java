@@ -1,4 +1,6 @@
 package warhammerrpg.gui.network;
+
+import warhammerrpg.Person.*;
 import javax.swing.*;
 
 public class GamerGui {
@@ -13,6 +15,8 @@ public class GamerGui {
         frame.pack();
         frame.setVisible(true);
     }
+
+
 
 
     ///do usuniecia gdy nie bedzie potrzebne

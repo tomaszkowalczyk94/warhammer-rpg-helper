@@ -4,9 +4,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Person {
-    private enum Breed { Brak,Człowiek,Elf,Krasnolud}
 
-    public Person(String name, Breed breed, String curProffesion, Integer age, String sex, String birthPlace, BigDecimal gold) {
+    public Person(String name, String breed, String curProffesion, String age, String sex, String birthPlace, String gold) {
         this.name = name;
         this.breed = breed;
         this.curProffesion = curProffesion;
@@ -37,14 +36,14 @@ public class Person {
         this.rightLeg = 0;
         this.leftLeg = 0;
         this.gold = gold;
-        this.silver = BigDecimal.valueOf(0);
-        this.brass =  BigDecimal.valueOf(0);
+        this.silver = "";
+        this.brass =  "";
 
     }
 
     //bohater
     private String name;
-    private Breed breed;
+    private String breed;
     private String curProffesion;
     private String prevProffesion;
 
@@ -58,11 +57,11 @@ public class Person {
         this.name = name;
     }
 
-    public Breed getBreed() {
+    public String getBreed() {
         return breed;
     }
 
-    public void setBreed(Breed breed) {
+    public void setBreed(String breed) {
         this.breed = breed;
     }
 
@@ -86,7 +85,7 @@ public class Person {
 
 
     //opis bohatera
-    private Integer age;
+    private String age;
     private String eyesColour;
     private String hairColour;
     private String starSign;
@@ -97,11 +96,11 @@ public class Person {
     private String birthPlace;
     private String specialSigns;
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -332,36 +331,51 @@ public class Person {
     }
 
 
-    ///pieniądze
-    private BigDecimal gold;
-    private BigDecimal silver;
-    private BigDecimal brass;  ///mosiądź
 
-    public BigDecimal getGold() {
+    ///pieniądze
+    private String gold;
+    private String silver;
+    private String brass;  ///mosiądź
+
+    public String getGold() {
         return gold;
     }
 
-    public void setGold(BigDecimal gold) {
+    public void setGold(String gold) {
         this.gold = gold;
     }
 
-    public BigDecimal getSilver() {
+    public String getSilver() {
         return silver;
     }
 
-    public void setSilver(BigDecimal silver) {
+    public void setSilver(String silver) {
         this.silver = silver;
     }
 
-    public BigDecimal getBrass() {
+    public String getBrass() {
         return brass;
     }
 
-    public void setBrass(BigDecimal brass) {
+    public void setBrass(String brass) {
         this.brass = brass;
     }
 
 
+
+
+
+
+    public void printPerson()
+    {
+        System.out.println("imie: " + getName()+
+                "\nRasa: " + getBreed()+
+                "\nProfesja: " + getCurProffesion()+
+                "\nWiek: "+ getAge()+
+                "\nPłeć: " + getSex()+
+                "\nMiejsce urodzenia: " +getBirthPlace()+
+                "\nZłoto: " + getGold());
+    }
 
 
 /* test obiektu

@@ -39,7 +39,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Imie:"/>
+                  <text value="* Imie:"/>
                 </properties>
               </component>
               <component id="c90c7" class="javax.swing.JTextField" binding="nameTextField">
@@ -55,7 +55,7 @@
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Rasa:"/>
+                  <text value="* Rasa:"/>
                 </properties>
               </component>
               <component id="f0299" class="javax.swing.JLabel">
@@ -63,7 +63,7 @@
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Obecna profesja:"/>
+                  <text value="* Obecna profesja:"/>
                 </properties>
               </component>
               <component id="43516" class="javax.swing.JTextField" binding="breedTextField">
@@ -112,7 +112,7 @@
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Wiek:"/>
+                  <text value="* Wiek:"/>
                 </properties>
               </component>
               <component id="6d33b" class="javax.swing.JLabel">
@@ -120,7 +120,7 @@
                   <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Płeć:"/>
+                  <text value="* Płeć:"/>
                 </properties>
               </component>
               <component id="5a313" class="javax.swing.JLabel">
@@ -168,7 +168,7 @@
                   <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Miejsce urodzenia:"/>
+                  <text value="* Miejsce urodzenia:"/>
                 </properties>
               </component>
               <component id="e7f02" class="javax.swing.JLabel">
@@ -245,7 +245,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="1f381" class="javax.swing.JTextPane" binding="textPane1" default-binding="true">
+              <component id="1f381" class="javax.swing.JTextPane" binding="specialSignsTextPanel">
                 <constraints>
                   <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -301,7 +301,7 @@
           </grid>
         </children>
       </tabbedpane>
-      <component id="df948" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="df948" class="javax.swing.JTextField" binding="goldTextField">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="350" height="-1"/>
@@ -309,21 +309,25 @@
         </constraints>
         <properties/>
       </component>
-      <component id="cdd5f" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="cdd5f" class="javax.swing.JTextField" binding="silverTextField">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="350" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="0"/>
+        </properties>
       </component>
-      <component id="f1e35" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="f1e35" class="javax.swing.JTextField" binding="brassTextField">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="350" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="0"/>
+        </properties>
       </component>
       <component id="852ab" class="javax.swing.JLabel">
         <constraints>
@@ -346,7 +350,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Złote korony:"/>
+          <text value="* Złote korony:"/>
         </properties>
       </component>
       <component id="7576" class="javax.swing.JLabel">
@@ -357,13 +361,15 @@
           <text value="Doświadczenie obecnie: "/>
         </properties>
       </component>
-      <component id="c7a6e" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="c7a6e" class="javax.swing.JTextField" binding="curExpTextField">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="350" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="0"/>
+        </properties>
       </component>
       <component id="8fbab" class="javax.swing.JLabel">
         <constraints>
@@ -373,13 +379,15 @@
           <text value="Doświadczenie razem:"/>
         </properties>
       </component>
-      <component id="473e8" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="473e8" class="javax.swing.JTextField" binding="allExpTextField">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="350" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value="0"/>
+        </properties>
       </component>
       <component id="e67af" class="javax.swing.JButton" binding="saveChanges">
         <constraints>
@@ -387,6 +395,14 @@
         </constraints>
         <properties>
           <text value="Zapisz zmiany"/>
+        </properties>
+      </component>
+      <component id="920a9" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="* oznacza pola wymagane"/>
         </properties>
       </component>
     </children>

@@ -15,4 +15,8 @@ public class GamerGuiForm {
     public JPanel getPanel() {
         return panel;
     }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }

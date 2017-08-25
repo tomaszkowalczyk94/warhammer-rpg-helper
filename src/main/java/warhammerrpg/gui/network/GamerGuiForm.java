@@ -50,7 +50,7 @@ public class GamerGuiForm {
 
 
     public void updatePerson(Person person) {
-        //basicValuesTest();
+        basicValuesTest();
 
 
         person.setName(nameTextField.getText());

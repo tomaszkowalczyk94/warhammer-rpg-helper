@@ -5,7 +5,7 @@ import javax.swing.*;
 public class ChooseServer {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("test");
+        JFrame frame = new JFrame("Warhammer RPG Helper");
         frame.setContentPane(new ChooseServerForm().getPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

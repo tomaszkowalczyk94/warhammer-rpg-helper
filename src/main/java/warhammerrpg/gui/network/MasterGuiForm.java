@@ -44,16 +44,14 @@ public class MasterGuiForm {
     }
 
     private JPanel panel;
-    private JTextArea message;
     private JButton throwDice;
     private JTextField diceResult;
     private JRadioButton oneDice;
     private JRadioButton twoDices;
+    private JTextArea messages;
+    private JTable table1;
+    private JLabel gameTime;
     private JRadioButton twoDice;
-
-    ///tabela
-    private JTable Gamers;
-
 
 
     {

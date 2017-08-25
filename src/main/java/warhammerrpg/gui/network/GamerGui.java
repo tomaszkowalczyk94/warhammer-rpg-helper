@@ -6,7 +6,7 @@ public class GamerGui {
         run();
     }
 
-    public static void run(){
+    static void run(){
         JFrame frame = new JFrame("Gamer GUI Form");
         frame.setContentPane(new GamerGuiForm().getPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

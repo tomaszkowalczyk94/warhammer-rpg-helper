@@ -5,41 +5,6 @@ import java.math.BigInteger;
 
 public class Person {
 
-    public Person(String name, String breed, String curProffesion, String age, String sex, String birthPlace, String gold) {
-        this.name = name;
-        this.breed = breed;
-        this.curProffesion = curProffesion;
-        this.prevProffesion = "";
-        this.age = age;
-        this.eyesColour = "";
-        this.hairColour = "";
-        this.starSign = "";
-        this.sex = sex;
-        this.weight = 0.0;
-        this.height = 0.0;
-        this.siblings = "";
-        this.birthPlace = birthPlace;
-        this.specialSigns = "";
-        this.gamerName = "";
-        this.gameNaster = "";
-        this.campaign = "";
-        this.campaignYear = 0;
-        this.expPresent = BigInteger.valueOf(0);
-        this.expAll =  BigInteger.valueOf(0);
-        this.move = 0;
-        this.attackRun = 0;
-        this.run = 0;
-        this.head = 0;
-        this.body = 0;
-        this.rightHand = 0;
-        this.leftHand = 0;
-        this.rightLeg = 0;
-        this.leftLeg = 0;
-        this.gold = gold;
-        this.silver = "";
-        this.brass =  "";
-
-    }
 
     //bohater
     private String name;

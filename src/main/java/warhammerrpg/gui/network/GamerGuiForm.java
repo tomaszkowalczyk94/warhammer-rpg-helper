@@ -37,21 +37,19 @@ public class GamerGuiForm {
         saveChanges.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                createPerson();
+                Person person = new Person();
+                createPerson(person);
 
             }
         });
     }
 
-    public void createPerson() {
-        Person person = new Person(nameTextField.getText(),
-                                   breedTextField.getText(),
-                                   curProffesionTextField.getText(),
-                                   ageTextField.getText(),
-                                   sexTextField.getText(),
-                                   birthPlaceTextField.getText(),
-                                   goldTextField.getText());
+    public void createPerson(Person person) {
         basicValuesTest();
+
+
+        person.setName(nameTextField.getText());
+        //@TODO Zaktualizować wszystkie elementy klasy Person (wpisać je tak jak ten powyżej)
         person.printPerson();
     }
 

@@ -39,7 +39,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="* Imie:"/>
+                  <text value="(*) Imie:"/>
                 </properties>
               </component>
               <component id="c90c7" class="javax.swing.JTextField" binding="nameTextField">
@@ -55,7 +55,7 @@
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="* Rasa:"/>
+                  <text value="(*) Rasa:"/>
                 </properties>
               </component>
               <component id="f0299" class="javax.swing.JLabel">
@@ -63,7 +63,7 @@
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="* Obecna profesja:"/>
+                  <text value="(*) Obecna profesja:"/>
                 </properties>
               </component>
               <component id="43516" class="javax.swing.JTextField" binding="breedTextField">
@@ -112,7 +112,7 @@
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="* Wiek:"/>
+                  <text value="(*) Wiek:"/>
                 </properties>
               </component>
               <component id="6d33b" class="javax.swing.JLabel">
@@ -120,7 +120,7 @@
                   <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="* Płeć:"/>
+                  <text value="(*) Płeć:"/>
                 </properties>
               </component>
               <component id="5a313" class="javax.swing.JLabel">
@@ -168,7 +168,7 @@
                   <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="* Miejsce urodzenia:"/>
+                  <text value="(*) Miejsce urodzenia:"/>
                 </properties>
               </component>
               <component id="e7f02" class="javax.swing.JLabel">
@@ -350,7 +350,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="* Złote korony:"/>
+          <text value="(*) Złote korony:"/>
         </properties>
       </component>
       <component id="7576" class="javax.swing.JLabel">
@@ -402,7 +402,7 @@
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="* oznacza pola wymagane"/>
+          <text value="(*) oznacza pola wymagane"/>
         </properties>
       </component>
     </children>

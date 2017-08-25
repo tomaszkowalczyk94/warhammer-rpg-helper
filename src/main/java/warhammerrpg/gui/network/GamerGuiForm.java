@@ -59,7 +59,7 @@ public class GamerGuiForm {
         if(nameTextField.getText().isEmpty() || breedTextField.getText().isEmpty() || curProffesionTextField.getText().isEmpty() ||
                 ageTextField.getText().isEmpty() ||  sexTextField.getText().isEmpty() || birthPlaceTextField.getText().isEmpty() ||  goldTextField.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(panel, "Wypełnij wymagane pola");
+            JOptionPane.showMessageDialog(panel, "Wypełnij wymagane (*) pola");
         }
     }
 

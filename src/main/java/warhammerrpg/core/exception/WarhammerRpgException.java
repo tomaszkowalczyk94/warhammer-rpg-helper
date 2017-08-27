@@ -5,6 +5,7 @@ public class WarhammerRpgException extends Exception {
     public WarhammerRpgException(Exception originalExceptionObject) {
         super();
         this.originalExceptionObject = originalExceptionObject;
+        originalExceptionObject.printStackTrace();
     }
 
     public WarhammerRpgException() {
@@ -19,7 +20,6 @@ public class WarhammerRpgException extends Exception {
 
     public void setOriginalExceptionObject(Exception originalExceptionObject) {
         this.originalExceptionObject = originalExceptionObject;
-        originalExceptionObject.printStackTrace();
     }
 
 }

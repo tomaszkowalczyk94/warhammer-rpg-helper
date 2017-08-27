@@ -15,9 +15,9 @@ import java.sql.SQLException;
 
 public class Database {
 
-    private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/WarhammerRpgDatabase";
-    private final static String DATABASE_USER = "root";
-    private final static String DATABASE_PASSWORD = "haslo";
+    private final static String DATABASE_URL = "jdbc:h2:~/WarhammerRpgDatabase;AUTO_SERVER=TRUE";
+    private final static String DATABASE_USER = "sa";
+    private final static String DATABASE_PASSWORD = "jk23hjkx9009s";
 
     private ConnectionSource conn = null;
 
@@ -63,6 +63,7 @@ public class Database {
     private void reCreateTables() throws DatabaseCreateTablesException, DatabaseDropTableException {
 
         try {
+
             TableUtils.dropTable(this.conn, Equipment.class, true);
             TableUtils.dropTable(this.conn, PersonToWeapon.class, true);
             TableUtils.dropTable(this.conn, Weapon.class, true);

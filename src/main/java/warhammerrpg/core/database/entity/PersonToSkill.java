@@ -16,6 +16,12 @@ public class PersonToSkill {
     @DatabaseField(foreign = true)
     Skill skill;
 
+    @DatabaseField()
+    private Boolean plusTen; ///+10
+
+    @DatabaseField()
+    private Boolean plusTwenty;
+
     public int getId() {
         return id;
     }
@@ -38,6 +44,22 @@ public class PersonToSkill {
 
     public void setSkill(Skill skill) {
         this.skill = skill;
+    }
+
+    public Boolean getPlusTen() {
+        return plusTen;
+    }
+
+    public void setPlusTen(Boolean plusTen) {
+        this.plusTen = plusTen;
+    }
+
+    public Boolean getPlusTwenty() {
+        return plusTwenty;
+    }
+
+    public void setPlusTwenty(Boolean plusTwenty) {
+        this.plusTwenty = plusTwenty;
     }
 
 }

@@ -1,5 +1,8 @@
 package warhammerrpg.core.database.entity;
 
+/**
+ * @todo zastanowić się czy by tego nie wywalić. Poczytajcie sobie w książce o pancerzach, są dwa tryby gry, z opancerzeniem prostym i złożonym
+ */
 public class Armor {
     enum ArmorType {Szata, ZbrojaLekka, ZbrojaCieżka;}
 

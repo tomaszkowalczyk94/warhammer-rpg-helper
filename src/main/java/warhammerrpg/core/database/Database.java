@@ -53,6 +53,7 @@ public class Database {
             TableUtils.createTableIfNotExists(this.conn, PersonToSkill.class);
             TableUtils.createTableIfNotExists(this.conn, Weapon.class);
             TableUtils.createTableIfNotExists(this.conn, PersonToWeapon.class);
+            TableUtils.createTableIfNotExists(this.conn, Equipment.class);
 
         } catch (SQLException e) {
             throw new DatabaseCreateTablesException(e);
@@ -62,6 +63,7 @@ public class Database {
     private void reCreateTables() throws DatabaseCreateTablesException, DatabaseDropTableException {
 
         try {
+            TableUtils.dropTable(this.conn, Equipment.class, true);
             TableUtils.dropTable(this.conn, PersonToWeapon.class, true);
             TableUtils.dropTable(this.conn, Weapon.class, true);
             TableUtils.dropTable(this.conn, PersonToSkill.class, true);

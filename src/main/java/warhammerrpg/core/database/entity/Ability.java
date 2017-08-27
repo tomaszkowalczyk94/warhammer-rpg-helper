@@ -1,34 +1,65 @@
 package warhammerrpg.core.database.entity;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable()
 public class Ability {
+
+    public Ability() {
+    }
+
     public Ability(String ability, String abilityDescription) {
-        this.ability = ability;
-        this.abilityDescription = abilityDescription;
+        this.name = ability;
+        this.description = abilityDescription;
     }
 
-    private String ability;
-    private String abilityDescription;
-    
-    public Ability(String ability) {
-        this.ability = ability;
+    @DatabaseField(generatedId = true)
+    protected int id;
+
+    @DatabaseField()
+    private String name;
+
+    @DatabaseField()
+    private String description;
+
+    @DatabaseField()
+    private String simpleDescription;
+
+    public Ability(String name) {
+        this.name = name;
     }
 
-    public String getAbility() {
-        return ability;
+    public int getId() {
+        return id;
     }
 
-    public void setAbility(String ability) {
-        this.ability = ability;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getabilityDescription() {
-        return abilityDescription;
+    public String getName() {
+        return name;
     }
 
-    public void setabilityDescription(String abilityDescription) {
-        this.abilityDescription = abilityDescription;
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getSimpleDescription() {
+        return simpleDescription;
+    }
+
+    public void setSimpleDescription(String simpleDescription) {
+        this.simpleDescription = simpleDescription;
+    }
 
 }

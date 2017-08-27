@@ -1,24 +1,38 @@
 package warhammerrpg.core.database.entity;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable()
 public class Feature {
-    private String featureName;
+
+    @DatabaseField(generatedId = true)
+    protected int id;
+
+    @DatabaseField()
     private Integer initialVal;
+
+    @DatabaseField()
     private Integer devScheme;
+
+    @DatabaseField()
     private Integer curVal;
 
-    public Feature(String featureName, Integer initialVal, Integer devScheme, Integer curVal) {
-        this.featureName = featureName;
+    public Feature() {
+    }
+
+    public Feature(Integer initialVal, Integer devScheme, Integer curVal) {
         this.initialVal = initialVal;
         this.devScheme = devScheme;
         this.curVal = curVal;
     }
 
-    public String getFeatureName() {
-        return featureName;
+    public int getId() {
+        return id;
     }
 
-    public void setFeatureName(String featureName) {
-        this.featureName = featureName;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Integer getInitialVal() {

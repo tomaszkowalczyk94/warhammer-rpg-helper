@@ -12,6 +12,189 @@ public class Person {
     @DatabaseField(generatedId = true)
     protected int id;
 
+    @ForeignCollectionField(eager = false)
+    ForeignCollection<PersonToSkill> personsToSkills;
+
+    @ForeignCollectionField(eager = false)
+    ForeignCollection<PersonToWeapon> weaponToSkills;
+
+    /**
+     * wyposażenie
+     */
+    @ForeignCollectionField(eager = false)
+    ForeignCollection<Equipment> trappings;
+
+
+
+
+    //bohater
+    @DatabaseField()
+    private String name;
+    @DatabaseField()
+    private String breed;
+    @DatabaseField()
+    private String curProffesion;
+    @DatabaseField()
+    private String prevProffesion;
+
+    //opis bohatera
+    @DatabaseField()
+    private String age;
+    @DatabaseField()
+    private String eyesColour;
+    @DatabaseField()
+    private String hairColour;
+    @DatabaseField()
+    private String starSign;
+    @DatabaseField()
+    private String sex;
+    @DatabaseField()
+    private String weight;
+    @DatabaseField()
+    private String height;
+    @DatabaseField()
+    private String siblings;
+    @DatabaseField()
+    private String birthPlace;
+    @DatabaseField()
+    private String specialSigns;
+
+    /**
+     * Walka wręcz (WS)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature weaponSkill;
+
+    /**
+     * Umiejętności strzeleckie (US)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature ballisticSkill;
+
+    /**
+     * Krzepa (K)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature strength;
+
+    /**
+     * Odporność (Odp)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature toughness;
+
+    /**
+     * Zręczność (Zr)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature agility;
+
+    /**
+     * Siła woli (SW)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature willPower;
+
+    /**
+     * Ogłada (Ogd)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature fellowship;
+
+    /**
+     * Ataki (a)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature attack;
+
+    /**
+     * Żywotność (Żyw)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature wounds;
+
+    /**
+     * Siła (S)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature strengthBonus;
+
+    /**
+     * Wytrzymałość (Wt)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature toughnessBonus;
+
+    /**
+     * Szybkość (Sz)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature movement;
+
+    /**
+     * Magia (Mag)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature magic;
+
+    /**
+     * Punkty obłędu (PO)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature insanityPoints;
+
+    /**
+     * Punkty przeznaczenia (PP)
+     */
+    @DatabaseField(foreign = true, foreignAutoCreate = true)
+    private Feature fatePoints;
+
+    ///Gracz
+    @DatabaseField()
+    private String gamerName;
+    @DatabaseField()
+    private String gameNaster;
+    @DatabaseField()
+    private String campaign;
+    @DatabaseField()
+    private Integer campaignYear;
+
+    ///Punkty Doswiadczenia
+    @DatabaseField()
+    private String curExp;
+    @DatabaseField()
+    private String allExp;
+
+    ///Ruch w walce
+    @DatabaseField()
+    private Integer move;
+    @DatabaseField()
+    private Integer attackRun; ///Szarża
+    @DatabaseField()
+    private Integer run;
+
+    ///Obrazek - Punkty Zbroi
+    @DatabaseField()
+    private Integer head;
+    @DatabaseField()
+    private Integer body;
+    @DatabaseField()
+    private Integer rightHand;
+    @DatabaseField()
+    private Integer leftHand;
+    @DatabaseField()
+    private Integer rightLeg;
+    @DatabaseField()
+    private Integer leftLeg;
+
+    ///pieniądze
+    @DatabaseField()
+    private String gold;
+    @DatabaseField()
+    private String silver;
+    @DatabaseField()
+    private String brass;  ///mosiądź
+
     public int getId() {
         return id;
     }
@@ -19,12 +202,6 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
-
-    @ForeignCollectionField(eager = false)
-    ForeignCollection<PersonToSkill> personsToSkills;
-
-    @ForeignCollectionField(eager = false)
-    ForeignCollection<PersonToWeapon> weaponToSkills;
 
     public ForeignCollection<PersonToSkill> getPersonsToSkills() {
         return personsToSkills;
@@ -41,15 +218,6 @@ public class Person {
     public void setWeaponToSkills(ForeignCollection<PersonToWeapon> weaponToSkills) {
         this.weaponToSkills = weaponToSkills;
     }
-
-
-    //bohater
-    private String name;
-    private String breed;
-    private String curProffesion;
-    private String prevProffesion;
-
-
 
     public String getName() {
         return name;
@@ -82,21 +250,6 @@ public class Person {
     public void setPrevProffesion(String prevProffesion) {
         this.prevProffesion = prevProffesion;
     }
-
-
-
-
-    //opis bohatera
-    private String age;
-    private String eyesColour;
-    private String hairColour;
-    private String starSign;
-    private String sex;
-    private String weight;
-    private String height;
-    private String siblings;
-    private String birthPlace;
-    private String specialSigns;
 
     public String getAge() {
         return age;
@@ -178,15 +331,6 @@ public class Person {
         this.specialSigns = specialSigns;
     }
 
-
-
-    ///Gracz
-    private String gamerName;
-    private String gameNaster;
-    private String campaign;
-    private Integer campaignYear;
-
-
     public String getGamerName() {
         return gamerName;
     }
@@ -219,12 +363,6 @@ public class Person {
         this.campaignYear = campaignYear;
     }
 
-
-    ///Punkty Doswiadczenia
-    private String curExp;
-    private String allExp;
-
-
     public String getCurExp() {
         return curExp;
     }
@@ -240,15 +378,6 @@ public class Person {
     public void setAllExp(String allExp) {
         this.allExp = allExp;
     }
-
-
-
-
-
-    ///Ruch w walce
-    private Integer move;
-    private Integer attackRun; ///Szarża
-    private Integer run;
 
     public Integer getMove() {
         return move;
@@ -273,17 +402,6 @@ public class Person {
     public void setRun(Integer run) {
         this.run = run;
     }
-
-
-
-
-    ///Obrazek - Punkty Zbroi
-    private Integer head;
-    private Integer body;
-    private Integer rightHand;
-    private Integer leftHand;
-    private Integer rightLeg;
-    private Integer leftLeg;
 
     public Integer getHead() {
         return head;
@@ -333,13 +451,6 @@ public class Person {
         this.leftLeg = leftLeg;
     }
 
-
-
-    ///pieniądze
-    private String gold;
-    private String silver;
-    private String brass;  ///mosiądź
-
     public String getGold() {
         return gold;
     }
@@ -364,10 +475,133 @@ public class Person {
         this.brass = brass;
     }
 
+    public Feature getWeaponSkill() {
+        return weaponSkill;
+    }
 
+    public void setWeaponSkill(Feature weaponSkill) {
+        this.weaponSkill = weaponSkill;
+    }
 
+    public Feature getBallisticSkill() {
+        return ballisticSkill;
+    }
 
+    public void setBallisticSkill(Feature ballisticSkill) {
+        this.ballisticSkill = ballisticSkill;
+    }
 
+    public Feature getStrength() {
+        return strength;
+    }
+
+    public void setStrength(Feature strength) {
+        this.strength = strength;
+    }
+
+    public Feature getToughness() {
+        return toughness;
+    }
+
+    public void setToughness(Feature toughness) {
+        this.toughness = toughness;
+    }
+
+    public Feature getAgility() {
+        return agility;
+    }
+
+    public void setAgility(Feature agility) {
+        this.agility = agility;
+    }
+
+    public Feature getWillPower() {
+        return willPower;
+    }
+
+    public void setWillPower(Feature willPower) {
+        this.willPower = willPower;
+    }
+
+    public Feature getFellowship() {
+        return fellowship;
+    }
+
+    public void setFellowship(Feature fellowship) {
+        this.fellowship = fellowship;
+    }
+
+    public Feature getAttack() {
+        return attack;
+    }
+
+    public void setAttack(Feature attack) {
+        this.attack = attack;
+    }
+
+    public Feature getWounds() {
+        return wounds;
+    }
+
+    public void setWounds(Feature wounds) {
+        this.wounds = wounds;
+    }
+
+    public Feature getStrengthBonus() {
+        return strengthBonus;
+    }
+
+    public void setStrengthBonus(Feature strengthBonus) {
+        this.strengthBonus = strengthBonus;
+    }
+
+    public Feature getToughnessBonus() {
+        return toughnessBonus;
+    }
+
+    public void setToughnessBonus(Feature toughnessBonus) {
+        this.toughnessBonus = toughnessBonus;
+    }
+
+    public Feature getMovement() {
+        return movement;
+    }
+
+    public void setMovement(Feature movement) {
+        this.movement = movement;
+    }
+
+    public Feature getMagic() {
+        return magic;
+    }
+
+    public void setMagic(Feature magic) {
+        this.magic = magic;
+    }
+
+    public Feature getInsanityPoints() {
+        return insanityPoints;
+    }
+
+    public void setInsanityPoints(Feature insanityPoints) {
+        this.insanityPoints = insanityPoints;
+    }
+
+    public Feature getFatePoints() {
+        return fatePoints;
+    }
+
+    public void setFatePoints(Feature fatePoints) {
+        this.fatePoints = fatePoints;
+    }
+
+    public ForeignCollection<Equipment> getTrappings() {
+        return trappings;
+    }
+
+    public void setTrappings(ForeignCollection<Equipment> trappings) {
+        this.trappings = trappings;
+    }
 
     public void printPerson()
     {

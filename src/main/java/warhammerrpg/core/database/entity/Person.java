@@ -20,9 +20,11 @@ public class Person {
         this.id = id;
     }
 
-
     @ForeignCollectionField(eager = false)
     ForeignCollection<PersonToSkill> personsToSkills;
+
+    @ForeignCollectionField(eager = false)
+    ForeignCollection<PersonToWeapon> weaponToSkills;
 
     public ForeignCollection<PersonToSkill> getPersonsToSkills() {
         return personsToSkills;
@@ -30,6 +32,14 @@ public class Person {
 
     public void setPersonsToSkills(ForeignCollection<PersonToSkill> personsToSkills) {
         this.personsToSkills = personsToSkills;
+    }
+
+    public ForeignCollection<PersonToWeapon> getWeaponToSkills() {
+        return weaponToSkills;
+    }
+
+    public void setWeaponToSkills(ForeignCollection<PersonToWeapon> weaponToSkills) {
+        this.weaponToSkills = weaponToSkills;
     }
 
 

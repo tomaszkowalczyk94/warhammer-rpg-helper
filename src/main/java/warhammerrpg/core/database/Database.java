@@ -4,11 +4,9 @@ package warhammerrpg.core.database;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
+import warhammerrpg.core.database.entity.*;
 import warhammerrpg.core.database.exception.DatabaseCreateTablesException;
 import warhammerrpg.core.database.exception.DatabaseDropTableException;
-import warhammerrpg.core.database.entity.Person;
-import warhammerrpg.core.database.entity.PersonToSkill;
-import warhammerrpg.core.database.entity.Skill;
 import warhammerrpg.core.database.exception.DatabaseCloseConnectionException;
 import warhammerrpg.core.database.exception.DatabaseOpenConnectionException;
 
@@ -27,9 +25,11 @@ public class Database {
 
         try {
             this.conn = new JdbcConnectionSource(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
-            this.createTablesIfNotExists();
+            this.reCreateTables();
         } catch (SQLException e) {
             throw new DatabaseOpenConnectionException(e);
+        } catch (DatabaseDropTableException e) {
+            e.printStackTrace();
         }
 
     }
@@ -51,6 +51,9 @@ public class Database {
             TableUtils.createTableIfNotExists(this.conn, Skill.class);
             TableUtils.createTableIfNotExists(this.conn, Person.class);
             TableUtils.createTableIfNotExists(this.conn, PersonToSkill.class);
+            TableUtils.createTableIfNotExists(this.conn, Weapon.class);
+            TableUtils.createTableIfNotExists(this.conn, PersonToWeapon.class);
+
         } catch (SQLException e) {
             throw new DatabaseCreateTablesException(e);
         }
@@ -59,6 +62,8 @@ public class Database {
     private void reCreateTables() throws DatabaseCreateTablesException, DatabaseDropTableException {
 
         try {
+            TableUtils.dropTable(this.conn, PersonToWeapon.class, true);
+            TableUtils.dropTable(this.conn, Weapon.class, true);
             TableUtils.dropTable(this.conn, PersonToSkill.class, true);
             TableUtils.dropTable(this.conn, Person.class, true);
             TableUtils.dropTable(this.conn, Skill.class, true);

@@ -20,8 +20,6 @@ public class Skill {
     @ForeignCollectionField(eager = false)
     ForeignCollection<PersonToSkill> personsToSkills;
 
-
-
     public Skill(){};
 
     public Skill(String skillName) {

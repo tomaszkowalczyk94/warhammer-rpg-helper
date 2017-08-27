@@ -1,7 +1,4 @@
-package warhammerrpg.Person;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
+package warhammerrpg.core.person;
 
 public class Person {
 
@@ -347,7 +344,7 @@ public class Person {
 /* test obiektu
     public static void main(String args[])
     {
-        Person obj = new Person ("wojtek",Breed.Elf,"Mag",22,"M","Miejsce",BigDecimal.valueOf(200));
+        person obj = new person ("wojtek",Breed.Elf,"Mag",22,"M","Miejsce",BigDecimal.valueOf(200));
         System.out.println(obj.name);
         obj.setBody(32);
         System.out.println("Body="+obj.getBody());

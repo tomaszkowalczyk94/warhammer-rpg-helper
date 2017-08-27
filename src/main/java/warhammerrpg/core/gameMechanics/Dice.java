@@ -1,4 +1,4 @@
-package warhammerrpg.GameMechanics;
+package warhammerrpg.core.gameMechanics;
 
 import java.util.Random;
 

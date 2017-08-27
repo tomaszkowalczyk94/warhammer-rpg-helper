@@ -1,6 +1,5 @@
 package warhammerrpg.gui.network;
 
-import warhammerrpg.Person.*;
 import javax.swing.*;
 
 public class GamerGui {

@@ -1,12 +1,10 @@
 package warhammerrpg.gui.network;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import warhammerrpg.Person.Person;
+import warhammerrpg.core.person.Person;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
 
 public class GamerGuiForm {
     private JPanel panel;

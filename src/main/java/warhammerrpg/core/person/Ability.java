@@ -1,4 +1,4 @@
-package warhammerrpg.Person;
+package warhammerrpg.core.person;
 
 public class Ability {
     public Ability(String ability, String abilityDescription) {

@@ -1,8 +1,7 @@
 package warhammerrpg.gui.network;
 
-import warhammerrpg.GameMechanics.*;
+import warhammerrpg.core.gameMechanics.*;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;

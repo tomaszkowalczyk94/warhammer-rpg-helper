@@ -1,6 +1,7 @@
 package warhammerrpg.core.database.entity;
 
 import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -14,24 +15,25 @@ public class Skill {
     @DatabaseField(uniqueIndex = true, canBeNull = false)
     private String name;
 
+    @DatabaseField(dataType= DataType.LONG_STRING)
+    private String description;
+
     @DatabaseField()
-    private String relatedSkills; ///skile pokrewne
+    private Boolean isAdvanced;
+
+    @DatabaseField
+    private String relatedTalentsString;
+
+    @DatabaseField
+    private String characteristic;
 
     @ForeignCollectionField(eager = false)
     ForeignCollection<PersonToSkill> personsToSkills;
 
+
+
+
     public Skill(){};
-
-    public Skill(String skillName) {
-        this.name = skillName;
-        this.relatedSkills = "";
-    }
-
-    ///drugi konstruktor dokladniejszy
-    public Skill(String skillName, String relatedSkills) {
-        this.name = skillName;
-        this.relatedSkills = relatedSkills;
-    }
 
     public int getId() {
         return id;
@@ -47,14 +49,6 @@ public class Skill {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getRelatedSkills() {
-        return relatedSkills;
-    }
-
-    public void setRelatedSkills(String relatedSkills) {
-        this.relatedSkills = relatedSkills;
     }
 
     public ForeignCollection<PersonToSkill> getPersonsToSkills() {

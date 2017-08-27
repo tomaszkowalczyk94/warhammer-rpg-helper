@@ -1,5 +1,6 @@
 package warhammerrpg.core.database.entity;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -18,7 +19,7 @@ public class Talent {
     @DatabaseField()
     private String name;
 
-    @DatabaseField()
+    @DatabaseField(dataType= DataType.LONG_STRING)
     private String description;
 
     public int getId() {

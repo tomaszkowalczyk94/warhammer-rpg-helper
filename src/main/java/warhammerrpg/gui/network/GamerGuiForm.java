@@ -1,6 +1,6 @@
 package warhammerrpg.gui.network;
 
-import warhammerrpg.core.person.Person;
+import warhammerrpg.core.database.entity.Person;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

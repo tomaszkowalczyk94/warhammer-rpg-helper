@@ -1,4 +1,4 @@
-package warhammerrpg.core.person;
+package warhammerrpg.core.database.entity;
 
 public class Armor {
     enum ArmorType {Szata, ZbrojaLekka, ZbrojaCieżka;}

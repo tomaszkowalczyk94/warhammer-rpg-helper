@@ -1,4 +1,4 @@
-package warhammerrpg.core.person;
+package warhammerrpg.core.database.entity;
 
 public class Weapon {
     private enum enumCategory { Jednoręczna, Dwuręczna, Strzelecka; }

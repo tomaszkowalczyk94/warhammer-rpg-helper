@@ -1,6 +1,36 @@
-package warhammerrpg.core.person;
+package warhammerrpg.core.database.entity;
 
+import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable()
 public class Person {
+
+
+    @DatabaseField(generatedId = true)
+    protected int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    @ForeignCollectionField(eager = false)
+    ForeignCollection<PersonToSkill> personsToSkills;
+
+    public ForeignCollection<PersonToSkill> getPersonsToSkills() {
+        return personsToSkills;
+    }
+
+    public void setPersonsToSkills(ForeignCollection<PersonToSkill> personsToSkills) {
+        this.personsToSkills = personsToSkills;
+    }
 
 
     //bohater

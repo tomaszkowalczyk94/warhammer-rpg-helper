@@ -1,12 +1,10 @@
 package warhammerrpg;
 
 import warhammerrpg.core.database.Database;
-import warhammerrpg.core.exception.DatabaseCloseConnectionException;
-import warhammerrpg.core.exception.DatabaseOpenConnectionException;
-import warhammerrpg.network.exception.NetworkException;
-
-import java.io.IOException;
-import java.sql.SQLException;
+import warhammerrpg.core.database.exception.DatabaseCloseConnectionException;
+import warhammerrpg.core.database.exception.DatabaseCreateTablesException;
+import warhammerrpg.core.database.exception.DatabaseOpenConnectionException;
+import warhammerrpg.core.exception.WarhammerRpgException;
 
 /**
  * Hello world!
@@ -14,11 +12,14 @@ import java.sql.SQLException;
  */
 public class App 
 {
-    public static void main( String[] args ) throws DatabaseOpenConnectionException, DatabaseCloseConnectionException {
+    public static void main( String[] args ) throws DatabaseOpenConnectionException, DatabaseCloseConnectionException, DatabaseCreateTablesException {
 
-        Database database = new Database();
-        database.closeConnection();
-
-        System.out.println( "Hello World!" );
+        //try {
+            Database database = new Database();
+            database.closeConnection();
+            System.out.println( "Hello World!" );
+        //} catch (WarhammerRpgException e) {
+        //    e.getOriginalExceptionObject().printStackTrace();
+        //}
     }
 }

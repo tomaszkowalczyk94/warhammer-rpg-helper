@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 public class Database {
 
-    private final static String DATABASE_URL = "jdbc:h2:~/WarhammerRpgDatabase";
+    private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/WarhammerRpgDatabase";
     private final static String DATABASE_USER = "root";
     private final static String DATABASE_PASSWORD = "haslo";
 

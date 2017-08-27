@@ -54,6 +54,11 @@ public class Database {
             TableUtils.createTableIfNotExists(this.conn, Weapon.class);
             TableUtils.createTableIfNotExists(this.conn, PersonToWeapon.class);
             TableUtils.createTableIfNotExists(this.conn, Equipment.class);
+            TableUtils.createTableIfNotExists(this.conn, Talent.class);
+            TableUtils.createTableIfNotExists(this.conn, Career.class);
+            TableUtils.createTableIfNotExists(this.conn, CareerToSkill.class);
+            TableUtils.createTableIfNotExists(this.conn, CareerToTalent.class);
+            TableUtils.createTableIfNotExists(this.conn, CareerExit.class);
 
         } catch (SQLException e) {
             throw new DatabaseCreateTablesException(e);
@@ -63,7 +68,11 @@ public class Database {
     private void reCreateTables() throws DatabaseCreateTablesException, DatabaseDropTableException {
 
         try {
-
+            TableUtils.dropTable(this.conn, CareerExit.class, true);
+            TableUtils.dropTable(this.conn, CareerToTalent.class, true);
+            TableUtils.dropTable(this.conn, CareerToSkill.class, true);
+            TableUtils.dropTable(this.conn, Career.class, true);
+            TableUtils.dropTable(this.conn, Talent.class, true);
             TableUtils.dropTable(this.conn, Equipment.class, true);
             TableUtils.dropTable(this.conn, PersonToWeapon.class, true);
             TableUtils.dropTable(this.conn, Weapon.class, true);

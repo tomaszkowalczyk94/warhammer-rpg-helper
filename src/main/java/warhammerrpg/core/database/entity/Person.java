@@ -60,7 +60,7 @@ public class Person {
     private String specialSigns;
 
     /**
-     * Walka wręcz (WS)
+     * Walka wręcz (WW)
      */
     @DatabaseField(foreign = true, foreignAutoCreate = true)
     private Feature weaponSkill;
@@ -88,6 +88,12 @@ public class Person {
      */
     @DatabaseField(foreign = true, foreignAutoCreate = true)
     private Feature agility;
+
+    /**
+     * Inteligencja (Int)
+     */
+    @DatabaseField()
+    private int intelligence;
 
     /**
      * Siła woli (SW)
@@ -601,6 +607,14 @@ public class Person {
 
     public void setTrappings(ForeignCollection<Equipment> trappings) {
         this.trappings = trappings;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
     }
 
     public void printPerson()

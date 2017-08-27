@@ -1,6 +1,7 @@
 package warhammerrpg.core.database.entity;
 
 import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -17,11 +18,11 @@ public class Career {
     @DatabaseField()
     private String name;
 
-    @DatabaseField()
+    @DatabaseField(dataType= DataType.LONG_STRING)
     private String description;
 
     /**
-     * Walka wręcz (WS)
+     * Walka wręcz (WW)
      */
     @DatabaseField()
     private int weaponSkill;
@@ -49,6 +50,12 @@ public class Career {
      */
     @DatabaseField()
     private int agility;
+
+    /**
+     * Inteligencja (Int)
+     */
+    @DatabaseField()
+    private int intelligence;
 
     /**
      * Siła woli (SW)
@@ -116,7 +123,7 @@ public class Career {
     @ForeignCollectionField(eager = false)
     ForeignCollection<CareerToTalent> carrerToTalents;
 
-    @DatabaseField()
+    @DatabaseField(dataType= DataType.LONG_STRING)
     private String equipments;
 
     @ForeignCollectionField(eager = false, foreignFieldName="career")
@@ -307,5 +314,13 @@ public class Career {
 
     public void setAdvanced(Boolean advanced) {
         isAdvanced = advanced;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
     }
 }

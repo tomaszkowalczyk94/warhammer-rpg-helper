@@ -1,0 +1,1790 @@
+"C:\Program Files\Java\jdk1.8.0_111\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.2\lib\idea_rt.jar=63078:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.2.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Users\tomek\IdeaProjects\warhammerrpg\target\classes;C:\Users\tomek\.m2\repository\com\esotericsoftware\kryonet\2.22.0-RC1\kryonet-2.22.0-RC1.jar;C:\Users\tomek\.m2\repository\com\esotericsoftware\kryo\kryo\2.24.0\kryo-2.24.0.jar;C:\Users\tomek\.m2\repository\com\esotericsoftware\minlog\minlog\1.2\minlog-1.2.jar;C:\Users\tomek\.m2\repository\org\objenesis\objenesis\2.1\objenesis-2.1.jar;C:\Users\tomek\.m2\repository\com\esotericsoftware\jsonbeans\0.7\jsonbeans-0.7.jar;C:\Users\tomek\.m2\repository\com\j256\ormlite\ormlite-core\5.0\ormlite-core-5.0.jar;C:\Users\tomek\.m2\repository\com\j256\ormlite\ormlite-jdbc\5.0\ormlite-jdbc-5.0.jar;C:\Users\tomek\.m2\repository\com\h2database\h2\1.4.196\h2-1.4.196.jar;C:\Users\tomek\.m2\repository\com\opencsv\opencsv\4.0\opencsv-4.0.jar;C:\Users\tomek\.m2\repository\org\apache\commons\commons-lang3\3.6\commons-lang3-3.6.jar;C:\Users\tomek\.m2\repository\org\apache\commons\commons-text\1.1\commons-text-1.1.jar;C:\Users\tomek\.m2\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;C:\Users\tomek\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\tomek\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar" warhammerrpg.core.utils.ImportCareerExit
+start parsing: akolita
+ -> profesja wyjsciowa: cyrulik
+  odnaleziono profesje w bazie, id: 7
+    zapisany profesje wyjsciowa pod id: 1
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 2
+ -> profesja wyjsciowa: fanatyk
+  odnaleziono profesje w bazie, id: 8
+    zapisany profesje wyjsciowa pod id: 3
+ -> profesja wyjsciowa: kapłan
+  odnaleziono profesje w bazie, id: 74
+    zapisany profesje wyjsciowa pod id: 4
+ -> profesja wyjsciowa: skryba
+  odnaleziono profesje w bazie, id: 38
+    zapisany profesje wyjsciowa pod id: 5
+ -> profesja wyjsciowa: zakonnik
+  odnaleziono profesje w bazie, id: 110
+    zapisany profesje wyjsciowa pod id: 6
+start parsing: banita
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 7
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 8
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 9
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 10
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 11
+start parsing: berserker z norski
+ -> profesja wyjsciowa: gladiator
+  odnaleziono profesje w bazie, id: 11
+    zapisany profesje wyjsciowa pod id: 12
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 13
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 14
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 15
+ -> profesja wyjsciowa: żeglarz
+  odnaleziono profesje w bazie, id: 58
+    zapisany profesje wyjsciowa pod id: 16
+start parsing: chłop
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 17
+ -> profesja wyjsciowa: fanatyk
+  odnaleziono profesje w bazie, id: 8
+    zapisany profesje wyjsciowa pod id: 18
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 19
+ -> profesja wyjsciowa: rybak
+  odnaleziono profesje w bazie, id: 34
+    zapisany profesje wyjsciowa pod id: 20
+ -> profesja wyjsciowa: rzemieślnik
+  odnaleziono profesje w bazie, id: 36
+    zapisany profesje wyjsciowa pod id: 21
+ -> profesja wyjsciowa: sługa
+  odnaleziono profesje w bazie, id: 39
+    zapisany profesje wyjsciowa pod id: 22
+ -> profesja wyjsciowa: śmieciarz
+  odnaleziono profesje w bazie, id: 47
+    zapisany profesje wyjsciowa pod id: 23
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 24
+ -> profesja wyjsciowa: węglarz
+  odnaleziono profesje w bazie, id: 50
+    zapisany profesje wyjsciowa pod id: 25
+start parsing: ciura obozowa
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 26
+ -> profesja wyjsciowa: rzemieślnik
+  odnaleziono profesje w bazie, id: 36
+    zapisany profesje wyjsciowa pod id: 27
+ -> profesja wyjsciowa: sługa
+  odnaleziono profesje w bazie, id: 39
+    zapisany profesje wyjsciowa pod id: 28
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 29
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 30
+ -> profesja wyjsciowa: węglarz
+  odnaleziono profesje w bazie, id: 50
+    zapisany profesje wyjsciowa pod id: 31
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 32
+start parsing: cyrkowiec
+ -> profesja wyjsciowa: bard
+  odnaleziono profesje w bazie, id: 64
+    zapisany profesje wyjsciowa pod id: 33
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 34
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 35
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 36
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 37
+start parsing: cyrulik
+ -> profesja wyjsciowa: medyk
+  odnaleziono profesje w bazie, id: 82
+    zapisany profesje wyjsciowa pod id: 38
+ -> profesja wyjsciowa: oprawca
+  odnaleziono profesje w bazie, id: 90
+    zapisany profesje wyjsciowa pod id: 39
+ -> profesja wyjsciowa: porywacz zwłok
+  odnaleziono profesje w bazie, id: 29
+    zapisany profesje wyjsciowa pod id: 40
+ -> profesja wyjsciowa: rzemieślnik
+  odnaleziono profesje w bazie, id: 36
+    zapisany profesje wyjsciowa pod id: 41
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 42
+start parsing: fanatyk
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 43
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 44
+ -> profesja wyjsciowa: biczownik
+  odnaleziono profesje w bazie, id: 65
+    zapisany profesje wyjsciowa pod id: 45
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 46
+ -> profesja wyjsciowa: zakonnik
+  odnaleziono profesje w bazie, id: 110
+    zapisany profesje wyjsciowa pod id: 47
+start parsing: flisak
+ -> profesja wyjsciowa: nawigator
+  odnaleziono profesje w bazie, id: 87
+    zapisany profesje wyjsciowa pod id: 48
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 49
+ -> profesja wyjsciowa: rybak
+  odnaleziono profesje w bazie, id: 34
+    zapisany profesje wyjsciowa pod id: 50
+ -> profesja wyjsciowa: żeglarz
+  odnaleziono profesje w bazie, id: 58
+    zapisany profesje wyjsciowa pod id: 51
+ -> profesja wyjsciowa: żołnierz okrętowy
+  odnaleziono profesje w bazie, id: 60
+    zapisany profesje wyjsciowa pod id: 52
+start parsing: giermek
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 53
+ -> profesja wyjsciowa: rycerz
+  odnaleziono profesje w bazie, id: 95
+    zapisany profesje wyjsciowa pod id: 54
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 55
+ -> profesja wyjsciowa: szlachcic
+  odnaleziono profesje w bazie, id: 46
+    zapisany profesje wyjsciowa pod id: 56
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 57
+start parsing: gladiator
+ -> profesja wyjsciowa: łowca nagród
+  odnaleziono profesje w bazie, id: 20
+    zapisany profesje wyjsciowa pod id: 58
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 59
+ -> profesja wyjsciowa: rzezimieszek
+  odnaleziono profesje w bazie, id: 37
+    zapisany profesje wyjsciowa pod id: 60
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 61
+ -> profesja wyjsciowa: zabójca trolli
+  odnaleziono profesje w bazie, id: 54
+    zapisany profesje wyjsciowa pod id: 62
+start parsing: goniec
+ -> profesja wyjsciowa: hiena cmentarna
+  odnaleziono profesje w bazie, id: 15
+    zapisany profesje wyjsciowa pod id: 63
+ -> profesja wyjsciowa: szczurołap
+  odnaleziono profesje w bazie, id: 44
+    zapisany profesje wyjsciowa pod id: 64
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 65
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 66
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 67
+start parsing: górnik
+ -> profesja wyjsciowa: inżynier
+  odnaleziono profesje w bazie, id: 72
+    zapisany profesje wyjsciowa pod id: 68
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 69
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 70
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 71
+ -> profesja wyjsciowa: węglarz
+  odnaleziono profesje w bazie, id: 50
+    zapisany profesje wyjsciowa pod id: 72
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 73
+start parsing: guślarz
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 74
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 75
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 76
+ -> profesja wyjsciowa: uczeń czarodzieja
+  odnaleziono profesje w bazie, id: 49
+    zapisany profesje wyjsciowa pod id: 77
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 78
+start parsing: hiena cmentarna
+ -> profesja wyjsciowa: łowca wampirów
+  odnaleziono profesje w bazie, id: 80
+    zapisany profesje wyjsciowa pod id: 79
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 80
+ -> profesja wyjsciowa: szczurołap
+  odnaleziono profesje w bazie, id: 44
+    zapisany profesje wyjsciowa pod id: 81
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 82
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 83
+start parsing: kanciarz
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 84
+ -> profesja wyjsciowa: cyrkowiec
+  odnaleziono profesje w bazie, id: 6
+    zapisany profesje wyjsciowa pod id: 85
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 86
+ -> profesja wyjsciowa: sługa
+  odnaleziono profesje w bazie, id: 39
+    zapisany profesje wyjsciowa pod id: 87
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 88
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 89
+start parsing: kozak kislevski
+ -> profesja wyjsciowa: łowca nagród
+  odnaleziono profesje w bazie, id: 20
+    zapisany profesje wyjsciowa pod id: 90
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 91
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 92
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 93
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 94
+start parsing: leśnik
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 95
+ -> profesja wyjsciowa: łowca
+  odnaleziono profesje w bazie, id: 19
+    zapisany profesje wyjsciowa pod id: 96
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 97
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 98
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 99
+start parsing: łowca
+ -> profesja wyjsciowa: górnik
+  odnaleziono profesje w bazie, id: 13
+    zapisany profesje wyjsciowa pod id: 100
+ -> profesja wyjsciowa: łowca nagród
+  odnaleziono profesje w bazie, id: 20
+    zapisany profesje wyjsciowa pod id: 101
+ -> profesja wyjsciowa: strażnik pól
+  odnaleziono profesje w bazie, id: 42
+    zapisany profesje wyjsciowa pod id: 102
+ -> profesja wyjsciowa: strzelec
+  odnaleziono profesje w bazie, id: 98
+    zapisany profesje wyjsciowa pod id: 103
+ -> profesja wyjsciowa: węglarz
+  odnaleziono profesje w bazie, id: 50
+    zapisany profesje wyjsciowa pod id: 104
+ -> profesja wyjsciowa: wojownik klanowy
+  odnaleziono profesje w bazie, id: 52
+    zapisany profesje wyjsciowa pod id: 105
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 106
+ -> profesja wyjsciowa: żołnierz
+  odnaleziono profesje w bazie, id: 59
+    zapisany profesje wyjsciowa pod id: 107
+start parsing: łowca nagród
+ -> profesja wyjsciowa: łowca wampirów
+  odnaleziono profesje w bazie, id: 80
+    zapisany profesje wyjsciowa pod id: 108
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 109
+ -> profesja wyjsciowa: rzezimieszek
+  odnaleziono profesje w bazie, id: 37
+    zapisany profesje wyjsciowa pod id: 110
+ -> profesja wyjsciowa: strzelec
+  odnaleziono profesje w bazie, id: 98
+    zapisany profesje wyjsciowa pod id: 111
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 112
+start parsing: mieszczanin
+ -> profesja wyjsciowa: karczmarz
+  odnaleziono profesje w bazie, id: 75
+    zapisany profesje wyjsciowa pod id: 113
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 114
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 115
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 116
+ -> profesja wyjsciowa: paź
+  odnaleziono profesje w bazie, id: 27
+    zapisany profesje wyjsciowa pod id: 117
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 118
+ -> profesja wyjsciowa: rzemieślnik
+  odnaleziono profesje w bazie, id: 36
+    zapisany profesje wyjsciowa pod id: 119
+start parsing: mytnik
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 120
+ -> profesja wyjsciowa: przewoźnik
+  odnaleziono profesje w bazie, id: 33
+    zapisany profesje wyjsciowa pod id: 121
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 122
+ -> profesja wyjsciowa: strażnik pól
+  odnaleziono profesje w bazie, id: 42
+    zapisany profesje wyjsciowa pod id: 123
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 124
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 125
+ -> profesja wyjsciowa: żołnierz
+  odnaleziono profesje w bazie, id: 59
+    zapisany profesje wyjsciowa pod id: 126
+start parsing: najemnik
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 127
+ -> profesja wyjsciowa: łowca nagród
+  odnaleziono profesje w bazie, id: 20
+    zapisany profesje wyjsciowa pod id: 128
+ -> profesja wyjsciowa: ochroniarz
+  odnaleziono profesje w bazie, id: 25
+    zapisany profesje wyjsciowa pod id: 129
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 130
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 131
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 132
+start parsing: ochotnik
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 133
+ -> profesja wyjsciowa: mistrz rzemiosła
+  odnaleziono profesje w bazie, id: 85
+    zapisany profesje wyjsciowa pod id: 134
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 135
+ -> profesja wyjsciowa: posłaniec
+  odnaleziono profesje w bazie, id: 30
+    zapisany profesje wyjsciowa pod id: 136
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 137
+ -> profesja wyjsciowa: strażnik pól
+  odnaleziono profesje w bazie, id: 42
+    zapisany profesje wyjsciowa pod id: 138
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 139
+start parsing: ochroniarz
+ -> profesja wyjsciowa: łowca nagród
+  odnaleziono profesje w bazie, id: 20
+    zapisany profesje wyjsciowa pod id: 140
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 141
+ -> profesja wyjsciowa: oprawca
+  odnaleziono profesje w bazie, id: 90
+    zapisany profesje wyjsciowa pod id: 142
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 143
+ -> profesja wyjsciowa: rzezimieszek
+  odnaleziono profesje w bazie, id: 37
+    zapisany profesje wyjsciowa pod id: 144
+ -> profesja wyjsciowa: strażnik więzienny
+  odnaleziono profesje w bazie, id: 43
+    zapisany profesje wyjsciowa pod id: 145
+ -> profesja wyjsciowa: zarządca
+  odnaleziono profesje w bazie, id: 55
+    zapisany profesje wyjsciowa pod id: 146
+start parsing: oprych
+ -> profesja wyjsciowa: gladiator
+  odnaleziono profesje w bazie, id: 11
+    zapisany profesje wyjsciowa pod id: 147
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 148
+ -> profesja wyjsciowa: ochroniarz
+  odnaleziono profesje w bazie, id: 25
+    zapisany profesje wyjsciowa pod id: 149
+ -> profesja wyjsciowa: oprawca
+  odnaleziono profesje w bazie, id: 90
+    zapisany profesje wyjsciowa pod id: 150
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 151
+start parsing: paź
+ -> profesja wyjsciowa: giermek
+  odnaleziono profesje w bazie, id: 10
+    zapisany profesje wyjsciowa pod id: 152
+ -> profesja wyjsciowa: herold
+  odnaleziono profesje w bazie, id: 70
+    zapisany profesje wyjsciowa pod id: 153
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 154
+ -> profesja wyjsciowa: majordomus
+  odnaleziono profesje w bazie, id: 81
+    zapisany profesje wyjsciowa pod id: 155
+ -> profesja wyjsciowa: żak
+  odnaleziono profesje w bazie, id: 57
+    zapisany profesje wyjsciowa pod id: 156
+start parsing: podżegacz
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 157
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 158
+ -> profesja wyjsciowa: fanatyk
+  odnaleziono profesje w bazie, id: 8
+    zapisany profesje wyjsciowa pod id: 159
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 160
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 161
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 162
+start parsing: porywacz zwłok
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 163
+ -> profesja wyjsciowa: szczurołap
+  odnaleziono profesje w bazie, id: 44
+    zapisany profesje wyjsciowa pod id: 164
+ -> profesja wyjsciowa: włamywacz
+  odnaleziono profesje w bazie, id: 106
+    zapisany profesje wyjsciowa pod id: 165
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 166
+ -> profesja wyjsciowa: żak
+  odnaleziono profesje w bazie, id: 57
+    zapisany profesje wyjsciowa pod id: 167
+start parsing: posłaniec
+ -> profesja wyjsciowa: herold
+  odnaleziono profesje w bazie, id: 70
+    zapisany profesje wyjsciowa pod id: 168
+ -> profesja wyjsciowa: strażnik dróg
+  odnaleziono profesje w bazie, id: 41
+    zapisany profesje wyjsciowa pod id: 169
+ -> profesja wyjsciowa: wojownik klanowy
+  odnaleziono profesje w bazie, id: 52
+    zapisany profesje wyjsciowa pod id: 170
+ -> profesja wyjsciowa: woźnica
+  odnaleziono profesje w bazie, id: 53
+    zapisany profesje wyjsciowa pod id: 171
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 172
+ -> profesja wyjsciowa: żołnierz
+  odnaleziono profesje w bazie, id: 59
+    zapisany profesje wyjsciowa pod id: 173
+start parsing: przemytnik
+ -> profesja wyjsciowa: flisak
+  odnaleziono profesje w bazie, id: 9
+    zapisany profesje wyjsciowa pod id: 174
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 175
+ -> profesja wyjsciowa: przewoźnik
+  odnaleziono profesje w bazie, id: 33
+    zapisany profesje wyjsciowa pod id: 176
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 177
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 178
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 179
+ -> profesja wyjsciowa: żeglarz
+  odnaleziono profesje w bazie, id: 58
+    zapisany profesje wyjsciowa pod id: 180
+start parsing: przepatrywacz
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 181
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 182
+ -> profesja wyjsciowa: strażnik dróg
+  odnaleziono profesje w bazie, id: 41
+    zapisany profesje wyjsciowa pod id: 183
+ -> profesja wyjsciowa: woźnica
+  odnaleziono profesje w bazie, id: 53
+    zapisany profesje wyjsciowa pod id: 184
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 185
+start parsing: przewoźnik
+ -> profesja wyjsciowa: flisak
+  odnaleziono profesje w bazie, id: 9
+    zapisany profesje wyjsciowa pod id: 186
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 187
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 188
+ -> profesja wyjsciowa: strażnik dróg
+  odnaleziono profesje w bazie, id: 41
+    zapisany profesje wyjsciowa pod id: 189
+ -> profesja wyjsciowa: żeglarz
+  odnaleziono profesje w bazie, id: 58
+    zapisany profesje wyjsciowa pod id: 190
+start parsing: rybak
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 191
+ -> profesja wyjsciowa: nawigator
+  odnaleziono profesje w bazie, id: 87
+    zapisany profesje wyjsciowa pod id: 192
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 193
+ -> profesja wyjsciowa: żeglarz
+  odnaleziono profesje w bazie, id: 58
+    zapisany profesje wyjsciowa pod id: 194
+ -> profesja wyjsciowa: żołnierz okrętowy
+  odnaleziono profesje w bazie, id: 60
+    zapisany profesje wyjsciowa pod id: 195
+start parsing: rzecznik rodu
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 196
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 197
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 198
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 199
+ -> profesja wyjsciowa: żeglarz
+  odnaleziono profesje w bazie, id: 58
+    zapisany profesje wyjsciowa pod id: 200
+ -> profesja wyjsciowa: żak
+  odnaleziono profesje w bazie, id: 57
+    zapisany profesje wyjsciowa pod id: 201
+start parsing: rzemieślnik
+ -> profesja wyjsciowa: fanatyk
+  odnaleziono profesje w bazie, id: 8
+    zapisany profesje wyjsciowa pod id: 202
+ -> profesja wyjsciowa: inżynier
+  odnaleziono profesje w bazie, id: 72
+    zapisany profesje wyjsciowa pod id: 203
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 204
+ -> profesja wyjsciowa: mistrz rzemiosła
+  odnaleziono profesje w bazie, id: 85
+    zapisany profesje wyjsciowa pod id: 205
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 206
+ -> profesja wyjsciowa: rzecznik rodu
+  odnaleziono profesje w bazie, id: 35
+    zapisany profesje wyjsciowa pod id: 207
+start parsing: rzezimieszek
+ -> profesja wyjsciowa: gladiator
+  odnaleziono profesje w bazie, id: 11
+    zapisany profesje wyjsciowa pod id: 208
+ -> profesja wyjsciowa: oprych
+  odnaleziono profesje w bazie, id: 26
+    zapisany profesje wyjsciowa pod id: 209
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 210
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 211
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 212
+start parsing: skryb
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 213
+ -> profesja wyjsciowa: nawigator
+  odnaleziono profesje w bazie, id: 87
+    zapisany profesje wyjsciowa pod id: 214
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 215
+ -> profesja wyjsciowa: uczeń czarodzieja
+  odnaleziono profesje w bazie, id: 49
+    zapisany profesje wyjsciowa pod id: 216
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 217
+start parsing: sługa
+ -> profesja wyjsciowa: ciura obozowa
+  odnaleziono profesje w bazie, id: 5
+    zapisany profesje wyjsciowa pod id: 218
+ -> profesja wyjsciowa: karczmarz
+  odnaleziono profesje w bazie, id: 75
+    zapisany profesje wyjsciowa pod id: 219
+ -> profesja wyjsciowa: mieszczanin
+  odnaleziono profesje w bazie, id: 21
+    zapisany profesje wyjsciowa pod id: 220
+ -> profesja wyjsciowa: paź
+  odnaleziono profesje w bazie, id: 27
+    zapisany profesje wyjsciowa pod id: 221
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 222
+ -> profesja wyjsciowa: posłaniec
+  odnaleziono profesje w bazie, id: 30
+    zapisany profesje wyjsciowa pod id: 223
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 224
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 225
+start parsing: strażnik
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 226
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 227
+ -> profesja wyjsciowa: rzemieślnik
+  odnaleziono profesje w bazie, id: 36
+    zapisany profesje wyjsciowa pod id: 228
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 229
+ -> profesja wyjsciowa: strażnik dróg
+  odnaleziono profesje w bazie, id: 41
+    zapisany profesje wyjsciowa pod id: 230
+ -> profesja wyjsciowa: żołnierz
+  odnaleziono profesje w bazie, id: 59
+    zapisany profesje wyjsciowa pod id: 231
+start parsing: strażnik dróg
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 232
+ -> profesja wyjsciowa: mytnik
+  odnaleziono profesje w bazie, id: 22
+    zapisany profesje wyjsciowa pod id: 233
+ -> profesja wyjsciowa: posłaniec
+  odnaleziono profesje w bazie, id: 30
+    zapisany profesje wyjsciowa pod id: 234
+ -> profesja wyjsciowa: przepatrywacz
+  odnaleziono profesje w bazie, id: 32
+    zapisany profesje wyjsciowa pod id: 235
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 236
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 237
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 238
+start parsing: strażnik pól
+ -> profesja wyjsciowa: łowca nagród
+  odnaleziono profesje w bazie, id: 20
+    zapisany profesje wyjsciowa pod id: 239
+ -> profesja wyjsciowa: łowca wampirów
+  odnaleziono profesje w bazie, id: 80
+    zapisany profesje wyjsciowa pod id: 240
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 241
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 242
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 243
+start parsing: strażnik więzienny
+ -> profesja wyjsciowa: ochroniarz
+  odnaleziono profesje w bazie, id: 25
+    zapisany profesje wyjsciowa pod id: 244
+ -> profesja wyjsciowa: oprawca
+  odnaleziono profesje w bazie, id: 90
+    zapisany profesje wyjsciowa pod id: 245
+ -> profesja wyjsciowa: strażnik
+  odnaleziono profesje w bazie, id: 40
+    zapisany profesje wyjsciowa pod id: 246
+ -> profesja wyjsciowa: szczurołap
+  odnaleziono profesje w bazie, id: 44
+    zapisany profesje wyjsciowa pod id: 247
+ -> profesja wyjsciowa: zarządca
+  odnaleziono profesje w bazie, id: 55
+    zapisany profesje wyjsciowa pod id: 248
+start parsing: szczurołap
+ -> profesja wyjsciowa: porywacz zwłok
+  odnaleziono profesje w bazie, id: 29
+    zapisany profesje wyjsciowa pod id: 249
+ -> profesja wyjsciowa: strażnik więzienny
+  odnaleziono profesje w bazie, id: 43
+    zapisany profesje wyjsciowa pod id: 250
+ -> profesja wyjsciowa: śmieciarz
+  odnaleziono profesje w bazie, id: 47
+    zapisany profesje wyjsciowa pod id: 251
+ -> profesja wyjsciowa: tarczownik
+  odnaleziono profesje w bazie, id: 48
+    zapisany profesje wyjsciowa pod id: 252
+ -> profesja wyjsciowa: włamywacz
+  odnaleziono profesje w bazie, id: 106
+    zapisany profesje wyjsciowa pod id: 253
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 254
+start parsing: szermierz estalijski
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 255
+ -> profesja wyjsciowa: ochroniarz
+  odnaleziono profesje w bazie, id: 25
+    zapisany profesje wyjsciowa pod id: 256
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 257
+ -> profesja wyjsciowa: rzezimieszek
+  odnaleziono profesje w bazie, id: 37
+    zapisany profesje wyjsciowa pod id: 258
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 259
+start parsing: szlachcic
+ -> profesja wyjsciowa: dworzanin
+  odnaleziono profesje w bazie, id: 68
+    zapisany profesje wyjsciowa pod id: 260
+ -> profesja wyjsciowa: giermek
+  odnaleziono profesje w bazie, id: 10
+    zapisany profesje wyjsciowa pod id: 261
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 262
+ -> profesja wyjsciowa: rajtar
+  odnaleziono profesje w bazie, id: 92
+    zapisany profesje wyjsciowa pod id: 263
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 264
+ -> profesja wyjsciowa: żak
+  odnaleziono profesje w bazie, id: 57
+    zapisany profesje wyjsciowa pod id: 265
+start parsing: smieciarz
+ -> profesja wyjsciowa: ciura obozowa
+  odnaleziono profesje w bazie, id: 5
+    zapisany profesje wyjsciowa pod id: 266
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 267
+ -> profesja wyjsciowa: porywacz zwłok
+  odnaleziono profesje w bazie, id: 29
+    zapisany profesje wyjsciowa pod id: 268
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 269
+ -> profesja wyjsciowa: włamywacz
+  odnaleziono profesje w bazie, id: 106
+    zapisany profesje wyjsciowa pod id: 270
+start parsing: tarczownik
+ -> profesja wyjsciowa: gladiator
+  odnaleziono profesje w bazie, id: 11
+    zapisany profesje wyjsciowa pod id: 271
+ -> profesja wyjsciowa: goniec
+  odnaleziono profesje w bazie, id: 12
+    zapisany profesje wyjsciowa pod id: 272
+ -> profesja wyjsciowa: hiena cmentarna
+  odnaleziono profesje w bazie, id: 15
+    zapisany profesje wyjsciowa pod id: 273
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 274
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 275
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 276
+start parsing: uczeń czarodzieja
+ -> profesja wyjsciowa: skryba
+  odnaleziono profesje w bazie, id: 38
+    zapisany profesje wyjsciowa pod id: 277
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 278
+ -> profesja wyjsciowa: wędrowny czarodziej
+  odnaleziono profesje w bazie, id: 105
+    zapisany profesje wyjsciowa pod id: 279
+start parsing: węglarz
+ -> profesja wyjsciowa: górnik
+  odnaleziono profesje w bazie, id: 13
+    zapisany profesje wyjsciowa pod id: 280
+ -> profesja wyjsciowa: leśnik
+  odnaleziono profesje w bazie, id: 18
+    zapisany profesje wyjsciowa pod id: 281
+ -> profesja wyjsciowa: łowca
+  odnaleziono profesje w bazie, id: 19
+    zapisany profesje wyjsciowa pod id: 282
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 283
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 284
+start parsing: włóczykij
+ -> profesja wyjsciowa: cyrkowiec
+  odnaleziono profesje w bazie, id: 6
+    zapisany profesje wyjsciowa pod id: 285
+ -> profesja wyjsciowa: leśnik
+  odnaleziono profesje w bazie, id: 18
+    zapisany profesje wyjsciowa pod id: 286
+ -> profesja wyjsciowa: śmieciarz
+  odnaleziono profesje w bazie, id: 47
+    zapisany profesje wyjsciowa pod id: 287
+ -> profesja wyjsciowa: zakonnik
+  odnaleziono profesje w bazie, id: 110
+    zapisany profesje wyjsciowa pod id: 288
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 289
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 290
+start parsing: wojownik klanowy
+ -> profesja wyjsciowa: łowca
+  odnaleziono profesje w bazie, id: 19
+    zapisany profesje wyjsciowa pod id: 291
+ -> profesja wyjsciowa: przepatrywacz
+  odnaleziono profesje w bazie, id: 32
+    zapisany profesje wyjsciowa pod id: 292
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 293
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 294
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 295
+start parsing: woźnica
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 296
+ -> profesja wyjsciowa: mytnik
+  odnaleziono profesje w bazie, id: 22
+    zapisany profesje wyjsciowa pod id: 297
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 298
+ -> profesja wyjsciowa: przewoźnik
+  odnaleziono profesje w bazie, id: 33
+    zapisany profesje wyjsciowa pod id: 299
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 300
+ -> profesja wyjsciowa: strażnik dróg
+  odnaleziono profesje w bazie, id: 41
+    zapisany profesje wyjsciowa pod id: 301
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 302
+start parsing: zabójca trolli
+ -> profesja wyjsciowa: zabójca olbrzymów
+  odnaleziono profesje w bazie, id: 109
+    zapisany profesje wyjsciowa pod id: 303
+start parsing: zarządca
+ -> profesja wyjsciowa: mytnik
+  odnaleziono profesje w bazie, id: 22
+    zapisany profesje wyjsciowa pod id: 304
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 305
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 306
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 307
+ -> profesja wyjsciowa: rzezimieszek
+  odnaleziono profesje w bazie, id: 37
+    zapisany profesje wyjsciowa pod id: 308
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 309
+start parsing: złodziej
+ -> profesja wyjsciowa: cyrkowiec
+  odnaleziono profesje w bazie, id: 6
+    zapisany profesje wyjsciowa pod id: 310
+ -> profesja wyjsciowa: hiena cmentarna
+  odnaleziono profesje w bazie, id: 15
+    zapisany profesje wyjsciowa pod id: 311
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 312
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 313
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 314
+ -> profesja wyjsciowa: włamywacz
+  odnaleziono profesje w bazie, id: 106
+    zapisany profesje wyjsciowa pod id: 315
+start parsing: żak
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 316
+ -> profesja wyjsciowa: cyrulik
+  odnaleziono profesje w bazie, id: 7
+    zapisany profesje wyjsciowa pod id: 317
+ -> profesja wyjsciowa: inżynier
+  odnaleziono profesje w bazie, id: 72
+    zapisany profesje wyjsciowa pod id: 318
+ -> profesja wyjsciowa: medyk
+  odnaleziono profesje w bazie, id: 82
+    zapisany profesje wyjsciowa pod id: 319
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 320
+ -> profesja wyjsciowa: rzecznik rodu
+  odnaleziono profesje w bazie, id: 35
+    zapisany profesje wyjsciowa pod id: 321
+ -> profesja wyjsciowa: uczeń czarodzieja
+  odnaleziono profesje w bazie, id: 49
+    zapisany profesje wyjsciowa pod id: 322
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 323
+start parsing: żeglarz
+ -> profesja wyjsciowa: bosman
+  odnaleziono profesje w bazie, id: 66
+    zapisany profesje wyjsciowa pod id: 324
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 325
+ -> profesja wyjsciowa: nawigator
+  odnaleziono profesje w bazie, id: 87
+    zapisany profesje wyjsciowa pod id: 326
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 327
+ -> profesja wyjsciowa: żołnierz okrętowy
+  odnaleziono profesje w bazie, id: 60
+    zapisany profesje wyjsciowa pod id: 328
+start parsing: żołnierz
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 329
+ -> profesja wyjsciowa: przepatrywacz
+  odnaleziono profesje w bazie, id: 32
+    zapisany profesje wyjsciowa pod id: 330
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 331
+ -> profesja wyjsciowa: strażnik
+  odnaleziono profesje w bazie, id: 40
+    zapisany profesje wyjsciowa pod id: 332
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 333
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 334
+start parsing: żołnierz okrętowy
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 335
+ -> profesja wyjsciowa: bosman
+  odnaleziono profesje w bazie, id: 66
+    zapisany profesje wyjsciowa pod id: 336
+ -> profesja wyjsciowa: oprych
+  odnaleziono profesje w bazie, id: 26
+    zapisany profesje wyjsciowa pod id: 337
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 338
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 339
+start parsing: arcykapłan
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 340
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 341
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 342
+start parsing: arcymag
+ -> profesja wyjsciowa: mistrz gildii
+  odnaleziono profesje w bazie, id: 84
+    zapisany profesje wyjsciowa pod id: 343
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 344
+start parsing: arystokrata
+ -> profesja wyjsciowa: kapitan
+  odnaleziono profesje w bazie, id: 73
+    zapisany profesje wyjsciowa pod id: 345
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 346
+ -> profesja wyjsciowa: rycerz
+  odnaleziono profesje w bazie, id: 95
+    zapisany profesje wyjsciowa pod id: 347
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 348
+start parsing: bard
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 349
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 350
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 351
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 352
+ -> profesja wyjsciowa: żak
+  odnaleziono profesje w bazie, id: 57
+    zapisany profesje wyjsciowa pod id: 353
+start parsing: biczownik
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 354
+ -> profesja wyjsciowa: kapłan
+  odnaleziono profesje w bazie, id: 74
+    zapisany profesje wyjsciowa pod id: 355
+ -> profesja wyjsciowa: oprawca
+  odnaleziono profesje w bazie, id: 90
+    zapisany profesje wyjsciowa pod id: 356
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 357
+ -> profesja wyjsciowa: żołnierz
+  odnaleziono profesje w bazie, id: 59
+    zapisany profesje wyjsciowa pod id: 358
+start parsing: bosman
+ -> profesja wyjsciowa: kapitan
+  odnaleziono profesje w bazie, id: 73
+    zapisany profesje wyjsciowa pod id: 359
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 360
+ -> profesja wyjsciowa: nawigator
+  odnaleziono profesje w bazie, id: 87
+    zapisany profesje wyjsciowa pod id: 361
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 362
+start parsing: demagog
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 363
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 364
+ -> profesja wyjsciowa: najemnik
+  odnaleziono profesje w bazie, id: 23
+    zapisany profesje wyjsciowa pod id: 365
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 366
+ -> profesja wyjsciowa: zakonnik
+  odnaleziono profesje w bazie, id: 110
+    zapisany profesje wyjsciowa pod id: 367
+start parsing: dworzanin
+ -> profesja wyjsciowa: arystokrata
+  odnaleziono profesje w bazie, id: 63
+    zapisany profesje wyjsciowa pod id: 368
+ -> profesja wyjsciowa: majordomus
+  odnaleziono profesje w bazie, id: 81
+    zapisany profesje wyjsciowa pod id: 369
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 370
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 371
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 372
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 373
+start parsing: fechtmistrz
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 374
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 375
+ -> profesja wyjsciowa: skrytobójca
+  odnaleziono profesje w bazie, id: 97
+    zapisany profesje wyjsciowa pod id: 376
+ -> profesja wyjsciowa: zwiadowca
+  odnaleziono profesje w bazie, id: 112
+    zapisany profesje wyjsciowa pod id: 377
+start parsing: herold
+ -> profesja wyjsciowa: cyrkowiec
+  odnaleziono profesje w bazie, id: 6
+    zapisany profesje wyjsciowa pod id: 378
+ -> profesja wyjsciowa: dworzanin
+  odnaleziono profesje w bazie, id: 68
+    zapisany profesje wyjsciowa pod id: 379
+ -> profesja wyjsciowa: giermek
+  odnaleziono profesje w bazie, id: 10
+    zapisany profesje wyjsciowa pod id: 380
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 381
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 382
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 383
+start parsing: herszt banitów
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 384
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 385
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 386
+ -> profesja wyjsciowa: skrytobójca
+  odnaleziono profesje w bazie, id: 97
+    zapisany profesje wyjsciowa pod id: 387
+start parsing: inżynier
+ -> profesja wyjsciowa: mistrz gildii
+  odnaleziono profesje w bazie, id: 84
+    zapisany profesje wyjsciowa pod id: 388
+ -> profesja wyjsciowa: mistrz rzemiosła
+  odnaleziono profesje w bazie, id: 85
+    zapisany profesje wyjsciowa pod id: 389
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 390
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 391
+ -> profesja wyjsciowa: rajtar
+  odnaleziono profesje w bazie, id: 92
+    zapisany profesje wyjsciowa pod id: 392
+start parsing: kapitan
+ -> profesja wyjsciowa: arystokrata
+  odnaleziono profesje w bazie, id: 63
+    zapisany profesje wyjsciowa pod id: 393
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 394
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 395
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 396
+start parsing: kapłan
+ -> profesja wyjsciowa: biczownik
+  odnaleziono profesje w bazie, id: 65
+    zapisany profesje wyjsciowa pod id: 397
+ -> profesja wyjsciowa: majordomus
+  odnaleziono profesje w bazie, id: 81
+    zapisany profesje wyjsciowa pod id: 398
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 399
+ -> profesja wyjsciowa: wybraniec boży
+  odnaleziono profesje w bazie, id: 107
+    zapisany profesje wyjsciowa pod id: 400
+start parsing: karczmarz
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 401
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 402
+ -> profesja wyjsciowa: mieszczanin
+  odnaleziono profesje w bazie, id: 21
+    zapisany profesje wyjsciowa pod id: 403
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 404
+ -> profesja wyjsciowa: przemytnik
+  odnaleziono profesje w bazie, id: 31
+    zapisany profesje wyjsciowa pod id: 405
+start parsing: książę złodziei
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 406
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 407
+ -> profesja wyjsciowa: mistrz cieni
+  odnaleziono profesje w bazie, id: 83
+    zapisany profesje wyjsciowa pod id: 408
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 409
+start parsing: kupiec
+ -> profesja wyjsciowa: mistrz gildii
+  odnaleziono profesje w bazie, id: 84
+    zapisany profesje wyjsciowa pod id: 410
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 411
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 412
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 413
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 414
+start parsing: leśny duch
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 415
+ -> profesja wyjsciowa: łowca wampirów
+  odnaleziono profesje w bazie, id: 80
+    zapisany profesje wyjsciowa pod id: 416
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 417
+ -> profesja wyjsciowa: strzelec
+  odnaleziono profesje w bazie, id: 98
+    zapisany profesje wyjsciowa pod id: 418
+start parsing: łowca czarownic
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 419
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 420
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 421
+ -> profesja wyjsciowa: mistrz zakonny
+  odnaleziono profesje w bazie, id: 86
+    zapisany profesje wyjsciowa pod id: 422
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 423
+start parsing: łowca wampirów
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 424
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 425
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 426
+ -> profesja wyjsciowa: rycerz
+  odnaleziono profesje w bazie, id: 95
+    zapisany profesje wyjsciowa pod id: 427
+ -> profesja wyjsciowa: strzelec
+  odnaleziono profesje w bazie, id: 98
+    zapisany profesje wyjsciowa pod id: 428
+start parsing: majordomus
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 429
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 430
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 431
+ -> profesja wyjsciowa: szlachcic
+  odnaleziono profesje w bazie, id: 46
+    zapisany profesje wyjsciowa pod id: 432
+start parsing: medyk
+ -> profesja wyjsciowa: mistrz gildii
+  odnaleziono profesje w bazie, id: 84
+    zapisany profesje wyjsciowa pod id: 433
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 434
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 435
+ -> profesja wyjsciowa: zakonnik
+  odnaleziono profesje w bazie, id: 110
+    zapisany profesje wyjsciowa pod id: 436
+start parsing: mistrz cieni
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 437
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 438
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 439
+ -> profesja wyjsciowa: strzelec
+  odnaleziono profesje w bazie, id: 98
+    zapisany profesje wyjsciowa pod id: 440
+start parsing: mistrz gildii
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 441
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 442
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 443
+start parsing: mistrz rzemiosła
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 444
+ -> profesja wyjsciowa: inżynier
+  odnaleziono profesje w bazie, id: 72
+    zapisany profesje wyjsciowa pod id: 445
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 446
+ -> profesja wyjsciowa: mistrz gildii
+  odnaleziono profesje w bazie, id: 84
+    zapisany profesje wyjsciowa pod id: 447
+ -> profesja wyjsciowa: ochotnik
+  odnaleziono profesje w bazie, id: 24
+    zapisany profesje wyjsciowa pod id: 448
+start parsing: mistrz zakonny
+ -> profesja wyjsciowa: arystokrata
+  odnaleziono profesje w bazie, id: 63
+    zapisany profesje wyjsciowa pod id: 449
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 450
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 451
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 452
+start parsing: nawigator
+ -> profesja wyjsciowa: kapitan
+  odnaleziono profesje w bazie, id: 73
+    zapisany profesje wyjsciowa pod id: 453
+ -> profesja wyjsciowa: mistrz rzemiosła
+  odnaleziono profesje w bazie, id: 85
+    zapisany profesje wyjsciowa pod id: 454
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 455
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 456
+start parsing: odkrywca
+ -> profesja wyjsciowa: kapitan
+  odnaleziono profesje w bazie, id: 73
+    zapisany profesje wyjsciowa pod id: 457
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 458
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 459
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 460
+start parsing: oficer
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 461
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 462
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 463
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 464
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 465
+start parsing: oprawca
+ -> profesja wyjsciowa: medyk
+  odnaleziono profesje w bazie, id: 82
+    zapisany profesje wyjsciowa pod id: 466
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 467
+ -> profesja wyjsciowa: złodziej
+  odnaleziono profesje w bazie, id: 56
+    zapisany profesje wyjsciowa pod id: 468
+start parsing: paser
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 469
+ -> profesja wyjsciowa: mistrz cieni
+  odnaleziono profesje w bazie, id: 83
+    zapisany profesje wyjsciowa pod id: 470
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 471
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 472
+start parsing: rajtar
+ -> profesja wyjsciowa: dworzanin
+  odnaleziono profesje w bazie, id: 68
+    zapisany profesje wyjsciowa pod id: 473
+ -> profesja wyjsciowa: rycerz
+  odnaleziono profesje w bazie, id: 95
+    zapisany profesje wyjsciowa pod id: 474
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 475
+ -> profesja wyjsciowa: weteran
+  odnaleziono profesje w bazie, id: 104
+    zapisany profesje wyjsciowa pod id: 476
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 477
+start parsing: reketer
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 478
+ -> profesja wyjsciowa: mistrz cieni
+  odnaleziono profesje w bazie, id: 83
+    zapisany profesje wyjsciowa pod id: 479
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 480
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 481
+start parsing: rozbójnik
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 482
+ -> profesja wyjsciowa: mistrz cieni
+  odnaleziono profesje w bazie, id: 83
+    zapisany profesje wyjsciowa pod id: 483
+ -> profesja wyjsciowa: podżegacz
+  odnaleziono profesje w bazie, id: 28
+    zapisany profesje wyjsciowa pod id: 484
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 485
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 486
+start parsing: rycerz
+ -> profesja wyjsciowa: akolita
+  odnaleziono profesje w bazie, id: 1
+    zapisany profesje wyjsciowa pod id: 487
+ -> profesja wyjsciowa: arystokrata
+  odnaleziono profesje w bazie, id: 63
+    zapisany profesje wyjsciowa pod id: 488
+ -> profesja wyjsciowa: łowca wampirów
+  odnaleziono profesje w bazie, id: 80
+    zapisany profesje wyjsciowa pod id: 489
+ -> profesja wyjsciowa: mistrz zakonny
+  odnaleziono profesje w bazie, id: 86
+    zapisany profesje wyjsciowa pod id: 490
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 491
+start parsing: sierżant
+ -> profesja wyjsciowa: oficer
+  odnaleziono profesje w bazie, id: 89
+    zapisany profesje wyjsciowa pod id: 492
+ -> profesja wyjsciowa: rycerz
+  odnaleziono profesje w bazie, id: 95
+    zapisany profesje wyjsciowa pod id: 493
+ -> profesja wyjsciowa: szampierz
+  odnaleziono profesje w bazie, id: 99
+    zapisany profesje wyjsciowa pod id: 494
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 495
+start parsing: skrytobójca
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 496
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 497
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 498
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 499
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 500
+start parsing: strzelec
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 501
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 502
+ -> profesja wyjsciowa: skrytobójca
+  odnaleziono profesje w bazie, id: 97
+    zapisany profesje wyjsciowa pod id: 503
+ -> profesja wyjsciowa: zwadźca
+  odnaleziono profesje w bazie, id: 111
+    zapisany profesje wyjsciowa pod id: 504
+start parsing: szampierz
+ -> profesja wyjsciowa: fanatyk
+  odnaleziono profesje w bazie, id: 8
+    zapisany profesje wyjsciowa pod id: 505
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 506
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 507
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 508
+ -> profesja wyjsciowa: skrytobójca
+  odnaleziono profesje w bazie, id: 97
+    zapisany profesje wyjsciowa pod id: 509
+start parsing: szarlatan
+ -> profesja wyjsciowa: banita
+  odnaleziono profesje w bazie, id: 2
+    zapisany profesje wyjsciowa pod id: 510
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 511
+ -> profesja wyjsciowa: szpieg
+  odnaleziono profesje w bazie, id: 101
+    zapisany profesje wyjsciowa pod id: 512
+ -> profesja wyjsciowa: urzędnik
+  odnaleziono profesje w bazie, id: 103
+    zapisany profesje wyjsciowa pod id: 513
+ -> profesja wyjsciowa: włamywacz
+  odnaleziono profesje w bazie, id: 106
+    zapisany profesje wyjsciowa pod id: 514
+start parsing: szpieg
+ -> profesja wyjsciowa: mistrz cieni
+  odnaleziono profesje w bazie, id: 83
+    zapisany profesje wyjsciowa pod id: 515
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 516
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 517
+ -> profesja wyjsciowa: skrytobójca
+  odnaleziono profesje w bazie, id: 97
+    zapisany profesje wyjsciowa pod id: 518
+start parsing: uczony
+ -> profesja wyjsciowa: kupiec
+  odnaleziono profesje w bazie, id: 77
+    zapisany profesje wyjsciowa pod id: 519
+ -> profesja wyjsciowa: majordomus
+  odnaleziono profesje w bazie, id: 81
+    zapisany profesje wyjsciowa pod id: 520
+ -> profesja wyjsciowa: medyk
+  odnaleziono profesje w bazie, id: 82
+    zapisany profesje wyjsciowa pod id: 521
+ -> profesja wyjsciowa: odkrywca
+  odnaleziono profesje w bazie, id: 88
+    zapisany profesje wyjsciowa pod id: 522
+ -> profesja wyjsciowa: uczeń czarodzieja
+  odnaleziono profesje w bazie, id: 49
+    zapisany profesje wyjsciowa pod id: 523
+ -> profesja wyjsciowa: zakonnik
+  odnaleziono profesje w bazie, id: 110
+    zapisany profesje wyjsciowa pod id: 524
+start parsing: urzędnik
+ -> profesja wyjsciowa: arystokrata
+  odnaleziono profesje w bazie, id: 63
+    zapisany profesje wyjsciowa pod id: 525
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 526
+ -> profesja wyjsciowa: dworzanin
+  odnaleziono profesje w bazie, id: 68
+    zapisany profesje wyjsciowa pod id: 527
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 528
+ -> profesja wyjsciowa: majordomus
+  odnaleziono profesje w bazie, id: 81
+    zapisany profesje wyjsciowa pod id: 529
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 530
+start parsing: weteran
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 531
+ -> profesja wyjsciowa: herszt banitów
+  odnaleziono profesje w bazie, id: 71
+    zapisany profesje wyjsciowa pod id: 532
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 533
+ -> profesja wyjsciowa: strzelec
+  odnaleziono profesje w bazie, id: 98
+    zapisany profesje wyjsciowa pod id: 534
+ -> profesja wyjsciowa: szampierz
+  odnaleziono profesje w bazie, id: 99
+    zapisany profesje wyjsciowa pod id: 535
+start parsing: wędrowny czarodziej
+ -> profesja wyjsciowa: mistrz magii
+  odnaleziono profesje w bazie, id: 113
+    zapisany profesje wyjsciowa pod id: 536
+ -> profesja wyjsciowa: szarlatan
+  odnaleziono profesje w bazie, id: 100
+    zapisany profesje wyjsciowa pod id: 537
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 538
+start parsing: włamywacz
+ -> profesja wyjsciowa: książę złodziei
+  odnaleziono profesje w bazie, id: 76
+    zapisany profesje wyjsciowa pod id: 539
+ -> profesja wyjsciowa: mistrz cieni
+  odnaleziono profesje w bazie, id: 83
+    zapisany profesje wyjsciowa pod id: 540
+ -> profesja wyjsciowa: paser
+  odnaleziono profesje w bazie, id: 91
+    zapisany profesje wyjsciowa pod id: 541
+ -> profesja wyjsciowa: reketer
+  odnaleziono profesje w bazie, id: 93
+    zapisany profesje wyjsciowa pod id: 542
+ -> profesja wyjsciowa: włóczykij
+  odnaleziono profesje w bazie, id: 51
+    zapisany profesje wyjsciowa pod id: 543
+start parsing: wybraniec boży
+ -> profesja wyjsciowa: arcykapłan
+  odnaleziono profesje w bazie, id: 61
+    zapisany profesje wyjsciowa pod id: 544
+ -> profesja wyjsciowa: biczownik
+  odnaleziono profesje w bazie, id: 65
+    zapisany profesje wyjsciowa pod id: 545
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 546
+ -> profesja wyjsciowa: łowca czarownic
+  odnaleziono profesje w bazie, id: 79
+    zapisany profesje wyjsciowa pod id: 547
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 548
+start parsing: zabójca demonów
+ -> profesja wyjsciowa: chwalebna śmierć!
+  NIE ODNALEZIONO WPISU!!!
+start parsing: zabójca olbrzymów
+ -> profesja wyjsciowa: zabójca demonów
+  odnaleziono profesje w bazie, id: 108
+    zapisany profesje wyjsciowa pod id: 549
+start parsing: zakonnik
+ -> profesja wyjsciowa: biczownik
+  odnaleziono profesje w bazie, id: 65
+    zapisany profesje wyjsciowa pod id: 550
+ -> profesja wyjsciowa: demagog
+  odnaleziono profesje w bazie, id: 67
+    zapisany profesje wyjsciowa pod id: 551
+ -> profesja wyjsciowa: kapłan
+  odnaleziono profesje w bazie, id: 74
+    zapisany profesje wyjsciowa pod id: 552
+ -> profesja wyjsciowa: uczony
+  odnaleziono profesje w bazie, id: 102
+    zapisany profesje wyjsciowa pod id: 553
+start parsing: zwadźca
+ -> profesja wyjsciowa: fechtmistrz
+  odnaleziono profesje w bazie, id: 69
+    zapisany profesje wyjsciowa pod id: 554
+ -> profesja wyjsciowa: kanciarz
+  odnaleziono profesje w bazie, id: 16
+    zapisany profesje wyjsciowa pod id: 555
+ -> profesja wyjsciowa: rozbójnik
+  odnaleziono profesje w bazie, id: 94
+    zapisany profesje wyjsciowa pod id: 556
+ -> profesja wyjsciowa: sierżant
+  odnaleziono profesje w bazie, id: 96
+    zapisany profesje wyjsciowa pod id: 557
+ -> profesja wyjsciowa: skrytobójca
+  odnaleziono profesje w bazie, id: 97
+    zapisany profesje wyjsciowa pod id: 558
+
+Process finished with exit code 0

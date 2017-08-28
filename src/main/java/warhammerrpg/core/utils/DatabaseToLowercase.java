@@ -5,6 +5,7 @@ import com.j256.ormlite.dao.DaoManager;
 import warhammerrpg.core.database.Database;
 import warhammerrpg.core.database.entity.Career;
 import warhammerrpg.core.database.entity.Skill;
+import warhammerrpg.core.database.entity.Talent;
 import warhammerrpg.core.database.exception.DatabaseCreateTablesException;
 import warhammerrpg.core.database.exception.DatabaseOpenConnectionException;
 
@@ -18,6 +19,8 @@ public class DatabaseToLowercase {
 
         Dao<Career, Integer> careerDao = DaoManager.createDao(database.getConn(), Career.class);
         Dao<Skill, Integer> skillDao = DaoManager.createDao(database.getConn(), Skill.class);
+        Dao<Talent, Integer> talentDao = DaoManager.createDao(database.getConn(), Talent.class);
+
 
         List<Career> careers = careerDao.queryForAll();
 
@@ -45,6 +48,18 @@ public class DatabaseToLowercase {
             s.setName(newName);
 
             skillDao.update(s);
+        }
+
+        List<Talent> talents = talentDao.queryForAll();
+
+        for(Talent t : talents) {
+            System.out.println("Parsuję talent: "+t.getName());
+            String newName = t.getName().trim().toLowerCase();
+
+            System.out.println("zmieniam nazwe na: "+newName);
+            t.setName(newName);
+
+            talentDao.update(t);
         }
 
 

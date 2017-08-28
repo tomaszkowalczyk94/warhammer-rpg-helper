@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
+ * POMYSl PORZUCONY!
  * wstawia relacje do tabeli PersonToSkill z pliku csv
  */
 public class ImportCareerToSkill {
@@ -48,14 +49,15 @@ public class ImportCareerToSkill {
             String[] skillsArrayString = skillsString.split(",");
 
             for (String skillString : skillsArrayString) {
-                System.out.println(" -> skill: " + skillString);
+                skillString = skillString.trim().toLowerCase();
+                System.out.println(" -> skill: '" + skillString+"'");
 
                 Skill skill = getSkillByName(skillString, skillDao);
 
                 if (skill != null) {
-                    System.out.println("  odnaleziono skill w bazie, id: "+skill.getId());
+                    System.out.println("    odnaleziono skill w bazie, id: "+skill.getId());
                 } else {
-                    System.out.println("  NIE ODNALEZIONO WPISU!!!");
+                    System.out.println("    NIE ODNALEZIONO WPISU!!!");
                 }
 
             }

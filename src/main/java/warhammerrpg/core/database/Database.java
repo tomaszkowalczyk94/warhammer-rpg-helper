@@ -31,12 +31,12 @@ public class Database {
 
         try {
             this.conn = new JdbcConnectionSource(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
-            //this.reCreateTables();
+            this.reCreateTables();
         } catch (SQLException e) {
             throw new DatabaseOpenConnectionException(e);
-        } //catch (DatabaseDropTableException e) {
-          //  e.printStackTrace();
-       // }
+        } catch (DatabaseDropTableException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -66,11 +66,10 @@ public class Database {
             TableUtils.createTableIfNotExists(this.conn, Equipment.class);
             TableUtils.createTableIfNotExists(this.conn, Talent.class);
             TableUtils.createTableIfNotExists(this.conn, Career.class);
-            TableUtils.createTableIfNotExists(this.conn, CareerToSkill.class);
-            TableUtils.createTableIfNotExists(this.conn, CareerToTalent.class);
             TableUtils.createTableIfNotExists(this.conn, CareerExit.class);
 
-            //this.insertDatabase();
+
+            this.insertDatabase();
 
         } catch (SQLException e) {
             throw new DatabaseCreateTablesException(e);
@@ -122,8 +121,6 @@ public class Database {
 
         try {
             TableUtils.dropTable(this.conn, CareerExit.class, true);
-            TableUtils.dropTable(this.conn, CareerToTalent.class, true);
-            TableUtils.dropTable(this.conn, CareerToSkill.class, true);
             TableUtils.dropTable(this.conn, Career.class, true);
             TableUtils.dropTable(this.conn, Talent.class, true);
             TableUtils.dropTable(this.conn, Equipment.class, true);

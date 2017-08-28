@@ -117,11 +117,11 @@ public class Career {
     @DatabaseField()
     private int fatePoints;
 
-    @ForeignCollectionField(eager = false)
-    ForeignCollection<CareerToSkill> carrerToSkills;
+    @DatabaseField(dataType= DataType.LONG_STRING)
+    private String avaibleSkills;
 
-    @ForeignCollectionField(eager = false)
-    ForeignCollection<CareerToTalent> carrerToTalents;
+    @DatabaseField(dataType= DataType.LONG_STRING)
+    private String avaibleTalents;
 
     @DatabaseField(dataType= DataType.LONG_STRING)
     private String equipments;
@@ -276,22 +276,6 @@ public class Career {
         this.fatePoints = fatePoints;
     }
 
-    public ForeignCollection<CareerToSkill> getCarrerToSkills() {
-        return carrerToSkills;
-    }
-
-    public void setCarrerToSkills(ForeignCollection<CareerToSkill> carrerToSkills) {
-        this.carrerToSkills = carrerToSkills;
-    }
-
-    public ForeignCollection<CareerToTalent> getCarrerToTalents() {
-        return carrerToTalents;
-    }
-
-    public void setCarrerToTalents(ForeignCollection<CareerToTalent> carrerToTalents) {
-        this.carrerToTalents = carrerToTalents;
-    }
-
     public String getEquipments() {
         return equipments;
     }
@@ -322,5 +306,21 @@ public class Career {
 
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
+    }
+
+    public String getAvaibleSkills() {
+        return avaibleSkills;
+    }
+
+    public void setAvaibleSkills(String avaibleSkills) {
+        this.avaibleSkills = avaibleSkills;
+    }
+
+    public String getAvaibleTalents() {
+        return avaibleTalents;
+    }
+
+    public void setAvaibleTalents(String avaibleTalents) {
+        this.avaibleTalents = avaibleTalents;
     }
 }

@@ -7,6 +7,7 @@ import warhammerrpg.core.database.exception.DatabaseRecordAlreadyExistException;
 import warhammerrpg.core.database.exception.DatabaseSqlException;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class PersonManager extends AbstractManagero<Person, Integer> {
 
@@ -31,6 +32,13 @@ public class PersonManager extends AbstractManagero<Person, Integer> {
         } catch (SQLException e) {
             throw new DatabaseSqlException(e);
         }
+    }
 
+    public List getAll() throws DatabaseSqlException {
+        try {
+            return dao.queryForAll();
+        } catch (SQLException e) {
+            throw new DatabaseSqlException(e);
+        }
     }
 }

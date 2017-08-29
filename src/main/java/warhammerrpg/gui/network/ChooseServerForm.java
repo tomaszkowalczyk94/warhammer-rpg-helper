@@ -5,6 +5,8 @@ import warhammerrpg.core.database.Database;
 import warhammerrpg.core.database.entity.Person;
 import warhammerrpg.core.database.exception.*;
 import warhammerrpg.core.database.manager.PersonManager;
+import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
+import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
 import warhammerrpg.network.Client;
 import warhammerrpg.network.Server;
 import warhammerrpg.network.exception.ClientConnectException;
@@ -14,6 +16,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class ChooseServerForm {
 
@@ -34,25 +37,18 @@ public class ChooseServerForm {
     private JTable selectPerson;
     private JButton addPerson;
 
-    String[] selectPersonColumnNames = {"Id", "Nick", "Rasa", "Profesja"};
-    Object[][] data = {
-            {"1", "Kathy", "Smith","xxx"},
-            {"2", "Kathy2", "Smith2","xxx"}
-    };
-
+    Database database = null;
 
     public ChooseServerForm() {
 
-        Database database = null;
-
         try {
             database = new Database();
-
-
+            generatePersonTable();
         } catch (DatabaseException e) {
             JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
+        final Database finalDatabase = database;
 
 
         connectButton.addActionListener(new ActionListener() {
@@ -89,20 +85,24 @@ public class ChooseServerForm {
             }
         });
 
-        final Database finalDatabase = database;
+
+
         addPerson.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = JOptionPane.showInputDialog(panel, "Podaj nick");
 
+
+
                 PersonManager personManager = null;
                 try {
                     Person person = new Person();
+
                     person.setName(username);
 
                     personManager = finalDatabase.getPersonManager();
                     personManager.create(person);
-
+                    generatePersonTable();
 
                 } catch(DatabaseRecordAlreadyExistException e1) {
                         JOptionPane.showMessageDialog(panel, "Użytkownik o danej nazwie już istnieje", "błąd", JOptionPane.ERROR_MESSAGE);
@@ -116,14 +116,39 @@ public class ChooseServerForm {
     }
 
 
+    private SelectPersonTableModel selectPersonTableModel = null;
 
     private void createUIComponents() {
-        selectPerson = new JTable(new DefaultTableModel(data, selectPersonColumnNames) {
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return false;
-            }
-        });
+        selectPersonTableModel = new SelectPersonTableModel();
+        selectPerson = new JTable(selectPersonTableModel);
+
+    }
+
+    private void generatePersonTable() throws DatabaseCreateManagerException, DatabaseSqlException {
+
+        final List<Person> allPersons = database.getPersonManager().getAll();
+        selectPersonTableModel.clearRows();
+        for(Person p : allPersons) {
+            SelectPersonRow row = new SelectPersonRow();
+
+            row.setId(p.getId());
+            row.setName(getEmptyStringIfNull(p.getName()));
+            row.setBreed(getEmptyStringIfNull(p.getBreed()));
+            row.setProffesion(getEmptyStringIfNull(p.getCurProffesion()));
+
+            selectPersonTableModel.addRow(row);
+        }
+        selectPersonTableModel.fireTableDataChanged();
+
+
+    }
+
+    private String getEmptyStringIfNull(String text) {
+        if(text != null) {
+            return text;
+        }else {
+           return "";
+        }
     }
 
     public JPanel getPanel() {

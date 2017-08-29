@@ -1,14 +1,14 @@
 package warhammerrpg.core.database;
 
 
+import com.j256.ormlite.dao.BaseDaoImpl;
+import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import warhammerrpg.core.database.entity.*;
-import warhammerrpg.core.database.exception.DatabaseCreateTablesException;
-import warhammerrpg.core.database.exception.DatabaseDropTableException;
-import warhammerrpg.core.database.exception.DatabaseCloseConnectionException;
-import warhammerrpg.core.database.exception.DatabaseOpenConnectionException;
+import warhammerrpg.core.database.exception.*;
+import warhammerrpg.core.database.manager.PersonManager;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -135,6 +135,18 @@ public class Database {
 
         this.createTablesIfNotExists();
     }
+
+    public PersonManager getPersonManager() throws DatabaseCreateManagerException {
+        try {
+            PersonManager personManager = new PersonManager();
+            personManager.setDao((BaseDaoImpl) DaoManager.createDao(this.conn, Person.class));
+            return personManager;
+        } catch (SQLException e) {
+            throw new DatabaseCreateManagerException(e);
+        }
+    }
+
+
 
 
 }

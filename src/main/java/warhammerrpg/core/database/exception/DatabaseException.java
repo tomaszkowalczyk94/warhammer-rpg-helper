@@ -6,4 +6,8 @@ public class DatabaseException extends WarhammerRpgException {
     public DatabaseException(Exception originalExceptionObject) {
         super(originalExceptionObject);
     }
+
+    public DatabaseException() {
+        super();
+    }
 }

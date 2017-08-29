@@ -1,10 +1,9 @@
 package warhammerrpg;
 
-import warhammerrpg.core.database.Database;
-import warhammerrpg.core.database.exception.DatabaseCloseConnectionException;
-import warhammerrpg.core.database.exception.DatabaseCreateTablesException;
-import warhammerrpg.core.database.exception.DatabaseOpenConnectionException;
-import warhammerrpg.core.exception.WarhammerRpgException;
+import warhammerrpg.database.Database;
+import warhammerrpg.database.exception.DatabaseCloseConnectionException;
+import warhammerrpg.database.exception.DatabaseCreateTablesException;
+import warhammerrpg.database.exception.DatabaseOpenConnectionException;
 
 import java.sql.SQLException;
 

@@ -1,12 +1,14 @@
 package warhammerrpg.gui.network;
 
 
-import warhammerrpg.core.database.Database;
-import warhammerrpg.core.database.entity.Person;
-import warhammerrpg.core.database.exception.*;
-import warhammerrpg.core.database.manager.PersonManager;
+import warhammerrpg.database.Database;
+import warhammerrpg.database.entity.Person;
+import warhammerrpg.database.exception.*;
+import warhammerrpg.database.manager.PersonManager;
+import warhammerrpg.gui.ClientGui;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
+import warhammerrpg.gui.old.MasterGui;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.server.Server;
 import warhammerrpg.network.exception.ClientConnectException;
@@ -63,8 +65,11 @@ public class ChooseServerForm {
                         connectButton.setEnabled(Boolean.FALSE);
                         createGameButton.setEnabled(Boolean.FALSE);
                         client = new Client(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
+
+
                         JOptionPane.showMessageDialog(panel, "Połączono");
-                        GamerGui gamerGui = new GamerGui();
+                        ClientGui clientGui = new ClientGui();
+                        clientGui.open();
 
                     } catch (ClientConnectException exception) {
                         JOptionPane.showMessageDialog(panel, "Nie można połączyć się z serwerem", "błąd", JOptionPane.ERROR_MESSAGE);

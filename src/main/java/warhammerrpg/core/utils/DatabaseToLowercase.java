@@ -2,12 +2,12 @@ package warhammerrpg.core.utils;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
-import warhammerrpg.core.database.Database;
-import warhammerrpg.core.database.entity.Career;
-import warhammerrpg.core.database.entity.Skill;
-import warhammerrpg.core.database.entity.Talent;
-import warhammerrpg.core.database.exception.DatabaseCreateTablesException;
-import warhammerrpg.core.database.exception.DatabaseOpenConnectionException;
+import warhammerrpg.database.Database;
+import warhammerrpg.database.entity.Career;
+import warhammerrpg.database.entity.Skill;
+import warhammerrpg.database.entity.Talent;
+import warhammerrpg.database.exception.DatabaseCreateTablesException;
+import warhammerrpg.database.exception.DatabaseOpenConnectionException;
 
 import java.sql.SQLException;
 import java.util.List;

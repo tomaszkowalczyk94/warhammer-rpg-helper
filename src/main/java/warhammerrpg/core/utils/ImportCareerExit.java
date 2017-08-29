@@ -6,9 +6,9 @@ import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
 import com.opencsv.CSVReader;
-import warhammerrpg.core.database.Database;
-import warhammerrpg.core.database.entity.Career;
-import warhammerrpg.core.database.entity.CareerExit;
+import warhammerrpg.database.Database;
+import warhammerrpg.database.entity.Career;
+import warhammerrpg.database.entity.CareerExit;
 
 import java.io.FileReader;
 import java.sql.SQLException;

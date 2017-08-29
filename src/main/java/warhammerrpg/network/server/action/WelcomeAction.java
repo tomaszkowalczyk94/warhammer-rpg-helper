@@ -31,9 +31,15 @@ public class WelcomeAction implements ActionInterface {
 
         if(users.get(username) == null) {
             String token = generateToken();
-            System.out.println("generated token:" + token);
+            System.out.println("SERVER: generated token:" + token);
             welcomeReply.successful = true;
             welcomeReply.receivedToken = token;
+
+            ServerUserContainer serverUserContainer = new ServerUserContainer();
+            serverUserContainer.setToken(token);
+            serverUserContainer.setUsername(username);
+            users.put(username, serverUserContainer);
+
         } else {
             welcomeReply.successful = false;
             welcomeReply.message = "użytkownik już jest zalogowany";

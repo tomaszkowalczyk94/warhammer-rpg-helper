@@ -43,17 +43,7 @@ public class ClientGui {
         });
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
-
-        for(UIManager.LookAndFeelInfo info:UIManager.getInstalledLookAndFeels()) {
-            System.out.println(info.getName());
-
-            if("Windows".equals(info.getName())) {
-                UIManager.setLookAndFeel(info.getClassName());
-                break;
-            }
-        }
-
+    public void open() {
         JFrame frame = new JFrame("Player GUI Form");
         frame.setContentPane(new ClientGui().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

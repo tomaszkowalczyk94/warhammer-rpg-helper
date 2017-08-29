@@ -7,14 +7,13 @@ import warhammerrpg.core.database.exception.*;
 import warhammerrpg.core.database.manager.PersonManager;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
-import warhammerrpg.network.Client;
-import warhammerrpg.network.Server;
+import warhammerrpg.network.client.Client;
+import warhammerrpg.network.server.Server;
 import warhammerrpg.network.exception.ClientConnectException;
 import warhammerrpg.network.exception.InvalidUsernameException;
 import warhammerrpg.network.exception.NetworkException;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -50,7 +49,6 @@ public class ChooseServerForm {
             System.exit(0);
         }
         final Database finalDatabase = database;
-
 
         connectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -100,41 +98,36 @@ public class ChooseServerForm {
             }
         });
 
-
-
         addPerson.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = JOptionPane.showInputDialog(panel, "Podaj nick");
+                if(username != null) {
+                    PersonManager personManager = null;
+                    try {
+                        Person person = new Person();
 
-                PersonManager personManager = null;
-                try {
-                    Person person = new Person();
+                        person.setName(username);
 
-                    person.setName(username);
+                        personManager = finalDatabase.getPersonManager();
+                        personManager.create(person);
+                        generatePersonTable();
 
-                    personManager = finalDatabase.getPersonManager();
-                    personManager.create(person);
-                    generatePersonTable();
-
-                } catch(DatabaseRecordAlreadyExistException e1) {
+                    } catch(DatabaseRecordAlreadyExistException e1) {
                         JOptionPane.showMessageDialog(panel, "Użytkownik o danej nazwie już istnieje", "błąd", JOptionPane.ERROR_MESSAGE);
-                } catch (DatabaseCreateManagerException | DatabaseSqlException e1) {
-                    JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
+                    } catch (DatabaseCreateManagerException | DatabaseSqlException e1) {
+                        JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
-
-
             }
         });
     }
-
 
     private SelectPersonTableModel selectPersonTableModel = null;
 
     private void createUIComponents() {
         selectPersonTableModel = new SelectPersonTableModel();
         selectPerson = new JTable(selectPersonTableModel);
-
     }
 
     private void generatePersonTable() throws DatabaseCreateManagerException, DatabaseSqlException {

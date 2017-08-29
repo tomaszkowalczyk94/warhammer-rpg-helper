@@ -1,24 +1,20 @@
 package warhammerrpg.network;
 
-import junit.framework.TestCase;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.exception.ClientConnectException;
 import warhammerrpg.network.exception.InvalidUsernameException;
 import warhammerrpg.network.exception.NetworkException;
 import warhammerrpg.network.server.Server;
-import warhammerrpg.network.pack.PingPack;
 
-public class ServerTest extends TestCase {
+public class NetworkTestHelpers {
 
-
-    public void testRun() throws Exception {
+    public static Server createServer() throws NetworkException {
         Server server = new Server();
         server.run(54321);
-
-        Client client = new Client("localhost", 54321, "test");
-        //client.sendRequest(new PingPack());
-        //wait();
-        //server.stop();
+        return server;
     }
 
+    public static Client createClient() throws ClientConnectException, InvalidUsernameException {
+        return new Client("localhost", 54321, "test");
+    }
 }

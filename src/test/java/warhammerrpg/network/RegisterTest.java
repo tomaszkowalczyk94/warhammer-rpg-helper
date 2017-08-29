@@ -2,7 +2,7 @@ package warhammerrpg.network;
 
 import com.esotericsoftware.kryo.Kryo;
 import junit.framework.TestCase;
-import warhammerrpg.network.request.PingRequest;
+import warhammerrpg.network.pack.PingPack;
 
 public class RegisterTest extends TestCase {
 
@@ -13,7 +13,7 @@ public class RegisterTest extends TestCase {
         kryo.setRegistrationRequired(true);
         register.registerClasses(kryo);
 
-        assertNotNull(kryo.getRegistration(PingRequest.class));
+        assertNotNull(kryo.getRegistration(PingPack.class));
     }
 
 }

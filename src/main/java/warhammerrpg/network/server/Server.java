@@ -1,7 +1,6 @@
-package warhammerrpg.network;
+package warhammerrpg.network.server;
 
-import com.esotericsoftware.kryonet.Connection;
-import com.esotericsoftware.kryonet.Listener;
+import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.NetworkException;
 
 import java.io.IOException;

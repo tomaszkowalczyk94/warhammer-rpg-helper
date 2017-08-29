@@ -19,7 +19,7 @@ public class ServerTest extends TestCase {
         client.connect("localhost", 54321, "test");
         //client.sendRequest(new PingPack());
         //wait();
-        //server.stop();
+        //master.stop();
     }
 
 }

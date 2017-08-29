@@ -1,4 +1,4 @@
-package warhammerrpg.gui.network;
+package warhammerrpg.gui;
 
 import warhammerrpg.gui.GuiManager;
 

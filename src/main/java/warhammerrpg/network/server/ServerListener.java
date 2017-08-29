@@ -2,6 +2,7 @@ package warhammerrpg.network.server;
 
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
+import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.server.action.PingAction;
@@ -17,8 +18,11 @@ class ServerListener extends Listener {
 
     private Map<String, ServerUserContainer> users;
 
-    public ServerListener() {
-        users = new HashMap<String, ServerUserContainer>();
+    MasterGuiConnector masterGuiConnector;
+
+    public ServerListener(MasterGuiConnector masterGuiConnector, Map<String, ServerUserContainer> users) {
+        this.masterGuiConnector = masterGuiConnector;
+        this.users = users;
     }
 
     public void received (Connection connection, Object object) {
@@ -46,7 +50,7 @@ class ServerListener extends Listener {
         if(request instanceof PingPack) {
             return new PingAction();
         } else if((request instanceof WelcomePack)) {
-            return new WelcomeAction(users);
+            return new WelcomeAction(users, masterGuiConnector);
         }
         throw new UnexpectedRequestException();
     }

@@ -1,20 +1,30 @@
 package warhammerrpg.network.server;
 
+import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.NetworkException;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Server {
     com.esotericsoftware.kryonet.Server server;
 
+    private MasterGuiConnector masterGuiConnector;
+    private Map<String, ServerUserContainer> users;
+
+    public Server() {
+        users = new HashMap<String, ServerUserContainer>();
+    }
+
     public void run(int port) throws NetworkException {
-        System.out.println("start running server");
+        System.out.println("start running master");
 
         server = new com.esotericsoftware.kryonet.Server();
         new Register().registerClasses(server.getKryo());
 
-        server.addListener(new ServerListener());
+        server.addListener(new ServerListener(masterGuiConnector, users));
 
         server.start();
 
@@ -29,4 +39,11 @@ public class Server {
         server.stop();
     }
 
+    public MasterGuiConnector getMasterGuiConnector() {
+        return masterGuiConnector;
+    }
+
+    public void setMasterGuiConnector(MasterGuiConnector masterGuiConnector) {
+        this.masterGuiConnector = masterGuiConnector;
+    }
 }

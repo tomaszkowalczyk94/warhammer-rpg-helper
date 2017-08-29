@@ -1,6 +1,6 @@
 package warhammerrpg.network.client.action;
 
-import warhammerrpg.gui.GuiClientFormConnector;
+import warhammerrpg.gui.client.ClientGuiConnector;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.pack.Pack;
@@ -9,11 +9,11 @@ import warhammerrpg.network.pack.WelcomeReplyPack;
 public class WelcomeReplyAction implements ActionInterface{
 
     Client client;
-    GuiClientFormConnector guiClientFormConnector;
+    ClientGuiConnector clientGuiConnector;
 
-    public WelcomeReplyAction(Client client, GuiClientFormConnector guiClientFormConnector) {
+    public WelcomeReplyAction(Client client, ClientGuiConnector clientGuiConnector) {
         this.client = client;
-        this.guiClientFormConnector = guiClientFormConnector;
+        this.clientGuiConnector = clientGuiConnector;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class WelcomeReplyAction implements ActionInterface{
             client.setToken(welcomeReplyPackrequest.receivedToken);
         } else {
             System.out.println("ERROR: brak tokena");
-            guiClientFormConnector.openAlertANdCloseApp("Zostałeś automatycznie wyrzucony z serwera. Może ktoś z takim nickiem jest już połączony?");
+            clientGuiConnector.openAlertAndCloseApp("Zostałeś automatycznie wyrzucony z serwera. Może ktoś z takim nickiem jest już połączony?");
         }
 
 

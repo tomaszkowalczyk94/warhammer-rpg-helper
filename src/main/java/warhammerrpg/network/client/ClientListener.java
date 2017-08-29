@@ -2,7 +2,7 @@ package warhammerrpg.network.client;
 
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
-import warhammerrpg.gui.GuiClientFormConnector;
+import warhammerrpg.gui.client.ClientGuiConnector;
 import warhammerrpg.network.client.action.WelcomeReplyAction;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.ActionInterface;
@@ -14,11 +14,11 @@ import warhammerrpg.network.pack.WelcomeReplyPack;
 public class ClientListener  extends Listener {
 
     Client client;
-    GuiClientFormConnector guiClientFormConnector;
+    ClientGuiConnector clientGuiConnector;
 
-    public ClientListener(Client client, GuiClientFormConnector guiClientFormConnector) {
+    public ClientListener(Client client, ClientGuiConnector clientGuiConnector) {
         this.client = client;
-        this.guiClientFormConnector = guiClientFormConnector;
+        this.clientGuiConnector = clientGuiConnector;
     }
 
     public void received (Connection connection, Object object) {
@@ -46,7 +46,7 @@ public class ClientListener  extends Listener {
         if(response instanceof PingPack) {
             return new PingAction();
         } else if(response instanceof WelcomeReplyPack) {
-            return new WelcomeReplyAction(this.client, guiClientFormConnector);
+            return new WelcomeReplyAction(this.client, clientGuiConnector);
         }
         throw new UnexpectedRequestException();
     }

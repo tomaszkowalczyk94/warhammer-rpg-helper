@@ -1,5 +1,6 @@
 package warhammerrpg.network.server.action;
 
+import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.server.ServerUserContainer;
@@ -15,9 +16,11 @@ import java.util.UUID;
 public class WelcomeAction implements ActionInterface {
 
     Map<String, ServerUserContainer> users;
+    MasterGuiConnector masterGuiConnector;
 
-    public WelcomeAction(Map<String, ServerUserContainer> users) {
+    public WelcomeAction(Map<String, ServerUserContainer> users, MasterGuiConnector masterGuiConnector) {
         this.users = users;
+        this.masterGuiConnector = masterGuiConnector;
     }
 
     @Override
@@ -40,6 +43,8 @@ public class WelcomeAction implements ActionInterface {
             serverUserContainer.setUsername(username);
             users.put(username, serverUserContainer);
 
+            masterGuiConnector.refreshUsersList(users);
+            masterGuiConnector.addNotice("Gracz "+username+" połączył . Token: " + token);
         } else {
             welcomeReply.successful = false;
             welcomeReply.message = "użytkownik już jest zalogowany";

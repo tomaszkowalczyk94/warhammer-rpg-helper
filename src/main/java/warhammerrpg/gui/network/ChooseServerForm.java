@@ -1,15 +1,16 @@
 package warhammerrpg.gui.network;
 
 
+import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.database.Database;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
-import warhammerrpg.gui.ClientGui;
-import warhammerrpg.gui.GuiClientFormConnector;
+import warhammerrpg.gui.client.ClientGui;
+import warhammerrpg.gui.client.ClientGuiConnector;
+import warhammerrpg.gui.master.MasterGui;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
-import warhammerrpg.gui.old.MasterGui;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.server.Server;
 import warhammerrpg.network.exception.ClientConnectException;
@@ -68,8 +69,8 @@ public class ChooseServerForm {
                         client = new Client();
 
                         ClientGui clientGui = new ClientGui(frame, client);
-                        GuiClientFormConnector guiClientFormConnector = new GuiClientFormConnector(clientGui);
-                        client.setGuiClientFormConnector(guiClientFormConnector);
+                        ClientGuiConnector clientGuiConnector = new ClientGuiConnector(clientGui);
+                        client.setClientGuiConnector(clientGuiConnector);
                         client.connect(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
 
                         JOptionPane.showMessageDialog(panel, "Połączono");
@@ -87,24 +88,35 @@ public class ChooseServerForm {
                     JOptionPane.showMessageDialog(panel, "Wybierz użytkownika", "błąd", JOptionPane.ERROR_MESSAGE);
                 }
 
-                connectButton.setEnabled(Boolean.TRUE);
-                createGameButton.setEnabled(Boolean.TRUE);
+                connectButton.setEnabled(true);
+                createGameButton.setEnabled(true);
             }
         });
         createGameButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                connectButton.setEnabled(false);
+                createGameButton.setEnabled(false);
+
                 server = new Server();
                 try {
+                    MasterGui masterGuiForm = new MasterGui(frame);
+                    MasterGuiConnector masterGuiConnector = new MasterGuiConnector(masterGuiForm);
+
+                    server.setMasterGuiConnector(masterGuiConnector);
+
                     server.run(Integer.parseInt(portCreateText.getText()));
                     JOptionPane.showMessageDialog(panel, "Serwer uruchomiony");
-                    MasterGui masterGui = new MasterGui();
-                    connectButton.setEnabled(Boolean.FALSE);
-                    createGameButton.setEnabled(Boolean.FALSE);
+
+                    frame.dispose();
+                    masterGuiForm.open();
+
                 } catch (NetworkException e1) {
                     JOptionPane.showMessageDialog(panel, "Nie można uruchomić serwera", "błąd", JOptionPane.ERROR_MESSAGE);
                 } catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(panel, "Niepoprawny port", "błąd", JOptionPane.ERROR_MESSAGE);
                 }
+                connectButton.setEnabled(true);
+                createGameButton.setEnabled(true);
             }
         });
 

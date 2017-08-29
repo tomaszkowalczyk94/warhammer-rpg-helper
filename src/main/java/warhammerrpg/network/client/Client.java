@@ -1,6 +1,6 @@
 package warhammerrpg.network.client;
 
-import warhammerrpg.gui.GuiClientFormConnector;
+import warhammerrpg.gui.client.ClientGuiConnector;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.ClientConnectException;
@@ -14,7 +14,7 @@ public class Client {
     private com.esotericsoftware.kryonet.Client client;
 
     private String token;
-    private GuiClientFormConnector guiClientFormConnector;
+    private ClientGuiConnector clientGuiConnector;
 
 
     public Client() {
@@ -24,7 +24,7 @@ public class Client {
     }
 
     public void connect(String host, int port, String username) throws InvalidUsernameException, ClientConnectException {
-        client.addListener(new ClientListener(this, guiClientFormConnector));
+        client.addListener(new ClientListener(this, clientGuiConnector));
         client.start();
 
         try {
@@ -57,11 +57,11 @@ public class Client {
     }
 
 
-    public GuiClientFormConnector getGuiClientFormConnector() {
-        return guiClientFormConnector;
+    public ClientGuiConnector getClientGuiConnector() {
+        return clientGuiConnector;
     }
 
-    public void setGuiClientFormConnector(GuiClientFormConnector guiClientFormConnector) {
-        this.guiClientFormConnector = guiClientFormConnector;
+    public void setClientGuiConnector(ClientGuiConnector clientGuiConnector) {
+        this.clientGuiConnector = clientGuiConnector;
     }
 }

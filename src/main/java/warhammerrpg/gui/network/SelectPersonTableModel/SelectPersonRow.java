@@ -15,7 +15,6 @@ public class SelectPersonRow {
             case 3: return getBreed();
             default: return null;
         }
-
     }
 
     public Integer getId() {

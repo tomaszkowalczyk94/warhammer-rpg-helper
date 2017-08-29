@@ -1,4 +1,4 @@
-package warhammerrpg.gui;
+package warhammerrpg.gui.client;
 
 import warhammerrpg.network.client.Client;
 

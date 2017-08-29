@@ -10,8 +10,8 @@ public class ClientTest extends TestCase {
     public void testSendRequest() throws Exception {
 
         Server server = NetworkTestHelpers.createServer();
-        Client client = new Client("localhost", 54321, "test");
-
+        Client client = new Client();
+        client.connect("localhost", 54321, "test");
 
 
     }

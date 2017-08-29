@@ -15,7 +15,8 @@ public class ServerTest extends TestCase {
         Server server = new Server();
         server.run(54321);
 
-        Client client = new Client("localhost", 54321, "test");
+        Client client = new Client();
+        client.connect("localhost", 54321, "test");
         //client.sendRequest(new PingPack());
         //wait();
         //server.stop();

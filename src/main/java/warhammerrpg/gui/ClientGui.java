@@ -1,5 +1,7 @@
 package warhammerrpg.gui;
 
+import warhammerrpg.network.client.Client;
+
 import javax.swing.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -27,7 +29,13 @@ public class ClientGui {
     private JButton button2;
     private JButton button3;
 
-    public ClientGui() {
+    JFrame frame;
+    Client client;
+    public ClientGui(JFrame frame, Client client) {
+
+        this.frame = frame;
+        this.client = client;
+
         formattedTextField5.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -45,7 +53,7 @@ public class ClientGui {
 
     public void open() {
         JFrame frame = new JFrame("Player GUI Form");
-        frame.setContentPane(new ClientGui().panel);
+        frame.setContentPane(new ClientGui(frame, client).panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

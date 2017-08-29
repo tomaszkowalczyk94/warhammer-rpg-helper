@@ -1,5 +1,6 @@
 package warhammerrpg.network.client;
 
+import warhammerrpg.gui.GuiClientFormConnector;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.ClientConnectException;
@@ -13,25 +14,32 @@ public class Client {
     private com.esotericsoftware.kryonet.Client client;
 
     private String token;
+    private GuiClientFormConnector guiClientFormConnector;
 
-    public Client(String host, int port, String username) throws ClientConnectException, InvalidUsernameException {
 
-        if(username == null | username.length() < 2) {
-            throw new InvalidUsernameException();
-        }
-
+    public Client() {
         client = new com.esotericsoftware.kryonet.Client();
         new Register().registerClasses(client.getKryo());
-        client.addListener(new ClientListener(this));
+
+    }
+
+    public void connect(String host, int port, String username) throws InvalidUsernameException, ClientConnectException {
+        client.addListener(new ClientListener(this, guiClientFormConnector));
         client.start();
 
         try {
+            if (username == null | username.length() < 2) {
+                throw new InvalidUsernameException();
+            }
+
             client.connect(5000, host, port);
 
             WelcomePack welcomeRequest = new WelcomePack();
             welcomeRequest.setUsername(username);
             this.sendRequest(welcomeRequest);
-        } catch (IOException e) {
+        } catch(NumberFormatException e) {
+                throw new ClientConnectException(e);
+        } catch (IOException | IllegalArgumentException e) {
             throw new ClientConnectException(e);
         }
     }
@@ -49,5 +57,11 @@ public class Client {
     }
 
 
+    public GuiClientFormConnector getGuiClientFormConnector() {
+        return guiClientFormConnector;
+    }
 
+    public void setGuiClientFormConnector(GuiClientFormConnector guiClientFormConnector) {
+        this.guiClientFormConnector = guiClientFormConnector;
+    }
 }

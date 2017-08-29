@@ -90,6 +90,7 @@ public class Database {
         this.insertSqlFile("sql/talent.sql");
         this.insertSqlFile("sql/skill.sql");
         this.insertSqlFile("sql/career.sql");
+        this.insertSqlFile("sql/persons.sql");
         System.out.println("END - import database: "+dateFormatThreadLocal.get().format(new Date()));
     }
 

@@ -15,6 +15,8 @@ public class NetworkTestHelpers {
     }
 
     public static Client createClient() throws ClientConnectException, InvalidUsernameException {
-        return new Client("localhost", 54321, "test");
+        Client client = new Client();
+        client.connect("localhost", 54321, "test");
+        return client;
     }
 }

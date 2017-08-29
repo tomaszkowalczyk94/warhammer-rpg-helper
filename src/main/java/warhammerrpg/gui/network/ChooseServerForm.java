@@ -6,6 +6,7 @@ import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
 import warhammerrpg.gui.ClientGui;
+import warhammerrpg.gui.GuiClientFormConnector;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
 import warhammerrpg.gui.old.MasterGui;
@@ -40,8 +41,10 @@ public class ChooseServerForm {
     private JButton addPerson;
 
     Database database = null;
+    JFrame frame;
 
-    public ChooseServerForm() {
+    public ChooseServerForm(final JFrame frame) {
+        this.frame = frame;
 
         try {
             database = new Database();
@@ -54,21 +57,23 @@ public class ChooseServerForm {
 
         connectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                connectButton.setEnabled(Boolean.FALSE);
-                createGameButton.setEnabled(Boolean.FALSE);
+                connectButton.setEnabled(false);
+                createGameButton.setEnabled(false);
 
                 int selectRowIndex = selectPerson.getSelectedRow();
                 if(selectRowIndex != -1) { // -1 jesli nie wybrano żadnego wiersza
                     String username =  selectPersonTableModel.getRow(selectRowIndex).getName();
 
                     try {
-                        connectButton.setEnabled(Boolean.FALSE);
-                        createGameButton.setEnabled(Boolean.FALSE);
-                        client = new Client(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
+                        client = new Client();
 
+                        ClientGui clientGui = new ClientGui(frame, client);
+                        GuiClientFormConnector guiClientFormConnector = new GuiClientFormConnector(clientGui);
+                        client.setGuiClientFormConnector(guiClientFormConnector);
+                        client.connect(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
 
                         JOptionPane.showMessageDialog(panel, "Połączono");
-                        ClientGui clientGui = new ClientGui();
+                        frame.dispose();
                         clientGui.open();
 
                     } catch (ClientConnectException exception) {
@@ -111,7 +116,6 @@ public class ChooseServerForm {
                     PersonManager personManager = null;
                     try {
                         Person person = new Person();
-
                         person.setName(username);
 
                         personManager = finalDatabase.getPersonManager();

@@ -17,6 +17,10 @@ public class SelectPersonTableModel extends AbstractTableModel {
         data.clear();
     }
 
+    public SelectPersonRow getRow(int index) {
+        return data.get(index);
+    }
+
     public int getColumnCount() {
         return columnNames.length;
     }

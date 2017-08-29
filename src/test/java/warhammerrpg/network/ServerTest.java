@@ -2,6 +2,7 @@ package warhammerrpg.network;
 
 import junit.framework.TestCase;
 import warhammerrpg.network.exception.ClientConnectException;
+import warhammerrpg.network.exception.InvalidUsernameException;
 import warhammerrpg.network.exception.NetworkException;
 import warhammerrpg.network.request.PingRequest;
 
@@ -12,7 +13,7 @@ public class ServerTest extends TestCase {
         Server server = new Server();
         server.run(54321);
 
-        Client client = new Client("localhost", 54321);
+        Client client = new Client("localhost", 54321, "test");
         client.sendRequest(new PingRequest());
         server.stop();
     }
@@ -28,9 +29,11 @@ public class ServerTest extends TestCase {
 
 
         try {
-            Client client = new Client("localhost", 54321);
+            Client client = new Client("localhost", 54321, "test");
             fail();
         } catch (ClientConnectException e) {
+            //nothing
+        } catch (InvalidUsernameException e) {
             //nothing
         }
     }

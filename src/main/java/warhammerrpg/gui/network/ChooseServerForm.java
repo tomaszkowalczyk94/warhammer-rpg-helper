@@ -10,6 +10,7 @@ import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
 import warhammerrpg.network.Client;
 import warhammerrpg.network.Server;
 import warhammerrpg.network.exception.ClientConnectException;
+import warhammerrpg.network.exception.InvalidUsernameException;
 import warhammerrpg.network.exception.NetworkException;
 
 import javax.swing.*;
@@ -53,19 +54,33 @@ public class ChooseServerForm {
 
         connectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                connectButton.setEnabled(Boolean.FALSE);
+                createGameButton.setEnabled(Boolean.FALSE);
 
-                try {
-                    client = new Client(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()));
-                    JOptionPane.showMessageDialog(panel, "Połączono");
-                    GamerGui gamerGui = new GamerGui();
-                    connectButton.setEnabled(Boolean.FALSE);
-                    createGameButton.setEnabled(Boolean.FALSE);
-                } catch (ClientConnectException exception) {
-                    JOptionPane.showMessageDialog(panel, "Nie można połączyć się z serwerem", "błąd", JOptionPane.ERROR_MESSAGE);
-                } catch (NumberFormatException exception) {
-                    JOptionPane.showMessageDialog(panel, "Niepoprawny port", "błąd", JOptionPane.ERROR_MESSAGE);
+                int selectRowIndex = selectPerson.getSelectedRow();
+                if(selectRowIndex != -1) { // -1 jesli nie wybrano żadnego wiersza
+                    String username =  selectPersonTableModel.getRow(selectRowIndex).getName();
+
+                    try {
+                        connectButton.setEnabled(Boolean.FALSE);
+                        createGameButton.setEnabled(Boolean.FALSE);
+                        client = new Client(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
+                        JOptionPane.showMessageDialog(panel, "Połączono");
+                        GamerGui gamerGui = new GamerGui();
+
+                    } catch (ClientConnectException exception) {
+                        JOptionPane.showMessageDialog(panel, "Nie można połączyć się z serwerem", "błąd", JOptionPane.ERROR_MESSAGE);
+                    } catch (NumberFormatException exception) {
+                        JOptionPane.showMessageDialog(panel, "Niepoprawny port", "błąd", JOptionPane.ERROR_MESSAGE);
+                    } catch (InvalidUsernameException e1) {
+                        JOptionPane.showMessageDialog(panel, "Nieprawidłowa nazwa użytkownika", "błąd", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(panel, "Wybierz użytkownika", "błąd", JOptionPane.ERROR_MESSAGE);
                 }
 
+                connectButton.setEnabled(Boolean.TRUE);
+                createGameButton.setEnabled(Boolean.TRUE);
             }
         });
         createGameButton.addActionListener(new ActionListener() {
@@ -91,8 +106,6 @@ public class ChooseServerForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = JOptionPane.showInputDialog(panel, "Podaj nick");
-
-
 
                 PersonManager personManager = null;
                 try {
@@ -139,8 +152,6 @@ public class ChooseServerForm {
             selectPersonTableModel.addRow(row);
         }
         selectPersonTableModel.fireTableDataChanged();
-
-
     }
 
     private String getEmptyStringIfNull(String text) {

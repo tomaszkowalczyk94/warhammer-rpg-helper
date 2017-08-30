@@ -1,5 +1,6 @@
 package warhammerrpg.network.client.action;
 
+import com.esotericsoftware.kryonet.Connection;
 import warhammerrpg.gui.client.ClientGuiConnector;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.client.Client;
@@ -17,7 +18,7 @@ public class WelcomeReplyAction implements ActionInterface{
     }
 
     @Override
-    public Pack run(Pack request) {
+    public Pack run(Pack request, Connection connection) {
         WelcomeReplyPack welcomeReplyPackrequest = (WelcomeReplyPack)request;
 
         if(welcomeReplyPackrequest.successful) {
@@ -31,4 +32,5 @@ public class WelcomeReplyAction implements ActionInterface{
 
         return null;
     }
+
 }

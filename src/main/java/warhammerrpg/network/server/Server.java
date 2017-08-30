@@ -1,6 +1,7 @@
 package warhammerrpg.network.server;
 
 import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.observer.OnDisconnectGuiObserver;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.NetworkException;
 
@@ -24,7 +25,10 @@ public class Server {
         server = new com.esotericsoftware.kryonet.Server();
         new Register().registerClasses(server.getKryo());
 
-        server.addListener(new ServerListener(masterGuiConnector, users));
+
+        ServerListener serverListener = new ServerListener(masterGuiConnector, users);
+        serverListener.register(new OnDisconnectGuiObserver(masterGuiConnector));
+        server.addListener(serverListener);
 
         server.start();
 

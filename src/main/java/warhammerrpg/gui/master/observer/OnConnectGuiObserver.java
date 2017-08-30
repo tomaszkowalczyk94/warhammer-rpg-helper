@@ -9,12 +9,10 @@ import java.util.Map;
 
 import static warhammerrpg.core.Observable.*;
 
-public class OnConnectGuiObserver  implements Observer {
-
-    MasterGuiConnector masterGuiConnector;
+public class OnConnectGuiObserver extends AbstractMasterGuiObserver  implements Observer {
 
     public OnConnectGuiObserver(MasterGuiConnector masterGuiConnector) {
-        this.masterGuiConnector = masterGuiConnector;
+        super(masterGuiConnector);
     }
 
     @Override

@@ -1,9 +1,13 @@
 package warhammerrpg.network.server;
 
+import com.esotericsoftware.kryonet.Connection;
+
 public class ServerUserContainer {
 
     protected String username;
     protected String token;
+    protected Connection connection;
+
 
     public String getUsername() {
         return username;
@@ -19,5 +23,13 @@ public class ServerUserContainer {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void setConnection(Connection connection) {
+        this.connection = connection;
     }
 }

@@ -29,6 +29,7 @@ public class MasterGuiConnector {
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
+                masterGui.getPlayersTableModel().clearRows();
                 for(Map.Entry<String, ServerUserContainer> entry: users.entrySet()) {
                     PlayersTableRow playersTableRow = new PlayersTableRow();
 

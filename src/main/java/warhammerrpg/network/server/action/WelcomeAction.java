@@ -1,5 +1,6 @@
 package warhammerrpg.network.server.action;
 
+import com.esotericsoftware.kryonet.Connection;
 import warhammerrpg.core.Observable;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.pack.Pack;
@@ -28,10 +29,10 @@ public class WelcomeAction extends AbstractAction implements ActionInterface, Ob
     }
 
     @Override
-    public Pack run(Pack request) {
+    public Pack run(Pack request, Connection connection) {
         request = (WelcomePack)request;
         String username = request.getUsername();
-        System.out.println("username: " + username);
+        System.out.println("username: " + username + "conn id: "+connection.getID()+"conn name"+ connection.getRemoteAddressTCP().toString());
 
         WelcomeReplyPack welcomeReply = new WelcomeReplyPack();
 
@@ -44,6 +45,7 @@ public class WelcomeAction extends AbstractAction implements ActionInterface, Ob
             ServerUserContainer serverUserContainer = new ServerUserContainer();
             serverUserContainer.setToken(token);
             serverUserContainer.setUsername(username);
+            serverUserContainer.setConnection(connection);
             users.put(username, serverUserContainer);
 
             this.notifyObservers(SERVER_USER_HAS_JOINED, users, serverUserContainer);

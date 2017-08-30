@@ -34,7 +34,7 @@ public class ClientListener  extends Listener {
                 //@todo put something
             }
 
-            Pack pack = action.run(request);
+            Pack pack = action.run(request, connection);
 
             if(pack != null) {
                 connection.sendTCP(pack);

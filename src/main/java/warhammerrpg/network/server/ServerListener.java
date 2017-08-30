@@ -2,6 +2,9 @@ package warhammerrpg.network.server;
 
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
+import warhammerrpg.core.Observable;
+import warhammerrpg.core.Observer;
+import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
 import warhammerrpg.network.pack.Pack;
@@ -12,10 +15,15 @@ import warhammerrpg.network.exception.UnexpectedRequestException;
 import warhammerrpg.network.pack.PingPack;
 import warhammerrpg.network.pack.WelcomePack;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-class ServerListener extends Listener {
+import static warhammerrpg.core.Observable.Event.SERVER_USER_DISCONNECTED;
+import static warhammerrpg.core.Observable.Event.SERVER_USER_DISCONNECTED_ERROR;
+import static warhammerrpg.core.Observable.Event.SERVER_USER_HAS_JOINED;
+
+class ServerListener extends Listener implements Observable {
 
     private Map<String, ServerUserContainer> users;
 
@@ -24,6 +32,7 @@ class ServerListener extends Listener {
     public ServerListener(MasterGuiConnector masterGuiConnector, Map<String, ServerUserContainer> users) {
         this.masterGuiConnector = masterGuiConnector;
         this.users = users;
+        this.observerList = new ArrayList<>();
     }
 
     public void received (Connection connection, Object object) {
@@ -39,11 +48,20 @@ class ServerListener extends Listener {
                 //@todo put something
             }
 
-            Pack response = action.run(request);
+            Pack response = action.run(request, connection);
 
             if(response != null) {
                 connection.sendTCP(response);
             }
+        }
+    }
+
+    public void disconnected (Connection connection) {
+        ServerUserContainer serverUserContainer = findServerUserContainerByConnection(connection);
+
+        if(serverUserContainer != null) {
+            users.remove(serverUserContainer.getUsername());
+            this.notifyObservers(SERVER_USER_DISCONNECTED, users, serverUserContainer);
         }
     }
 
@@ -56,5 +74,38 @@ class ServerListener extends Listener {
             return welcomeAction;
         }
         throw new UnexpectedRequestException();
+    }
+
+    private ServerUserContainer findServerUserContainerByConnection(Connection connection) {
+        for(Map.Entry<String, ServerUserContainer> entry : users.entrySet()) {
+            if(entry.getValue().getConnection().getID() == connection.getID()) {
+                return entry.getValue();
+            }
+        }
+        return null;
+    }
+
+
+    protected ArrayList<Observer> observerList;
+
+    @Override
+    public void register(Observer o) {
+        observerList.add(o);
+    }
+
+    @Override
+    public void unregister(Observer o) {
+        observerList.remove(o);
+    }
+
+    @Override
+    public void notifyObservers(Observable.Event event, Object param1, Object param2) {
+        for (Observer o : observerList){
+            try {
+                o.run(event, param1, param2);
+            } catch (UnknowObserableEventException e) {
+                e.printStackTrace(); // @todo cos z tym zrobic
+            }
+        }
     }
 }

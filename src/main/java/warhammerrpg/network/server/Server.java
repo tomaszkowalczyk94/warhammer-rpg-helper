@@ -4,6 +4,7 @@ import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.gui.master.observer.OnDisconnectGuiObserver;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.NetworkException;
+import warhammerrpg.network.pack.KickPack;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,7 +26,6 @@ public class Server {
         server = new com.esotericsoftware.kryonet.Server();
         new Register().registerClasses(server.getKryo());
 
-
         ServerListener serverListener = new ServerListener(masterGuiConnector, users);
         serverListener.register(new OnDisconnectGuiObserver(masterGuiConnector));
         server.addListener(serverListener);
@@ -41,6 +41,18 @@ public class Server {
 
     public void stop() {
         server.stop();
+    }
+
+    public void kickUser(String username, String message) {
+        if(users.get(username) != null) {
+            KickPack kickPack = new KickPack();
+            kickPack.message = message;
+            users.get(username).getConnection().sendTCP(kickPack);
+            users.remove(username);
+        } else {
+            //@todo cos zrobic z tym
+        }
+
     }
 
     public MasterGuiConnector getMasterGuiConnector() {

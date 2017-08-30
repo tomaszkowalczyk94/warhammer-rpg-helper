@@ -108,6 +108,7 @@ public class ChooseServerForm {
                     JOptionPane.showMessageDialog(panel, "Serwer uruchomiony");
 
                     frame.dispose();
+                    masterGuiForm.setServer(server);
                     masterGuiForm.open();
 
                 } catch (NetworkException e1) {

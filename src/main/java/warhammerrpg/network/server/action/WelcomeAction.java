@@ -2,6 +2,7 @@ package warhammerrpg.network.server.action;
 
 import com.esotericsoftware.kryonet.Connection;
 import warhammerrpg.core.Observable;
+import warhammerrpg.network.AbstractAction;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.server.ServerUserContainer;

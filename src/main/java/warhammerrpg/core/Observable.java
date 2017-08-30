@@ -8,6 +8,7 @@ public interface Observable {
         SERVER_USER_JOINED_TOKEN_ALREADY_EXIST,
         SERVER_USER_DISCONNECTED,
         SERVER_USER_DISCONNECTED_ERROR,
+        CLIENT_KICKED,
     }
 
     void register(Observer o);

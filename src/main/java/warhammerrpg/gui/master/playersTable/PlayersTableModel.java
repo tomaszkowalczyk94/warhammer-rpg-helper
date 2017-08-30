@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PlayersTableModel extends AbstractTableModel {
 
-    private String[] columnNames = {"nick", "token"};
+    private String[] columnNames = {"nick", "token", "akcja"};
     List<PlayersTableRow> data = new ArrayList<PlayersTableRow>();
 
     public void addRow(PlayersTableRow playersTableRow) {
@@ -45,5 +45,9 @@ public class PlayersTableModel extends AbstractTableModel {
 
     public boolean isCellEditable(int row, int col) {
         return false;
+    }
+
+    public void removeRow(int modelRow) {
+        data.remove(data.get(modelRow));
     }
 }

@@ -1,9 +1,7 @@
 package warhammerrpg.network;
 
 import com.esotericsoftware.kryo.Kryo;
-import warhammerrpg.network.pack.PingPack;
-import warhammerrpg.network.pack.WelcomePack;
-import warhammerrpg.network.pack.WelcomeReplyPack;
+import warhammerrpg.network.pack.*;
 
 /**
  * All request and response object must be register in Kryo object. See https://github.com/EsotericSoftware/kryonet#registering-classes
@@ -13,5 +11,7 @@ public class Register {
         kryo.register(PingPack.class);
         kryo.register(WelcomePack.class);
         kryo.register(WelcomeReplyPack.class);
+        kryo.register(KickPack.class);
+        kryo.register(ChangeDataEventPack.class);
     }
 }

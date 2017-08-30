@@ -1,4 +1,4 @@
-package warhammerrpg.network.server.action;
+package warhammerrpg.network;
 
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;

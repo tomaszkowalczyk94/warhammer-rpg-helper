@@ -1,14 +1,14 @@
 package warhammerrpg.gui.master;
 
 import warhammerrpg.core.gameMechanics.*;
+import warhammerrpg.gui.ButtonColumn;
 import warhammerrpg.gui.master.playersTable.PlayersTableModel;
+import warhammerrpg.gui.master.playersTable.PlayersTableRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
+import warhammerrpg.network.server.Server;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 
 public class MasterGui {
@@ -26,6 +26,8 @@ public class MasterGui {
     private JRadioButton twoDice;
 
     JFrame frame;
+
+    private Server server;
 
     public MasterGui(JFrame frame) {
         this.frame = frame;
@@ -81,6 +83,35 @@ public class MasterGui {
     private void createUIComponents() {
         playersTableModel = new PlayersTableModel();
         playersTable = new JTable(playersTableModel);
+
+        ButtonColumn buttonColumn = new ButtonColumn(playersTable, null, 2);
+
+        playersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                String kickMessage = JOptionPane.showInputDialog(panel, "Powód");
+                if(kickMessage != null) {
+                    int row = playersTable.rowAtPoint(evt.getPoint());
+                    PlayersTableRow playersTableRow = playersTableModel.getRow(row);
+                    System.out.println("user: "+playersTableRow.getName());
+
+                    server.kickUser(playersTableRow.getName(), kickMessage);
+                }
+
+
+
+
+            }
+        });
     }
+
+    public Server getServer() {
+        return server;
+    }
+
+    public void setServer(Server server) {
+        this.server = server;
+    }
+
 }
 

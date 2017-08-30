@@ -2,6 +2,7 @@ package warhammerrpg.network.server.action;
 
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
+import warhammerrpg.core.exception.UnknowObserableEventException;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,11 @@ public abstract class AbstractAction implements Observable {
     @Override
     public void notifyObservers(Observable.Event event, Object param1, Object param2) {
         for (Observer o : observerList){
-            o.run(event, param1, param2);
+            try {
+                o.run(event, param1, param2);
+            } catch (UnknowObserableEventException e) {
+                e.printStackTrace(); // @todo cos z tym zrobic
+            }
         }
     }
 

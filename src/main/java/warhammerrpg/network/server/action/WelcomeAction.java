@@ -1,9 +1,6 @@
 package warhammerrpg.network.server.action;
 
 import warhammerrpg.core.Observable;
-import warhammerrpg.core.Observer;
-import warhammerrpg.gui.master.MasterGuiConnector;
-import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.server.ServerUserContainer;
@@ -12,6 +9,9 @@ import warhammerrpg.network.pack.WelcomeReplyPack;
 
 import java.util.Map;
 import java.util.UUID;
+
+import static warhammerrpg.core.Observable.Event.SERVER_USER_HAS_JOINED;
+import static warhammerrpg.core.Observable.Event.SERVER_USER_JOINED_TOKEN_ALREADY_EXIST;
 
 /**
  * Tworzy token, inicjuje bardzo uproszczoną sesje
@@ -46,8 +46,9 @@ public class WelcomeAction extends AbstractAction implements ActionInterface, Ob
             serverUserContainer.setUsername(username);
             users.put(username, serverUserContainer);
 
-            this.notifyObservers(Observable.Event.TOKEN_CREATED, users, serverUserContainer);
+            this.notifyObservers(SERVER_USER_HAS_JOINED, users, serverUserContainer);
         } else {
+            this.notifyObservers(SERVER_USER_JOINED_TOKEN_ALREADY_EXIST, username);
             welcomeReply.successful = false;
             welcomeReply.message = "użytkownik już jest zalogowany";
         }

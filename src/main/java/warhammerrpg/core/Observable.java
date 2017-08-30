@@ -4,7 +4,8 @@ public interface Observable {
 
 
     public enum Event {
-        TOKEN_CREATED,
+        SERVER_USER_HAS_JOINED,
+        SERVER_USER_JOINED_TOKEN_ALREADY_EXIST,
     }
 
     void register(Observer o);

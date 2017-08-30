@@ -3,6 +3,7 @@ package warhammerrpg.network.server;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.server.action.PingAction;
@@ -50,7 +51,9 @@ class ServerListener extends Listener {
         if(request instanceof PingPack) {
             return new PingAction();
         } else if((request instanceof WelcomePack)) {
-            return new WelcomeAction(users, masterGuiConnector);
+            WelcomeAction welcomeAction = new WelcomeAction(users);
+            welcomeAction.register(new OnConnectGuiObserver(masterGuiConnector));
+            return welcomeAction;
         }
         throw new UnexpectedRequestException();
     }

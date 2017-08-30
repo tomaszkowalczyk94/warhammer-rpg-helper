@@ -1,6 +1,9 @@
 package warhammerrpg.network.server.action;
 
+import warhammerrpg.core.Observable;
+import warhammerrpg.core.Observer;
 import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.server.ServerUserContainer;
@@ -13,14 +16,15 @@ import java.util.UUID;
 /**
  * Tworzy token, inicjuje bardzo uproszczoną sesje
  */
-public class WelcomeAction implements ActionInterface {
+public class WelcomeAction extends AbstractAction implements ActionInterface, Observable {
+
+
 
     Map<String, ServerUserContainer> users;
-    MasterGuiConnector masterGuiConnector;
 
-    public WelcomeAction(Map<String, ServerUserContainer> users, MasterGuiConnector masterGuiConnector) {
+    public WelcomeAction(Map<String, ServerUserContainer> users) {
+        super();
         this.users = users;
-        this.masterGuiConnector = masterGuiConnector;
     }
 
     @Override
@@ -28,7 +32,6 @@ public class WelcomeAction implements ActionInterface {
         request = (WelcomePack)request;
         String username = request.getUsername();
         System.out.println("username: " + username);
-
 
         WelcomeReplyPack welcomeReply = new WelcomeReplyPack();
 
@@ -43,8 +46,7 @@ public class WelcomeAction implements ActionInterface {
             serverUserContainer.setUsername(username);
             users.put(username, serverUserContainer);
 
-            masterGuiConnector.refreshUsersList(users);
-            masterGuiConnector.addNotice("Gracz "+username+" połączył . Token: " + token);
+            this.notifyObservers(Observable.Event.TOKEN_CREATED, users, serverUserContainer);
         } else {
             welcomeReply.successful = false;
             welcomeReply.message = "użytkownik już jest zalogowany";
@@ -57,4 +59,5 @@ public class WelcomeAction implements ActionInterface {
         String uuid = UUID.randomUUID().toString();
         return uuid;
     }
+
 }

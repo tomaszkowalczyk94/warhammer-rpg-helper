@@ -7,21 +7,21 @@ import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
+import warhammerrpg.gui.master.observer.OnUserChangeDataObserver;
+import warhammerrpg.network.pack.ChangeDataEventPack;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.server.action.PingAction;
+import warhammerrpg.network.server.action.UserChangedDataAction;
 import warhammerrpg.network.server.action.WelcomeAction;
 import warhammerrpg.network.exception.UnexpectedRequestException;
 import warhammerrpg.network.pack.PingPack;
 import warhammerrpg.network.pack.WelcomePack;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
-import static warhammerrpg.core.Observable.Event.SERVER_USER_DISCONNECTED;
-import static warhammerrpg.core.Observable.Event.SERVER_USER_DISCONNECTED_ERROR;
-import static warhammerrpg.core.Observable.Event.SERVER_USER_HAS_JOINED;
+import static warhammerrpg.core.Observable.Event.*;
 
 class ServerListener extends Listener implements Observable {
 
@@ -48,6 +48,15 @@ class ServerListener extends Listener implements Observable {
                 //@todo put something
             }
 
+            if(action.checkToken()) {
+                ServerUserContainer serverUserContainer = users.get(request.getUsername());
+                if(!serverUserContainer.getToken().equals(request.getToken())) {
+                    System.out.println("Błedny TOKEN");
+                    this.notifyObservers(SERVER_USER_TOKEN_ERROR, request.getUsername(), null);
+                    return;
+                }
+            }
+
             Pack response = action.run(request, connection);
 
             if(response != null) {
@@ -72,6 +81,10 @@ class ServerListener extends Listener implements Observable {
             WelcomeAction welcomeAction = new WelcomeAction(users);
             welcomeAction.register(new OnConnectGuiObserver(masterGuiConnector));
             return welcomeAction;
+        } else if(request instanceof ChangeDataEventPack) {
+            UserChangedDataAction userChangedDataAction = new UserChangedDataAction();
+            userChangedDataAction.register(new OnUserChangeDataObserver(masterGuiConnector));
+            return userChangedDataAction;
         }
         throw new UnexpectedRequestException();
     }

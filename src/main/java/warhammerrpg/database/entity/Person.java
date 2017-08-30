@@ -9,9 +9,25 @@ import warhammerrpg.database.manager.dao.PersonDao;
 @DatabaseTable(daoClass = PersonDao.class)
 public class Person {
 
+    public enum Field {
+        ID, NAME, BREED, CUR_PROFFESION, PREV_PROFFESION
+    }
+
+
 
     @DatabaseField(generatedId = true)
     protected int id;
+
+    //bohater
+    @DatabaseField()
+    private String name;
+    @DatabaseField()
+    private String breed;
+    @DatabaseField()
+    private String curProffesion;
+    @DatabaseField()
+    private String prevProffesion;
+
 
     @ForeignCollectionField(eager = false)
     ForeignCollection<PersonToSkill> personsToSkills;
@@ -26,17 +42,6 @@ public class Person {
     ForeignCollection<Equipment> trappings;
 
 
-
-
-    //bohater
-    @DatabaseField()
-    private String name;
-    @DatabaseField()
-    private String breed;
-    @DatabaseField()
-    private String curProffesion;
-    @DatabaseField()
-    private String prevProffesion;
 
     //opis bohatera
     @DatabaseField()
@@ -618,27 +623,38 @@ public class Person {
         this.intelligence = intelligence;
     }
 
-    public void printPerson()
-    {
-        System.out.println("imie: " + getName()+
-                "\nRasa: " + getBreed()+
-                "\nProfesja: " + getCurProffesion()+
-                "\nWiek: "+ getAge()+
-                "\nPłeć: " + getSex()+
-                "\nMiejsce urodzenia: " +getBirthPlace()+
-                "\nZłoto: " + getGold());
+    public Object getField(Field field) {
+        switch (field) {
+            case ID:
+                return getId();
+            case NAME:
+                return getName();
+            case BREED:
+                return getBreed();
+            case CUR_PROFFESION:
+                return getCurProffesion();
+            case PREV_PROFFESION:
+                return getPrevProffesion();
+
+        }
+        return null;
     }
 
+    public void setField(Field field, Object value) {
+        switch (field) {
+            case NAME:
+                setName((String) value);
+                break;
+            case BREED:
+                 setBreed((String) value);
+                 break;
+            case CUR_PROFFESION:
+                setCurProffesion((String) value);
+                break;
+            case PREV_PROFFESION:
+                setPrevProffesion((String) value);
+                break;
 
-/* test obiektu
-    public static void main(String args[])
-    {
-        person obj = new person ("wojtek",Breed.Elf,"Mag",22,"M","Miejsce",BigDecimal.valueOf(200));
-        System.out.println(obj.name);
-        obj.setBody(32);
-        System.out.println("Body="+obj.getBody());
-        System.out.println("Exp="+obj.getExpPresent());
-        System.out.println("Gold="+obj.getGold());
+        }
     }
-*/
 }

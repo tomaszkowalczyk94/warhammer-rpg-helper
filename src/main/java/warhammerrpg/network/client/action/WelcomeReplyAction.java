@@ -2,12 +2,13 @@ package warhammerrpg.network.client.action;
 
 import com.esotericsoftware.kryonet.Connection;
 import warhammerrpg.gui.client.ClientGuiConnector;
+import warhammerrpg.network.AbstractAction;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.pack.WelcomeReplyPack;
 
-public class WelcomeReplyAction implements ActionInterface{
+public class WelcomeReplyAction extends AbstractAction implements ActionInterface{
 
     Client client;
     ClientGuiConnector clientGuiConnector;

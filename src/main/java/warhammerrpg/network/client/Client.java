@@ -14,6 +14,7 @@ public class Client {
     private com.esotericsoftware.kryonet.Client client;
 
     private String token;
+    private String username;
     private ClientGuiConnector clientGuiConnector;
 
 
@@ -31,7 +32,7 @@ public class Client {
             if (username == null | username.length() < 2) {
                 throw new InvalidUsernameException();
             }
-
+            this.username = username;
             client.connect(5000, host, port);
 
             WelcomePack welcomeRequest = new WelcomePack();
@@ -45,6 +46,8 @@ public class Client {
     }
 
     public void sendRequest(Pack request) {
+        request.setToken(token);
+        request.setUsername(username);
         client.sendTCP(request);
     }
 

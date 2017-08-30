@@ -7,4 +7,5 @@ public interface ActionInterface {
 
     Pack run(Pack request, Connection connection);
 
+    boolean checkToken();
 }

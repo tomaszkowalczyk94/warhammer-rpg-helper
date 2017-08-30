@@ -17,9 +17,9 @@ public class App
 
 
         //try {
-            Database database = new Database();
-            database.closeConnection();
-            System.out.println( "Hello World!" );
+        //    Database database = new Database();
+        //    database.closeConnection();
+        //    System.out.println( "Hello World!" );
         //} catch (WarhammerRpgException e) {
         //    e.getOriginalExceptionObject().printStackTrace();
         //}

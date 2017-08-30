@@ -71,8 +71,6 @@ public class GamerGuiForm {
         person.setBrass(brassTextField.getText());
         person.setCurExp(curExpTextField.getText());
         person.setAllExp(allExpTextField.getText());
-
-        person.printPerson();
     }
 
     public void basicValuesTest(){

@@ -9,6 +9,8 @@ import com.j256.ormlite.table.TableUtils;
 import warhammerrpg.database.entity.*;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
+import warhammerrpg.network.client.Client;
+import warhammerrpg.network.client.observer.PersonChangeDataObserver;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -141,6 +143,7 @@ public class Database {
         try {
             PersonManager personManager = new PersonManager();
             personManager.setDao((BaseDaoImpl) DaoManager.createDao(this.conn, Person.class));
+
             return personManager;
         } catch (SQLException e) {
             throw new DatabaseCreateManagerException(e);

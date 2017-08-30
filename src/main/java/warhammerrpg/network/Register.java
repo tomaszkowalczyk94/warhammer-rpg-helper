@@ -1,6 +1,7 @@
 package warhammerrpg.network;
 
 import com.esotericsoftware.kryo.Kryo;
+import warhammerrpg.database.entity.Person;
 import warhammerrpg.network.pack.*;
 
 /**
@@ -12,6 +13,8 @@ public class Register {
         kryo.register(WelcomePack.class);
         kryo.register(WelcomeReplyPack.class);
         kryo.register(KickPack.class);
+        kryo.register(Person.Field.class);
         kryo.register(ChangeDataEventPack.class);
+
     }
 }

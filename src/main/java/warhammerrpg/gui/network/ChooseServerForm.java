@@ -12,6 +12,7 @@ import warhammerrpg.gui.master.MasterGui;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
 import warhammerrpg.network.client.Client;
+import warhammerrpg.network.client.observer.PersonChangeDataObserver;
 import warhammerrpg.network.server.Server;
 import warhammerrpg.network.exception.ClientConnectException;
 import warhammerrpg.network.exception.InvalidUsernameException;
@@ -64,17 +65,21 @@ public class ChooseServerForm {
                 int selectRowIndex = selectPerson.getSelectedRow();
                 if(selectRowIndex != -1) { // -1 jesli nie wybrano żadnego wiersza
                     String username =  selectPersonTableModel.getRow(selectRowIndex).getName();
+                    int personId =  selectPersonTableModel.getRow(selectRowIndex).getId();
 
                     try {
                         client = new Client();
 
-                        ClientGui clientGui = new ClientGui(frame, client);
+                        ClientGui clientGui = new ClientGui(frame, client, personId);
+
                         ClientGuiConnector clientGuiConnector = new ClientGuiConnector(clientGui);
                         client.setClientGuiConnector(clientGuiConnector);
+
                         client.connect(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
 
                         JOptionPane.showMessageDialog(panel, "Połączono");
                         frame.dispose();
+                        clientGui.register(new PersonChangeDataObserver(client));
                         clientGui.open();
 
                     } catch (ClientConnectException exception) {
@@ -84,6 +89,7 @@ public class ChooseServerForm {
                     } catch (InvalidUsernameException e1) {
                         JOptionPane.showMessageDialog(panel, "Nieprawidłowa nazwa użytkownika", "błąd", JOptionPane.ERROR_MESSAGE);
                     }
+
                 } else {
                     JOptionPane.showMessageDialog(panel, "Wybierz użytkownika", "błąd", JOptionPane.ERROR_MESSAGE);
                 }

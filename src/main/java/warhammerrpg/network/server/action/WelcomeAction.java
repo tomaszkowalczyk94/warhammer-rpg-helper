@@ -20,7 +20,9 @@ import static warhammerrpg.core.Observable.Event.SERVER_USER_JOINED_TOKEN_ALREAD
  */
 public class WelcomeAction extends AbstractAction implements ActionInterface, Observable {
 
-
+    public boolean checkToken() {
+        return false;
+    }
 
     Map<String, ServerUserContainer> users;
 

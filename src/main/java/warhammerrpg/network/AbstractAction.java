@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 public abstract class AbstractAction implements Observable {
 
+    public boolean checkToken() {
+        return true;
+    }
+
     protected ArrayList<Observer> observerList;
 
     protected AbstractAction() {
@@ -43,6 +47,8 @@ public abstract class AbstractAction implements Observable {
             }
         }
     }
+
+
 
 
 }

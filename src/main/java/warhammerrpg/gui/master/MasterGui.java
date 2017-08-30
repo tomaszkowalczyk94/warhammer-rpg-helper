@@ -9,6 +9,8 @@ import warhammerrpg.network.server.Server;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 
 public class MasterGui {
@@ -21,8 +23,8 @@ public class MasterGui {
     private JRadioButton oneDice;
     private JRadioButton twoDices;
     private JTextArea messages;
-    private JLabel gameTime;
     private JTable playersTable;
+    private JLabel ipAdressLabel;
     private JRadioButton twoDice;
 
     JFrame frame;
@@ -41,7 +43,6 @@ public class MasterGui {
                 } else {
                     diceResult.setText(dice.oneDiceThrow().toString());
                 }
-                messages.setText("sddsdassad");
             }
         });
         twoDices.addActionListener(new ActionListener() {
@@ -56,6 +57,12 @@ public class MasterGui {
                 twoDices.setSelected(false);
             }
         });
+
+        try {
+            ipAdressLabel.setText("Adres ip: "+ InetAddress.getLocalHost());
+        } catch (UnknownHostException e) {
+            e.printStackTrace(); // @todo cos z tym zrobić
+        }
     }
 
     public void open(){

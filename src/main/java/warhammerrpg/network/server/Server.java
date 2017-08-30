@@ -2,6 +2,7 @@ package warhammerrpg.network.server;
 
 import warhammerrpg.gui.master.MasterGuiConnector;
 import warhammerrpg.gui.master.observer.OnDisconnectGuiObserver;
+import warhammerrpg.gui.master.observer.OnTokenError;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.NetworkException;
 import warhammerrpg.network.pack.KickPack;
@@ -28,6 +29,7 @@ public class Server {
 
         ServerListener serverListener = new ServerListener(masterGuiConnector, users);
         serverListener.register(new OnDisconnectGuiObserver(masterGuiConnector));
+        serverListener.register(new OnTokenError(masterGuiConnector));
         server.addListener(serverListener);
 
         server.start();

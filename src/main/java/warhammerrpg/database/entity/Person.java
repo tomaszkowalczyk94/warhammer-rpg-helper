@@ -6,6 +6,13 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 import warhammerrpg.database.manager.dao.PersonDao;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import static warhammerrpg.database.entity.PersonMethod.Type.GETTER;
+import static warhammerrpg.database.entity.PersonMethod.Type.SETTER;
+
 @DatabaseTable(daoClass = PersonDao.class)
 public class Person {
 
@@ -19,12 +26,19 @@ public class Person {
     protected int id;
 
     //bohater
+    @PersonField(field=Field.NAME, name="imię")
     @DatabaseField()
     private String name;
+
+    @PersonField(field=Field.BREED, name="rasa")
     @DatabaseField()
     private String breed;
+
+    @PersonField(field=Field.CUR_PROFFESION, name="obecna profesja")
     @DatabaseField()
     private String curProffesion;
+
+    @PersonField(field=Field.PREV_PROFFESION, name="poprzednia profesja")
     @DatabaseField()
     private String prevProffesion;
 
@@ -231,34 +245,42 @@ public class Person {
         this.weaponToSkills = weaponToSkills;
     }
 
+    @PersonMethod(forField=Field.NAME, type=GETTER)
     public String getName() {
         return name;
     }
 
+    @PersonMethod(forField=Field.NAME, type=SETTER)
     public void setName(String name) {
         this.name = name;
     }
 
+    @PersonMethod(forField=Field.BREED, type=GETTER)
     public String getBreed() {
         return breed;
     }
 
+    @PersonMethod(forField=Field.BREED, type=SETTER)
     public void setBreed(String breed) {
         this.breed = breed;
     }
 
+    @PersonMethod(forField=Field.CUR_PROFFESION, type=GETTER)
     public String getCurProffesion() {
         return curProffesion;
     }
 
+    @PersonMethod(forField=Field.CUR_PROFFESION, type=SETTER)
     public void setCurProffesion(String curProffesion) {
         this.curProffesion = curProffesion;
     }
 
+    @PersonMethod(forField=Field.PREV_PROFFESION, type=GETTER)
     public String getPrevProffesion() {
         return prevProffesion;
     }
 
+    @PersonMethod(forField=Field.PREV_PROFFESION, type=SETTER)
     public void setPrevProffesion(String prevProffesion) {
         this.prevProffesion = prevProffesion;
     }
@@ -624,37 +646,58 @@ public class Person {
     }
 
     public Object getField(Field field) {
-        switch (field) {
-            case ID:
-                return getId();
-            case NAME:
-                return getName();
-            case BREED:
-                return getBreed();
-            case CUR_PROFFESION:
-                return getCurProffesion();
-            case PREV_PROFFESION:
-                return getPrevProffesion();
+        final Method[] methods = this.getClass().getDeclaredMethods();
 
+        for(Method m : methods) {
+            if(m.isAnnotationPresent(PersonMethod.class)) {
+                PersonMethod annotation = m.getAnnotation(PersonMethod.class);
+                if(annotation.forField() == field && annotation.type() == GETTER) {
+                    try {
+                        return m.invoke(this);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace(); //@todo
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace(); //@todo
+                    }
+                }
+            }
         }
         return null;
     }
 
     public void setField(Field field, Object value) {
-        switch (field) {
-            case NAME:
-                setName((String) value);
-                break;
-            case BREED:
-                 setBreed((String) value);
-                 break;
-            case CUR_PROFFESION:
-                setCurProffesion((String) value);
-                break;
-            case PREV_PROFFESION:
-                setPrevProffesion((String) value);
-                break;
+        final Method[] methods = this.getClass().getDeclaredMethods();
 
+        for(Method m : methods) {
+            if(m.isAnnotationPresent(PersonMethod.class)) {
+                PersonMethod annotation = m.getAnnotation(PersonMethod.class);
+                if(annotation.forField() == field && annotation.type() == SETTER) {
+                    try {
+                        m.invoke(this, value);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace(); //@todo
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace(); //@todo
+                    }
+                }
+            }
         }
+    }
+
+    public String getNameField(Field field) {
+
+
+        final java.lang.reflect.Field[] fields = this.getClass().getDeclaredFields();
+
+        for(java.lang.reflect.Field f : fields) {
+            if(f.isAnnotationPresent(PersonField.class)) {
+                PersonField personField = f.getAnnotation(PersonField.class);
+                if(personField.field() == field) {
+                    return personField.name();
+                }
+            }
+        }
+
+        return "UNKNOWN";
     }
 }

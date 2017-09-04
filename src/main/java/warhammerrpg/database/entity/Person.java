@@ -9,6 +9,9 @@ import warhammerrpg.database.manager.dao.PersonDao;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 import static warhammerrpg.database.entity.PersonMethod.Type.GETTER;
 import static warhammerrpg.database.entity.PersonMethod.Type.SETTER;
@@ -645,59 +648,54 @@ public class Person {
         this.intelligence = intelligence;
     }
 
-    public Object getField(Field field) {
-        final Method[] methods = this.getClass().getDeclaredMethods();
 
-        for(Method m : methods) {
-            if(m.isAnnotationPresent(PersonMethod.class)) {
-                PersonMethod annotation = m.getAnnotation(PersonMethod.class);
-                if(annotation.forField() == field && annotation.type() == GETTER) {
-                    try {
-                        return m.invoke(this);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace(); //@todo
-                    } catch (InvocationTargetException e) {
-                        e.printStackTrace(); //@todo
-                    }
-                }
-            }
+    public Object getField(Field field) {
+        Stream<Method> methodStream = Arrays.stream(this.getClass().getDeclaredMethods());
+
+        Optional<Method> optionaMethod = methodStream
+                .filter(method -> method.isAnnotationPresent(PersonMethod.class))
+                .filter(method -> method.getAnnotation(PersonMethod.class).forField() == field)
+                .filter(method -> method.getAnnotation(PersonMethod.class).type() == GETTER)
+                .findFirst();
+
+        try {
+            return optionaMethod.get().invoke(this);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace(); //@todo
+        } catch (InvocationTargetException e) {
+            e.printStackTrace(); //@todo
         }
         return null;
     }
 
     public void setField(Field field, Object value) {
-        final Method[] methods = this.getClass().getDeclaredMethods();
+        final Stream<Method> methodStream = Arrays.stream(this.getClass().getDeclaredMethods());
+        final Optional<Method> optionalMethod = methodStream
+                .filter(method -> method.isAnnotationPresent(PersonMethod.class))
+                .filter(method -> method.getAnnotation(PersonMethod.class).forField() == field)
+                .filter(method -> method.getAnnotation(PersonMethod.class).type() == SETTER)
+                .findFirst();
 
-        for(Method m : methods) {
-            if(m.isAnnotationPresent(PersonMethod.class)) {
-                PersonMethod annotation = m.getAnnotation(PersonMethod.class);
-                if(annotation.forField() == field && annotation.type() == SETTER) {
-                    try {
-                        m.invoke(this, value);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace(); //@todo
-                    } catch (InvocationTargetException e) {
-                        e.printStackTrace(); //@todo
-                    }
-                }
-            }
+        try {
+            optionalMethod.get().invoke(this, value);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace(); //@todo
+        } catch (InvocationTargetException e) {
+            e.printStackTrace(); //@todo
         }
     }
 
     public String getNameField(Field field) {
 
+        Stream<java.lang.reflect.Field> fieldsStream = Arrays.stream(this.getClass().getDeclaredFields());
 
-        final java.lang.reflect.Field[] fields = this.getClass().getDeclaredFields();
+        final Optional<String> optionalName = fieldsStream.filter(f -> f.isAnnotationPresent(PersonField.class))
+                .map(f -> f.getAnnotation(PersonField.class))
+                .filter(annotation -> annotation.field() == field)
+                .findFirst()
+                .map(annotation -> annotation.name());
 
-        for(java.lang.reflect.Field f : fields) {
-            if(f.isAnnotationPresent(PersonField.class)) {
-                PersonField personField = f.getAnnotation(PersonField.class);
-                if(personField.field() == field) {
-                    return personField.name();
-                }
-            }
-        }
+        return optionalName.get();
 
-        return "UNKNOWN";
     }
 }

@@ -177,6 +177,7 @@ public class ClientGui  implements Observable {
             try {
                 o.run(event, param1, param2);
             } catch (UnknowObserableEventException e) {
+                System.out.println(e);
                 e.printStackTrace(); // @todo cos z tym zrobic
             }
         }

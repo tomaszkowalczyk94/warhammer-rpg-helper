@@ -2,18 +2,21 @@ package warhammerrpg.network;
 
 import com.esotericsoftware.kryo.Kryo;
 import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 import warhammerrpg.network.pack.PingPack;
 
-public class RegisterTest extends TestCase {
+public class RegisterTest {
 
-    public void testRegisterClasses() throws Exception {
+    @Test
+    public void registerClasses() throws Exception {
         Register register = new Register();
 
         Kryo kryo = new Kryo();
         kryo.setRegistrationRequired(true);
         register.registerClasses(kryo);
 
-        assertNotNull(kryo.getRegistration(PingPack.class));
+        Assert.assertNotNull(kryo.getRegistration(PingPack.class));
     }
 
 }

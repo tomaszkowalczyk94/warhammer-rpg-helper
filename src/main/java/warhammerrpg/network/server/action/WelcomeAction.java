@@ -35,7 +35,6 @@ public class WelcomeAction extends AbstractAction implements ActionInterface, Ob
     public Pack run(Pack request, Connection connection) {
         request = (WelcomePack)request;
         String username = request.getUsername();
-        System.out.println("username: " + username + "conn id: "+connection.getID()+"conn name"+ connection.getRemoteAddressTCP().toString());
 
         WelcomeReplyPack welcomeReply = new WelcomeReplyPack();
 

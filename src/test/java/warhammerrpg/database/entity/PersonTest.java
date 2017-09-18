@@ -30,7 +30,9 @@ public class PersonTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                {Person.Field.NAME, "Alex", "imię" }
+                {Person.Field.NAME, "Alex", "imię" },
+                {Person.Field.CUR_PROFFESION, "test", "obecna profesja" },
+                {Person.Field.SPECIAL_SIGNS, "test xxx", "znaki szczególne" }
         });
     }
 

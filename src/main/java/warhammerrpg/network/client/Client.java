@@ -45,6 +45,10 @@ public class Client {
         }
     }
 
+    public void close() {
+        client.close();
+    }
+
     public void sendRequest(Pack request) {
         request.setToken(token);
         request.setUsername(username);

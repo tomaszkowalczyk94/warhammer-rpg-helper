@@ -46,14 +46,26 @@ public class Server {
     }
 
     public void kickUser(String username, String message) {
+        this.kickUser(username, message, false);
+    }
+
+    public void kickUser(String username, String message, boolean test) {
         if(users.get(username) != null) {
             KickPack kickPack = new KickPack();
             kickPack.message = message;
-            users.get(username).getConnection().sendTCP(kickPack);
+
+            if(!test) {
+                users.get(username).getConnection().sendTCP(kickPack);
+            }
+
             users.remove(username);
         } else {
             //@todo cos zrobic z tym
         }
+    }
+
+    public Map<String, ServerUserContainer> getUsers() {
+        return users;
     }
 
     public MasterGuiConnector getMasterGuiConnector() {
@@ -63,4 +75,6 @@ public class Server {
     public void setMasterGuiConnector(MasterGuiConnector masterGuiConnector) {
         this.masterGuiConnector = masterGuiConnector;
     }
+
+
 }

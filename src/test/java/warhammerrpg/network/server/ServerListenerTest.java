@@ -3,7 +3,7 @@ package warhammerrpg.network.server;
 import com.esotericsoftware.kryonet.Connection;
 import org.junit.Before;
 import org.junit.Test;
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.MasterGuiManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,13 +15,13 @@ import static org.mockito.Mockito.when;
 public class ServerListenerTest {
 
     private Map<String, ServerUserContainer> users;
-    MasterGuiConnector masterGuiConnector;
+    MasterGuiManager masterGuiManager;
     ServerListener serverListener;
 
     @Before
     public void setUp() throws Exception {
         users = new HashMap<String, ServerUserContainer>();
-        masterGuiConnector = mock(MasterGuiConnector.class);
+        masterGuiManager = mock(MasterGuiManager.class);
 
     }
 
@@ -35,7 +35,7 @@ public class ServerListenerTest {
         serverUserContainer.setUsername("testUsername");
         users.put("testUsername", serverUserContainer);
 
-        serverListener = new ServerListener(masterGuiConnector, users);
+        serverListener = new ServerListener(masterGuiManager, users);
 
 
         Connection connectionfail = mock(Connection.class);

@@ -2,9 +2,8 @@ package warhammerrpg.network.client;
 
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
-import warhammerrpg.gui.client.ClientGuiConnector;
+import warhammerrpg.gui.client.ClientGuiManager;
 import warhammerrpg.gui.client.observer.OnKickGuiObserver;
-import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
 import warhammerrpg.network.client.action.KickAction;
 import warhammerrpg.network.client.action.WelcomeReplyAction;
 import warhammerrpg.network.pack.KickPack;
@@ -18,11 +17,11 @@ import warhammerrpg.network.pack.WelcomeReplyPack;
 public class ClientListener  extends Listener {
 
     Client client;
-    ClientGuiConnector clientGuiConnector;
+    ClientGuiManager clientGuiManager;
 
-    public ClientListener(Client client, ClientGuiConnector clientGuiConnector) {
+    public ClientListener(Client client, ClientGuiManager clientGuiManager) {
         this.client = client;
-        this.clientGuiConnector = clientGuiConnector;
+        this.clientGuiManager = clientGuiManager;
     }
 
     public void received (Connection connection, Object object) {
@@ -50,10 +49,10 @@ public class ClientListener  extends Listener {
         if(response instanceof PingPack) {
             return new PingAction();
         } else if(response instanceof WelcomeReplyPack) {
-            return new WelcomeReplyAction(this.client, clientGuiConnector);
+            return new WelcomeReplyAction(this.client, clientGuiManager);
         } else if(response instanceof KickPack) {
             KickAction kickAction = new KickAction();
-            kickAction.register(new OnKickGuiObserver(clientGuiConnector));
+            kickAction.register(new OnKickGuiObserver(clientGuiManager));
             return kickAction;
         }
         throw new UnexpectedRequestException();

@@ -1,7 +1,7 @@
 package warhammerrpg.network.client.action;
 
 import com.esotericsoftware.kryonet.Connection;
-import warhammerrpg.gui.client.ClientGuiConnector;
+import warhammerrpg.gui.client.ClientGuiManager;
 import warhammerrpg.network.AbstractAction;
 import warhammerrpg.network.ActionInterface;
 import warhammerrpg.network.client.Client;
@@ -11,11 +11,11 @@ import warhammerrpg.network.pack.WelcomeReplyPack;
 public class WelcomeReplyAction extends AbstractAction implements ActionInterface{
 
     Client client;
-    ClientGuiConnector clientGuiConnector;
+    ClientGuiManager clientGuiManager;
 
-    public WelcomeReplyAction(Client client, ClientGuiConnector clientGuiConnector) {
+    public WelcomeReplyAction(Client client, ClientGuiManager clientGuiManager) {
         this.client = client;
-        this.clientGuiConnector = clientGuiConnector;
+        this.clientGuiManager = clientGuiManager;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class WelcomeReplyAction extends AbstractAction implements ActionInterfac
             client.setToken(welcomeReplyPackrequest.receivedToken);
         } else {
             System.out.println("ERROR: brak tokena");
-            clientGuiConnector.openAlertAndCloseApp("Zostałeś automatycznie wyrzucony z serwera. Może ktoś z takim nickiem jest już połączony?");
+            clientGuiManager.openAlertAndCloseApp("Zostałeś automatycznie wyrzucony z serwera. Może ktoś z takim nickiem jest już połączony?");
         }
 
 

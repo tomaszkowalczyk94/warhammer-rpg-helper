@@ -1,6 +1,6 @@
 package warhammerrpg.network.server;
 
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.MasterGuiManager;
 import warhammerrpg.gui.master.observer.OnDisconnectGuiObserver;
 import warhammerrpg.gui.master.observer.OnTokenError;
 import warhammerrpg.network.Register;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class Server {
     com.esotericsoftware.kryonet.Server server;
 
-    private MasterGuiConnector masterGuiConnector;
+    private MasterGuiManager masterGuiManager;
     private Map<String, ServerUserContainer> users;
 
     public Server() {
@@ -27,9 +27,9 @@ public class Server {
         server = new com.esotericsoftware.kryonet.Server();
         new Register().registerClasses(server.getKryo());
 
-        ServerListener serverListener = new ServerListener(masterGuiConnector, users);
-        serverListener.register(new OnDisconnectGuiObserver(masterGuiConnector));
-        serverListener.register(new OnTokenError(masterGuiConnector));
+        ServerListener serverListener = new ServerListener(masterGuiManager, users);
+        serverListener.register(new OnDisconnectGuiObserver(masterGuiManager));
+        serverListener.register(new OnTokenError(masterGuiManager));
         server.addListener(serverListener);
 
         server.start();
@@ -68,12 +68,12 @@ public class Server {
         return users;
     }
 
-    public MasterGuiConnector getMasterGuiConnector() {
-        return masterGuiConnector;
+    public MasterGuiManager getMasterGuiManager() {
+        return masterGuiManager;
     }
 
-    public void setMasterGuiConnector(MasterGuiConnector masterGuiConnector) {
-        this.masterGuiConnector = masterGuiConnector;
+    public void setMasterGuiManager(MasterGuiManager masterGuiManager) {
+        this.masterGuiManager = masterGuiManager;
     }
 
 

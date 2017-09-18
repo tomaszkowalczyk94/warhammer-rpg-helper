@@ -1,6 +1,6 @@
 package warhammerrpg.network.client;
 
-import warhammerrpg.gui.client.ClientGuiConnector;
+import warhammerrpg.gui.client.ClientGuiManager;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.ClientConnectException;
@@ -15,7 +15,7 @@ public class Client {
 
     private String token;
     private String username;
-    private ClientGuiConnector clientGuiConnector;
+    private ClientGuiManager clientGuiManager;
 
 
     public Client() {
@@ -25,7 +25,7 @@ public class Client {
     }
 
     public void connect(String host, int port, String username) throws InvalidUsernameException, ClientConnectException {
-        client.addListener(new ClientListener(this, clientGuiConnector));
+        client.addListener(new ClientListener(this, clientGuiManager));
         client.start();
 
         try {
@@ -64,11 +64,11 @@ public class Client {
     }
 
 
-    public ClientGuiConnector getClientGuiConnector() {
-        return clientGuiConnector;
+    public ClientGuiManager getClientGuiManager() {
+        return clientGuiManager;
     }
 
-    public void setClientGuiConnector(ClientGuiConnector clientGuiConnector) {
-        this.clientGuiConnector = clientGuiConnector;
+    public void setClientGuiManager(ClientGuiManager clientGuiManager) {
+        this.clientGuiManager = clientGuiManager;
     }
 }

@@ -1,12 +1,12 @@
 package warhammerrpg.gui.master.observer;
 
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.MasterGuiManager;
 
 abstract public class AbstractMasterGuiObserver {
 
-    protected MasterGuiConnector masterGuiConnector;
+    protected MasterGuiManager masterGuiManager;
 
-    public AbstractMasterGuiObserver(MasterGuiConnector masterGuiConnector) {
-        this.masterGuiConnector = masterGuiConnector;
+    public AbstractMasterGuiObserver(MasterGuiManager masterGuiManager) {
+        this.masterGuiManager = masterGuiManager;
     }
 }

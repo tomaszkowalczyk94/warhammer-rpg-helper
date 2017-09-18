@@ -5,7 +5,7 @@ import com.esotericsoftware.kryonet.Listener;
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.MasterGuiManager;
 import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
 import warhammerrpg.gui.master.observer.OnUserChangeDataObserver;
 import warhammerrpg.network.pack.ChangeDataEventPack;
@@ -27,10 +27,10 @@ class ServerListener extends Listener implements Observable {
 
     private Map<String, ServerUserContainer> users;
 
-    MasterGuiConnector masterGuiConnector;
+    MasterGuiManager masterGuiManager;
 
-    public ServerListener(MasterGuiConnector masterGuiConnector, Map<String, ServerUserContainer> users) {
-        this.masterGuiConnector = masterGuiConnector;
+    public ServerListener(MasterGuiManager masterGuiManager, Map<String, ServerUserContainer> users) {
+        this.masterGuiManager = masterGuiManager;
         this.users = users;
         this.observerList = new ArrayList<>();
     }
@@ -79,11 +79,11 @@ class ServerListener extends Listener implements Observable {
             return new PingAction();
         } else if((request instanceof WelcomePack)) {
             WelcomeAction welcomeAction = new WelcomeAction(users);
-            welcomeAction.register(new OnConnectGuiObserver(masterGuiConnector));
+            welcomeAction.register(new OnConnectGuiObserver(masterGuiManager));
             return welcomeAction;
         } else if(request instanceof ChangeDataEventPack) {
             UserChangedDataAction userChangedDataAction = new UserChangedDataAction();
-            userChangedDataAction.register(new OnUserChangeDataObserver(masterGuiConnector));
+            userChangedDataAction.register(new OnUserChangeDataObserver(masterGuiManager));
             return userChangedDataAction;
         }
         throw new UnexpectedRequestException();

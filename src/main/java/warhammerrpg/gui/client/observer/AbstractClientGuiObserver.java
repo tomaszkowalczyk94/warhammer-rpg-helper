@@ -1,13 +1,12 @@
 package warhammerrpg.gui.client.observer;
 
-import warhammerrpg.gui.client.ClientGuiConnector;
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.client.ClientGuiManager;
 
 public class AbstractClientGuiObserver {
 
-    protected ClientGuiConnector clientGuiConnector;
+    protected ClientGuiManager clientGuiManager;
 
-    public AbstractClientGuiObserver(ClientGuiConnector clientGuiConnector) {
-        this.clientGuiConnector = clientGuiConnector;
+    public AbstractClientGuiObserver(ClientGuiManager clientGuiManager) {
+        this.clientGuiManager = clientGuiManager;
     }
 }

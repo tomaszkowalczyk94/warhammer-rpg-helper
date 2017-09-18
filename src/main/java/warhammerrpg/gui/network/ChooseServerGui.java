@@ -1,13 +1,13 @@
 package warhammerrpg.gui.network;
 
 
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.MasterGuiManager;
 import warhammerrpg.database.Database;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
 import warhammerrpg.gui.client.ClientGui;
-import warhammerrpg.gui.client.ClientGuiConnector;
+import warhammerrpg.gui.client.ClientGuiManager;
 import warhammerrpg.gui.master.MasterGui;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
@@ -71,8 +71,8 @@ public class ChooseServerGui {
 
                         ClientGui clientGui = new ClientGui(frame, client, personId);
 
-                        ClientGuiConnector clientGuiConnector = new ClientGuiConnector(clientGui);
-                        client.setClientGuiConnector(clientGuiConnector);
+                        ClientGuiManager clientGuiManager = new ClientGuiManager(clientGui);
+                        client.setClientGuiManager(clientGuiManager);
 
                         client.connect(ipConnectText.getText(), Integer.parseInt(portConnectText.getText()), username);
 
@@ -105,9 +105,9 @@ public class ChooseServerGui {
                 server = new Server();
                 try {
                     MasterGui masterGuiForm = new MasterGui(frame);
-                    MasterGuiConnector masterGuiConnector = new MasterGuiConnector(masterGuiForm);
+                    MasterGuiManager masterGuiManager = new MasterGuiManager(masterGuiForm);
 
-                    server.setMasterGuiConnector(masterGuiConnector);
+                    server.setMasterGuiManager(masterGuiManager);
 
                     server.run(Integer.parseInt(portCreateText.getText()));
                     JOptionPane.showMessageDialog(panel, "Serwer uruchomiony");

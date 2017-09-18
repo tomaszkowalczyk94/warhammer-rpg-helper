@@ -6,11 +6,11 @@ import warhammerrpg.network.server.ServerUserContainer;
 import javax.swing.*;
 import java.util.Map;
 
-public class MasterGuiConnector {
+public class MasterGuiManager {
 
     private MasterGui masterGui;
 
-    public MasterGuiConnector(MasterGui masterGui) {
+    public MasterGuiManager(MasterGui masterGui) {
         this.masterGui = masterGui;
     }
 

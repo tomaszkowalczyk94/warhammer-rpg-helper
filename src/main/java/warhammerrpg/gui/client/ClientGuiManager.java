@@ -2,11 +2,11 @@ package warhammerrpg.gui.client;
 
 import javax.swing.*;
 
-public class ClientGuiConnector {
+public class ClientGuiManager {
 
     private ClientGui clientGui;
 
-    public ClientGuiConnector(ClientGui clientGui) {
+    public ClientGuiManager(ClientGui clientGui) {
         this.clientGui = clientGui;
     }
 

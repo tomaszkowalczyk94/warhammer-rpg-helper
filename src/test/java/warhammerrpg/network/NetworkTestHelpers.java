@@ -1,7 +1,7 @@
 package warhammerrpg.network;
 
-import warhammerrpg.gui.client.ClientGuiConnector;
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.client.ClientGuiManager;
+import warhammerrpg.gui.master.MasterGuiManager;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.exception.ClientConnectException;
 import warhammerrpg.network.exception.InvalidUsernameException;
@@ -18,7 +18,7 @@ public class NetworkTestHelpers {
 
     public static Server createServer() throws NetworkException {
         Server server = new Server();
-        server.setMasterGuiConnector(mock(MasterGuiConnector.class));
+        server.setMasterGuiManager(mock(MasterGuiManager.class));
 
         server.run(port);
         return server;
@@ -28,9 +28,9 @@ public class NetworkTestHelpers {
         Client client = new Client();
         client.connect(host, port, username);
 
-        ClientGuiConnector clientGuiConnector = mock(ClientGuiConnector.class);
+        ClientGuiManager clientGuiManager = mock(ClientGuiManager.class);
 
-        client.setClientGuiConnector(clientGuiConnector);
+        client.setClientGuiManager(clientGuiManager);
 
         return client;
     }

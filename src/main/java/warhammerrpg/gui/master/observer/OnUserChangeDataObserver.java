@@ -4,13 +4,13 @@ import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.database.entity.Person;
-import warhammerrpg.gui.master.MasterGuiConnector;
+import warhammerrpg.gui.master.MasterGuiManager;
 import warhammerrpg.network.pack.ChangeDataEventPack;
 
 public class OnUserChangeDataObserver extends AbstractMasterGuiObserver  implements Observer {
 
-    public OnUserChangeDataObserver(MasterGuiConnector masterGuiConnector) {
-        super(masterGuiConnector);
+    public OnUserChangeDataObserver(MasterGuiManager masterGuiManager) {
+        super(masterGuiManager);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class OnUserChangeDataObserver extends AbstractMasterGuiObserver  impleme
                 String nameUpdatedField = person.getNameField(changeDataEventPack.updatedField);
 
                 System.out.println("OnUserChangeDataObserver - wywoluje się");
-                masterGuiConnector.addNotice("Gracz: "+username+" zmienił '"+nameUpdatedField+"' wartość z '"+changeDataEventPack.oldValue+"' na '"+changeDataEventPack.newValue+"'" );
+                masterGuiManager.addNotice("Gracz: "+username+" zmienił '"+nameUpdatedField+"' wartość z '"+changeDataEventPack.oldValue+"' na '"+changeDataEventPack.newValue+"'" );
                 break;
         }
 

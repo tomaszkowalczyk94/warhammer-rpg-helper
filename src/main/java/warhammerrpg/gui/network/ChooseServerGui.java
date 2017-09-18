@@ -78,7 +78,7 @@ public class ChooseServerGui {
 
                         JOptionPane.showMessageDialog(panel, "Połączono");
                         frame.dispose();
-                        clientGui.register(new PersonChangeDataObserver(client));
+                        clientGui.addObserver(new PersonChangeDataObserver(client));
                         clientGui.open();
 
                     } catch (ClientConnectException exception) {

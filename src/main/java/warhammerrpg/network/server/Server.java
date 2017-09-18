@@ -28,8 +28,8 @@ public class Server {
         new Register().registerClasses(server.getKryo());
 
         ServerListener serverListener = new ServerListener(masterGuiManager, users);
-        serverListener.register(new OnDisconnectGuiObserver(masterGuiManager));
-        serverListener.register(new OnTokenError(masterGuiManager));
+        serverListener.addObserver(new OnDisconnectGuiObserver(masterGuiManager));
+        serverListener.addObserver(new OnTokenError(masterGuiManager));
         server.addListener(serverListener);
 
         server.start();

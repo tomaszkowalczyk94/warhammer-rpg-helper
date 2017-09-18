@@ -14,7 +14,7 @@ public interface Observable {
         CLIENT_SET_PERSON_DATA,
     }
 
-    void register(Observer o);
-    void unregister(Observer o);
+    void addObserver(Observer o);
+    void removeObserver(Observer o);
     void notifyObservers(Observable.Event e, Object param1, Object param2);
 }

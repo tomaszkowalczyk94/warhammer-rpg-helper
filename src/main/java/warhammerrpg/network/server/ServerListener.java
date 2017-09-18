@@ -79,11 +79,11 @@ class ServerListener extends Listener implements Observable {
             return new PingAction();
         } else if((request instanceof WelcomePack)) {
             WelcomeAction welcomeAction = new WelcomeAction(users);
-            welcomeAction.register(new OnConnectGuiObserver(masterGuiManager));
+            welcomeAction.addObserver(new OnConnectGuiObserver(masterGuiManager));
             return welcomeAction;
         } else if(request instanceof ChangeDataEventPack) {
             UserChangedDataAction userChangedDataAction = new UserChangedDataAction();
-            userChangedDataAction.register(new OnUserChangeDataObserver(masterGuiManager));
+            userChangedDataAction.addObserver(new OnUserChangeDataObserver(masterGuiManager));
             return userChangedDataAction;
         }
         throw new UnexpectedRequestException();
@@ -102,12 +102,12 @@ class ServerListener extends Listener implements Observable {
     protected ArrayList<Observer> observerList;
 
     @Override
-    public void register(Observer o) {
+    public void addObserver(Observer o) {
         observerList.add(o);
     }
 
     @Override
-    public void unregister(Observer o) {
+    public void removeObserver(Observer o) {
         observerList.remove(o);
     }
 

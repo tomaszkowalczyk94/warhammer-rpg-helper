@@ -16,6 +16,11 @@ import java.util.ArrayList;
 
 import static warhammerrpg.database.entity.Person.Field.*;
 
+
+/**
+ * default observers:
+ *
+ */
 public class ClientGui  implements Observable {
 
     private JPanel panel;
@@ -172,12 +177,12 @@ public class ClientGui  implements Observable {
     protected ArrayList<Observer> observerList;
 
     @Override
-    public void register(Observer o) {
+    public void addObserver(Observer o) {
         observerList.add(o);
     }
 
     @Override
-    public void unregister(Observer o) {
+    public void removeObserver(Observer o) {
         observerList.remove(o);
     }
 

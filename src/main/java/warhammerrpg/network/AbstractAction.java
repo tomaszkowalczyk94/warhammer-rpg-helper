@@ -19,12 +19,12 @@ public abstract class AbstractAction implements Observable {
     }
 
     @Override
-    public void register(Observer o) {
+    public void addObserver(Observer o) {
         observerList.add(o);
     }
 
     @Override
-    public void unregister(Observer o) {
+    public void removeObserver(Observer o) {
         observerList.remove(o);
     }
 

@@ -52,7 +52,7 @@ public class ClientListener  extends Listener {
             return new WelcomeReplyAction(this.client, clientGuiManager);
         } else if(response instanceof KickPack) {
             KickAction kickAction = new KickAction();
-            kickAction.register(new OnKickGuiObserver(clientGuiManager));
+            kickAction.addObserver(new OnKickGuiObserver(clientGuiManager));
             return kickAction;
         }
         throw new UnexpectedRequestException();

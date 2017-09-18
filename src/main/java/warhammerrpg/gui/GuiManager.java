@@ -1,6 +1,6 @@
 package warhammerrpg.gui;
 
-import warhammerrpg.gui.network.ChooseServerForm;
+import warhammerrpg.gui.network.ChooseServerGui;
 
 import javax.swing.*;
 
@@ -17,7 +17,7 @@ public class GuiManager {
         }
 
         JFrame frame = new JFrame("Warhammer RPG Helper");
-        frame.setContentPane(new ChooseServerForm(frame).getPanel());
+        frame.setContentPane(new ChooseServerGui(frame).getPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

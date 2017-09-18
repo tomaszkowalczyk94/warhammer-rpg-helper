@@ -7,6 +7,7 @@ import warhammerrpg.database.Database;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
+import warhammerrpg.gui.client.observer.ClientSetPersonDataEventContainer;
 import warhammerrpg.network.client.Client;
 
 import javax.swing.*;
@@ -23,22 +24,19 @@ public class ClientGui  implements Observable {
     private JFormattedTextField curProffesionTextField;
     private JFormattedTextField prevProffesionTextField;
 
+    private JFormattedTextField ageTextField;
+    private JFormattedTextField sexTextField;
+    private JFormattedTextField eyesColourTextField;
+    private JFormattedTextField hairColourTextField;
+    private JFormattedTextField starSignTextField;
+    private JFormattedTextField weightTextField;
+    private JFormattedTextField heightTextField;
+    private JFormattedTextField siblingsTextField;
+    private JFormattedTextField birthPlaceTextField;
+    private JFormattedTextField specialSignsTextField;
 
     private JLabel imageLogo;
-    private JFormattedTextField formattedTextField5;
-    private JFormattedTextField formattedTextField6;
-    private JFormattedTextField formattedTextField7;
-    private JFormattedTextField formattedTextField8;
-    private JFormattedTextField formattedTextField9;
-    private JFormattedTextField formattedTextField10;
-    private JFormattedTextField formattedTextField11;
-    private JFormattedTextField formattedTextField12;
-    private JFormattedTextField formattedTextField13;
-    private JFormattedTextField formattedTextField14;
-    private JButton zapiszButton;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+
 
 
     JFrame frame;
@@ -62,10 +60,21 @@ public class ClientGui  implements Observable {
             JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
         }
 
-        createEditableField(nameTextField, NAME);
-        createEditableField(breedTextField, BREED);
-        createEditableField(curProffesionTextField, CUR_PROFFESION);
-        createEditableField(prevProffesionTextField, PREV_PROFFESION);
+        createStringEditableField(nameTextField, NAME);
+        createStringEditableField(breedTextField, BREED);
+        createStringEditableField(curProffesionTextField, CUR_PROFFESION);
+        createStringEditableField(prevProffesionTextField, PREV_PROFFESION);
+
+        createStringEditableField(ageTextField , AGE);
+        createStringEditableField(sexTextField , SEX);
+        createStringEditableField(eyesColourTextField , EYES_COLOUR);
+        createStringEditableField(hairColourTextField , HAIR_COLOUR);
+        createStringEditableField(starSignTextField , STAR_SIGN);
+        createStringEditableField(weightTextField , WEIGHT);
+        createStringEditableField(heightTextField , HEIGHT);
+        createStringEditableField(siblingsTextField , SIBLINGS);
+        createStringEditableField(birthPlaceTextField , BIRTH_PLACE);
+        createStringEditableField(specialSignsTextField , SPECIAL_SIGNS);
 
         fillIn(this.getPerson());
     }
@@ -77,7 +86,7 @@ public class ClientGui  implements Observable {
         prevProffesionTextField.setText(person.getPrevProffesion());
     }
 
-    private void createEditableField(final JFormattedTextField field, final Person.Field personField) {
+    private void createStringEditableField(final JFormattedTextField field, final Person.Field personField) {
 
         field.addMouseListener(new MouseAdapter() {
             @Override
@@ -116,7 +125,6 @@ public class ClientGui  implements Observable {
             String newValue =  field.getText();
             String oldValue = personManager.updateStringField(getPerson(), nameField, newValue);
 
-
             if(oldValue == null) {
                 oldValue = "";
             }
@@ -124,11 +132,13 @@ public class ClientGui  implements Observable {
                 newValue = "";
             }
 
-            System.out.println("old: "+ oldValue);
-            System.out.println("new: " + newValue);
-
             if(!oldValue.equals(newValue)) {
-                this.notifyObservers(Event.CLIENT_SET_PERSON_DATA, oldValue, newValue);
+                ClientSetPersonDataEventContainer clientSetPersonDataEventContainer = new ClientSetPersonDataEventContainer();
+                clientSetPersonDataEventContainer.field = nameField;
+                clientSetPersonDataEventContainer.oldValue = oldValue;
+                clientSetPersonDataEventContainer.newValue = newValue;
+
+                this.notifyObservers(Event.CLIENT_SET_PERSON_DATA, clientSetPersonDataEventContainer, null);
             }
         } catch (DatabaseException e) {
             JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);

@@ -20,10 +20,10 @@ import static warhammerrpg.database.entity.PersonMethod.Type.SETTER;
 public class Person {
 
     public enum Field {
-        ID, NAME, BREED, CUR_PROFFESION, PREV_PROFFESION
+        ID, NAME, BREED, CUR_PROFFESION, PREV_PROFFESION,
+        AGE, EYES_COLOUR, HAIR_COLOUR, STAR_SIGN, SEX, WEIGHT, HEIGHT, SIBLINGS, BIRTH_PLACE, SPECIAL_SIGNS,
+
     }
-
-
 
     @DatabaseField(generatedId = true)
     protected int id;
@@ -58,27 +58,44 @@ public class Person {
     @ForeignCollectionField(eager = false)
     ForeignCollection<Equipment> trappings;
 
-
-
     //opis bohatera
+    @PersonField(field = Field.AGE, name="wiek")
     @DatabaseField()
     private String age;
+
+    @PersonField(field = Field.EYES_COLOUR, name="kolor oczu")
     @DatabaseField()
     private String eyesColour;
+
+    @PersonField(field = Field.HAIR_COLOUR, name="kolor włosów")
     @DatabaseField()
     private String hairColour;
+
+    @PersonField(field = Field.STAR_SIGN, name="znak gwiezdny")
     @DatabaseField()
     private String starSign;
+
+    @PersonField(field = Field.SEX, name="płeć")
     @DatabaseField()
     private String sex;
+
+    @PersonField(field = Field.WEIGHT, name="waga")
     @DatabaseField()
     private String weight;
+
+    @PersonField(field = Field.HEIGHT, name="wzrost")
     @DatabaseField()
     private String height;
+
+    @PersonField(field = Field.SIBLINGS, name="rodzeństwo")
     @DatabaseField()
     private String siblings;
+
+    @PersonField(field = Field.BIRTH_PLACE, name="miejsce urodzenia")
     @DatabaseField()
     private String birthPlace;
+
+    @PersonField(field = Field.SPECIAL_SIGNS, name="znaki szczególne")
     @DatabaseField()
     private String specialSigns;
 
@@ -288,82 +305,102 @@ public class Person {
         this.prevProffesion = prevProffesion;
     }
 
+    @PersonMethod(forField=Field.AGE, type=GETTER)
     public String getAge() {
         return age;
     }
 
+    @PersonMethod(forField=Field.AGE, type=SETTER)
     public void setAge(String age) {
         this.age = age;
     }
 
+    @PersonMethod(forField=Field.EYES_COLOUR, type=GETTER)
     public String getEyesColour() {
         return eyesColour;
     }
 
+    @PersonMethod(forField=Field.EYES_COLOUR, type=SETTER)
     public void setEyesColour(String eyesColour) {
         this.eyesColour = eyesColour;
     }
 
+    @PersonMethod(forField=Field.HAIR_COLOUR, type=GETTER)
     public String getHairColour() {
         return hairColour;
     }
 
+    @PersonMethod(forField=Field.HAIR_COLOUR, type=SETTER)
     public void setHairColour(String hairColour) {
         this.hairColour = hairColour;
     }
 
+    @PersonMethod(forField=Field.STAR_SIGN, type=GETTER)
     public String getStarSign() {
         return starSign;
     }
 
+    @PersonMethod(forField=Field.STAR_SIGN, type=SETTER)
     public void setStarSign(String starSign) {
         this.starSign = starSign;
     }
 
+    @PersonMethod(forField=Field.SEX, type=GETTER)
     public String getSex() {
         return sex;
     }
 
+    @PersonMethod(forField=Field.SEX, type=SETTER)
     public void setSex(String sex) {
         this.sex = sex;
     }
 
+    @PersonMethod(forField=Field.WEIGHT, type=GETTER)
     public String getWeight() {
         return weight;
     }
 
+    @PersonMethod(forField=Field.WEIGHT, type=SETTER)
     public void setWeight(String weight) {
         this.weight = weight;
     }
 
+    @PersonMethod(forField=Field.HEIGHT, type=GETTER)
     public String getHeight() {
         return height;
     }
 
+    @PersonMethod(forField=Field.HEIGHT, type=SETTER)
     public void setHeight(String height) {
         this.height = height;
     }
 
+    @PersonMethod(forField=Field.SIBLINGS, type=GETTER)
     public String getSiblings() {
         return siblings;
     }
 
+    @PersonMethod(forField=Field.SIBLINGS, type=SETTER)
     public void setSiblings(String siblings) {
         this.siblings = siblings;
     }
 
+    @PersonMethod(forField=Field.BIRTH_PLACE, type=GETTER)
     public String getBirthPlace() {
         return birthPlace;
     }
 
+    @PersonMethod(forField=Field.BIRTH_PLACE, type=SETTER)
     public void setBirthPlace(String birthPlace) {
         this.birthPlace = birthPlace;
     }
 
+    @PersonMethod(forField=Field.SPECIAL_SIGNS, type=GETTER)
     public String getSpecialSigns() {
         return specialSigns;
     }
 
+    @PersonMethod(forField=Field.SPECIAL_SIGNS, type=SETTER)
     public void setSpecialSigns(String specialSigns) {
         this.specialSigns = specialSigns;
     }

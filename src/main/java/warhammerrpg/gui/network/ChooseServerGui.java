@@ -1,14 +1,14 @@
 package warhammerrpg.gui.network;
 
 
-import warhammerrpg.gui.master.MasterGuiManager;
+import warhammerrpg.gui.server.MasterGuiManager;
 import warhammerrpg.database.Database;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
 import warhammerrpg.gui.client.ClientGui;
 import warhammerrpg.gui.client.ClientGuiManager;
-import warhammerrpg.gui.master.MasterGui;
+import warhammerrpg.gui.server.ServerGui;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
 import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
 import warhammerrpg.network.client.Client;
@@ -104,8 +104,8 @@ public class ChooseServerGui {
 
                 server = new Server();
                 try {
-                    MasterGui masterGuiForm = new MasterGui(frame);
-                    MasterGuiManager masterGuiManager = new MasterGuiManager(masterGuiForm);
+                    ServerGui serverGuiForm = new ServerGui(frame);
+                    MasterGuiManager masterGuiManager = new MasterGuiManager(serverGuiForm);
 
                     server.setMasterGuiManager(masterGuiManager);
 
@@ -113,8 +113,8 @@ public class ChooseServerGui {
                     JOptionPane.showMessageDialog(panel, "Serwer uruchomiony");
 
                     frame.dispose();
-                    masterGuiForm.setServer(server);
-                    masterGuiForm.open();
+                    serverGuiForm.setServer(server);
+                    serverGuiForm.open();
 
                 } catch (NetworkException e1) {
                     JOptionPane.showMessageDialog(panel, "Nie można uruchomić serwera", "błąd", JOptionPane.ERROR_MESSAGE);

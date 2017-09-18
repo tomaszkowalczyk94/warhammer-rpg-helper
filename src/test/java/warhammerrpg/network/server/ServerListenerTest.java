@@ -3,7 +3,7 @@ package warhammerrpg.network.server;
 import com.esotericsoftware.kryonet.Connection;
 import org.junit.Before;
 import org.junit.Test;
-import warhammerrpg.gui.master.MasterGuiManager;
+import warhammerrpg.gui.server.MasterGuiManager;
 
 import java.util.HashMap;
 import java.util.Map;

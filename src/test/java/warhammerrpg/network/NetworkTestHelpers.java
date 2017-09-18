@@ -1,7 +1,7 @@
 package warhammerrpg.network;
 
 import warhammerrpg.gui.client.ClientGuiManager;
-import warhammerrpg.gui.master.MasterGuiManager;
+import warhammerrpg.gui.server.MasterGuiManager;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.exception.ClientConnectException;
 import warhammerrpg.network.exception.InvalidUsernameException;

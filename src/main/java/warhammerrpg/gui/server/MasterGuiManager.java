@@ -1,6 +1,6 @@
-package warhammerrpg.gui.master;
+package warhammerrpg.gui.server;
 
-import warhammerrpg.gui.master.playersTable.PlayersTableRow;
+import warhammerrpg.gui.server.playersTable.PlayersTableRow;
 import warhammerrpg.network.server.ServerUserContainer;
 
 import javax.swing.*;
@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class MasterGuiManager {
 
-    private MasterGui masterGui;
+    private ServerGui serverGui;
 
-    public MasterGuiManager(MasterGui masterGui) {
-        this.masterGui = masterGui;
+    public MasterGuiManager(ServerGui serverGui) {
+        this.serverGui = serverGui;
     }
 
     public void addNotice(final String text) {
@@ -19,8 +19,8 @@ public class MasterGuiManager {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 String output = "";
-                masterGui.getMessages().append(text);
-                masterGui.getMessages().append(System.getProperty("line.separator"));
+                serverGui.getMessages().append(text);
+                serverGui.getMessages().append(System.getProperty("line.separator"));
             }
         });
     }
@@ -29,16 +29,16 @@ public class MasterGuiManager {
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                masterGui.getPlayersTableModel().clearRows();
+                serverGui.getPlayersTableModel().clearRows();
                 for(Map.Entry<String, ServerUserContainer> entry: users.entrySet()) {
                     PlayersTableRow playersTableRow = new PlayersTableRow();
 
                     playersTableRow.setName(entry.getValue().getUsername());
                     playersTableRow.setToken(entry.getValue().getToken());
 
-                    masterGui.getPlayersTableModel().addRow(playersTableRow);
+                    serverGui.getPlayersTableModel().addRow(playersTableRow);
                 }
-                masterGui.getPlayersTableModel().fireTableDataChanged();
+                serverGui.getPlayersTableModel().fireTableDataChanged();
             }
         });
 

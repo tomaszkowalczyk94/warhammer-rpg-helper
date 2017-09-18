@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="warhammerrpg.gui.master.MasterGui">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="warhammerrpg.gui.server.ServerGui">
   <tabbedpane id="3150a">
     <constraints>
       <xy x="20" y="20" width="633" height="573"/>

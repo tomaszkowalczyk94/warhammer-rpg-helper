@@ -3,7 +3,7 @@ package warhammerrpg.network.client;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import warhammerrpg.gui.client.ClientGuiManager;
-import warhammerrpg.gui.client.observer.OnKickGuiObserver;
+import warhammerrpg.gui.client.observer.OnKickClientGuiObserver;
 import warhammerrpg.network.client.action.KickAction;
 import warhammerrpg.network.client.action.WelcomeReplyAction;
 import warhammerrpg.network.pack.KickPack;
@@ -52,7 +52,7 @@ public class ClientListener  extends Listener {
             return new WelcomeReplyAction(this.client, clientGuiManager);
         } else if(response instanceof KickPack) {
             KickAction kickAction = new KickAction();
-            kickAction.addObserver(new OnKickGuiObserver(clientGuiManager));
+            kickAction.addObserver(new OnKickClientGuiObserver(clientGuiManager));
             return kickAction;
         }
         throw new UnexpectedRequestException();

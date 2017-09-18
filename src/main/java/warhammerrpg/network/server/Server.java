@@ -1,8 +1,8 @@
 package warhammerrpg.network.server;
 
-import warhammerrpg.gui.master.MasterGuiManager;
-import warhammerrpg.gui.master.observer.OnDisconnectGuiObserver;
-import warhammerrpg.gui.master.observer.OnTokenError;
+import warhammerrpg.gui.server.MasterGuiManager;
+import warhammerrpg.gui.server.observer.OnUserDisconnectServerGuiObserver;
+import warhammerrpg.gui.server.observer.OnTokenErrorServerObserver;
 import warhammerrpg.network.Register;
 import warhammerrpg.network.exception.NetworkException;
 import warhammerrpg.network.pack.KickPack;
@@ -22,14 +22,14 @@ public class Server {
     }
 
     public void run(int port) throws NetworkException {
-        System.out.println("start running master");
+        System.out.println("start running server");
 
         server = new com.esotericsoftware.kryonet.Server();
         new Register().registerClasses(server.getKryo());
 
         ServerListener serverListener = new ServerListener(masterGuiManager, users);
-        serverListener.addObserver(new OnDisconnectGuiObserver(masterGuiManager));
-        serverListener.addObserver(new OnTokenError(masterGuiManager));
+        serverListener.addObserver(new OnUserDisconnectServerGuiObserver(masterGuiManager));
+        serverListener.addObserver(new OnTokenErrorServerObserver(masterGuiManager));
         server.addListener(serverListener);
 
         server.start();

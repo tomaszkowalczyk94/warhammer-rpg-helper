@@ -5,9 +5,9 @@ import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.gui.client.ClientGuiManager;
 
-public class OnKickGuiObserver  extends AbstractClientGuiObserver implements Observer {
+public class OnKickClientGuiObserver extends AbstractClientGuiObserver implements Observer {
 
-    public OnKickGuiObserver(ClientGuiManager clientGuiManager) {
+    public OnKickClientGuiObserver(ClientGuiManager clientGuiManager) {
         super(clientGuiManager);
     }
 

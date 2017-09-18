@@ -19,7 +19,7 @@ import static warhammerrpg.database.entity.Person.Field.*;
 
 /**
  * default observers:
- *
+ *  - PersonChangeDataObserver
  */
 public class ClientGui  implements Observable {
 

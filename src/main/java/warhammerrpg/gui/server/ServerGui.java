@@ -1,10 +1,9 @@
-package warhammerrpg.gui.master;
+package warhammerrpg.gui.server;
 
 import warhammerrpg.core.gameMechanics.*;
 import warhammerrpg.gui.ButtonColumn;
-import warhammerrpg.gui.master.playersTable.PlayersTableModel;
-import warhammerrpg.gui.master.playersTable.PlayersTableRow;
-import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonTableModel;
+import warhammerrpg.gui.server.playersTable.PlayersTableModel;
+import warhammerrpg.gui.server.playersTable.PlayersTableRow;
 import warhammerrpg.network.server.Server;
 
 import javax.swing.*;
@@ -13,7 +12,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 
-public class MasterGui {
+public class ServerGui {
 
 
 
@@ -31,7 +30,7 @@ public class MasterGui {
 
     private Server server;
 
-    public MasterGui(JFrame frame) {
+    public ServerGui(JFrame frame) {
         this.frame = frame;
 
         throwDice.addMouseListener(new MouseAdapter() {

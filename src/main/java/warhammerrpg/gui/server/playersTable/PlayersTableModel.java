@@ -1,6 +1,4 @@
-package warhammerrpg.gui.master.playersTable;
-
-import warhammerrpg.gui.network.SelectPersonTableModel.SelectPersonRow;
+package warhammerrpg.gui.server.playersTable;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;

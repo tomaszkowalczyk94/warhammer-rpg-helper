@@ -5,9 +5,9 @@ import com.esotericsoftware.kryonet.Listener;
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
-import warhammerrpg.gui.master.MasterGuiManager;
-import warhammerrpg.gui.master.observer.OnConnectGuiObserver;
-import warhammerrpg.gui.master.observer.OnUserChangeDataObserver;
+import warhammerrpg.gui.server.MasterGuiManager;
+import warhammerrpg.gui.server.observer.OnConnectServerGuiObserver;
+import warhammerrpg.gui.server.observer.OnUserChangeDataServerGuiObserver;
 import warhammerrpg.network.pack.ChangeDataEventPack;
 import warhammerrpg.network.pack.Pack;
 import warhammerrpg.network.ActionInterface;
@@ -79,11 +79,11 @@ class ServerListener extends Listener implements Observable {
             return new PingAction();
         } else if((request instanceof WelcomePack)) {
             WelcomeAction welcomeAction = new WelcomeAction(users);
-            welcomeAction.addObserver(new OnConnectGuiObserver(masterGuiManager));
+            welcomeAction.addObserver(new OnConnectServerGuiObserver(masterGuiManager));
             return welcomeAction;
         } else if(request instanceof ChangeDataEventPack) {
             UserChangedDataAction userChangedDataAction = new UserChangedDataAction();
-            userChangedDataAction.addObserver(new OnUserChangeDataObserver(masterGuiManager));
+            userChangedDataAction.addObserver(new OnUserChangeDataServerGuiObserver(masterGuiManager));
             return userChangedDataAction;
         }
         throw new UnexpectedRequestException();

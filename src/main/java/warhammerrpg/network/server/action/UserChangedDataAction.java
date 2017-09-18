@@ -9,6 +9,10 @@ import warhammerrpg.network.pack.Pack;
 
 import static warhammerrpg.core.Observable.Event.SERVER_USER_CHANGED_DATA;
 
+/**
+ * default observers:
+ *  - OnUserChangeDataServerGuiObserver
+ */
 public class UserChangedDataAction extends AbstractAction implements ActionInterface, Observable {
 
 

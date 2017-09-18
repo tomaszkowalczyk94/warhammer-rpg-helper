@@ -1,17 +1,17 @@
-package warhammerrpg.gui.master.observer;
+package warhammerrpg.gui.server.observer;
 
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
-import warhammerrpg.gui.master.MasterGuiManager;
+import warhammerrpg.gui.server.MasterGuiManager;
 import warhammerrpg.network.server.ServerUserContainer;
 
 import java.util.Map;
 
-public class OnDisconnectGuiObserver extends AbstractMasterGuiObserver implements Observer {
+public class OnUserDisconnectServerGuiObserver extends AbstractServerGuiObserver implements Observer {
 
 
-    public OnDisconnectGuiObserver(MasterGuiManager masterGuiManager) {
+    public OnUserDisconnectServerGuiObserver(MasterGuiManager masterGuiManager) {
         super(masterGuiManager);
     }
 
@@ -23,7 +23,7 @@ public class OnDisconnectGuiObserver extends AbstractMasterGuiObserver implement
                 ServerUserContainer serverUserContainer = (ServerUserContainer) param2;
                 masterGuiManager.refreshUsersList(users);
                 masterGuiManager.addNotice("Gracz "+serverUserContainer.getUsername()+" rozłączył się ");
-                System.out.println("OnDisconnectGuiObserver - SERVER_USER_DISCONNECTED wywoluje się");
+                System.out.println("OnUserDisconnectServerGuiObserver - SERVER_USER_DISCONNECTED wywoluje się");
                 break;
         }
     }

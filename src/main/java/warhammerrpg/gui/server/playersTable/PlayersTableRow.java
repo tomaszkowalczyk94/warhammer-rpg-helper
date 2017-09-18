@@ -1,4 +1,4 @@
-package warhammerrpg.gui.master.playersTable;
+package warhammerrpg.gui.server.playersTable;
 
 public class PlayersTableRow {
 

@@ -11,7 +11,7 @@ import static warhammerrpg.core.Observable.Event.CLIENT_KICKED;
 
 /**
  * default observers:
- *  -
+ *  - OnKickClientGuiObserver
  */
 public class KickAction extends AbstractAction implements ActionInterface, Observable {
 

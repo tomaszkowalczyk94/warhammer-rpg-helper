@@ -23,6 +23,11 @@ import java.util.Map;
 
 import static warhammerrpg.core.Observable.Event.*;
 
+/**
+ * default observers:
+ *  - OnUserDisconnectServerGuiObserver
+ *  - OnTokenErrorServerGuiObserver
+ */
 class ServerListener extends Listener implements Observable {
 
     private Map<String, ServerUserContainer> users;

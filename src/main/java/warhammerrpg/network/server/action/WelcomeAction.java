@@ -17,6 +17,8 @@ import static warhammerrpg.core.Observable.Event.SERVER_USER_JOINED_TOKEN_ALREAD
 
 /**
  * Tworzy token, inicjuje bardzo uproszczoną sesje
+ * default observers:
+ *  - OnConnectServerGuiObserver
  */
 public class WelcomeAction extends AbstractAction implements ActionInterface, Observable {
 

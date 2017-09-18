@@ -5,9 +5,9 @@ import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.gui.server.MasterGuiManager;
 
-public class OnTokenErrorServerObserver extends AbstractServerGuiObserver implements Observer {
+public class OnTokenErrorServerGuiObserver extends AbstractServerGuiObserver implements Observer {
 
-    public OnTokenErrorServerObserver(MasterGuiManager masterGuiManager) {
+    public OnTokenErrorServerGuiObserver(MasterGuiManager masterGuiManager) {
         super(masterGuiManager);
     }
 

@@ -54,7 +54,6 @@ public class Server {
         } else {
             //@todo cos zrobic z tym
         }
-
     }
 
     public MasterGuiConnector getMasterGuiConnector() {

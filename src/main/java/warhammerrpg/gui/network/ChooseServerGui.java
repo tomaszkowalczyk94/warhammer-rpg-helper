@@ -23,9 +23,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class ChooseServerForm {
+public class ChooseServerGui {
 
-    private Client client;
     private Server server;
 
     private JPanel panel;
@@ -45,7 +44,7 @@ public class ChooseServerForm {
     Database database = null;
     JFrame frame;
 
-    public ChooseServerForm(final JFrame frame) {
+    public ChooseServerGui(final JFrame frame) {
         this.frame = frame;
 
         try {
@@ -68,7 +67,7 @@ public class ChooseServerForm {
                     int personId =  selectPersonTableModel.getRow(selectRowIndex).getId();
 
                     try {
-                        client = new Client();
+                        Client client = new Client();
 
                         ClientGui clientGui = new ClientGui(frame, client, personId);
 

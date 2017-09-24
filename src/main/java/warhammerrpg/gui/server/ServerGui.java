@@ -2,6 +2,7 @@ package warhammerrpg.gui.server;
 
 import warhammerrpg.core.gameMechanics.*;
 import warhammerrpg.gui.ButtonColumn;
+import warhammerrpg.gui.server.gameNotificationTable.NotificationTableModel;
 import warhammerrpg.gui.server.playersTable.PlayersTableModel;
 import warhammerrpg.gui.server.playersTable.PlayersTableRow;
 import warhammerrpg.network.server.Server;
@@ -24,6 +25,7 @@ public class ServerGui {
     private JTextArea messages;
     private JTable playersTable;
     private JLabel ipAdressLabel;
+    private JTable notificationTable;
     private JRadioButton twoDice;
 
     JFrame frame;
@@ -80,10 +82,14 @@ public class ServerGui {
         return messages;
     }
 
-    private PlayersTableModel playersTableModel = null;
-
+    private PlayersTableModel playersTableModel;
     public PlayersTableModel getPlayersTableModel() {
         return playersTableModel;
+    }
+
+    private NotificationTableModel notificationTableModel;
+    public NotificationTableModel getNotificationTableModel() {
+        return notificationTableModel;
     }
 
     private void createUIComponents() {
@@ -99,16 +105,14 @@ public class ServerGui {
                 if(kickMessage != null) {
                     int row = playersTable.rowAtPoint(evt.getPoint());
                     PlayersTableRow playersTableRow = playersTableModel.getRow(row);
-                    System.out.println("user: "+playersTableRow.getName());
 
                     server.kickUser(playersTableRow.getName(), kickMessage);
                 }
-
-
-
-
             }
         });
+
+        notificationTableModel = new NotificationTableModel();
+        notificationTable = new JTable(notificationTableModel);
     }
 
     public Server getServer() {
@@ -119,5 +123,9 @@ public class ServerGui {
         this.server = server;
     }
 
+
+    public JTable getNotificationTable() {
+        return notificationTable;
+    }
 }
 

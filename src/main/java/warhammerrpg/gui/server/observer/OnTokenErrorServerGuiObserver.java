@@ -4,6 +4,7 @@ import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.gui.server.MasterGuiManager;
+import warhammerrpg.gui.server.gameNotificationTable.NotificationTableManager;
 
 public class OnTokenErrorServerGuiObserver extends AbstractServerGuiObserver implements Observer {
 
@@ -16,7 +17,7 @@ public class OnTokenErrorServerGuiObserver extends AbstractServerGuiObserver imp
         switch (e) {
             case SERVER_USER_TOKEN_ERROR:
                 String username = (String) param1;
-                masterGuiManager.addNotice("Bledny token od gracza: "+username);
+                masterGuiManager.getNotificationTableManager().addNotification(username, "Bledny token od gracza",  NotificationTableManager.Type.ERROR);
                 System.out.println("OnUserDisconnectServerGuiObserver - SERVER_USER_DISCONNECTED wywoluje się");
                 break;
         }

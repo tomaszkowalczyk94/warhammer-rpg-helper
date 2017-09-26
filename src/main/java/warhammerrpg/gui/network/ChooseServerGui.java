@@ -167,16 +167,18 @@ public class ChooseServerGui {
             row.setId(p.getId());
             row.setName(getEmptyStringIfNull(p.getName()));
             row.setBreed(getEmptyStringIfNull(p.getBreed()));
-            row.setProffesion(getEmptyStringIfNull(p.getCurProffesion()));
+
+
+            row.setProffesion(getEmptyStringIfNull(p.getCurCareer()));
 
             selectPersonTableModel.addRow(row);
         }
         selectPersonTableModel.fireTableDataChanged();
     }
 
-    private String getEmptyStringIfNull(String text) {
+    private String getEmptyStringIfNull(Object text) {
         if(text != null) {
-            return text;
+            return text.toString();
         }else {
            return "";
         }

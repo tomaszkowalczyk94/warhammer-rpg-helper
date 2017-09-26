@@ -6,7 +6,6 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 import warhammerrpg.database.manager.dao.PersonDao;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -20,7 +19,7 @@ import static warhammerrpg.database.entity.PersonMethod.Type.SETTER;
 public class Person {
 
     public enum Field {
-        ID, NAME, BREED, CUR_PROFFESION, PREV_PROFFESION,
+        ID, NAME, BREED, CUR_CAREER, PREV_CAREER,
         AGE, EYES_COLOUR, HAIR_COLOUR, STAR_SIGN, SEX, WEIGHT, HEIGHT, SIBLINGS, BIRTH_PLACE, SPECIAL_SIGNS,
 
     }
@@ -37,13 +36,13 @@ public class Person {
     @DatabaseField()
     private String breed;
 
-    @PersonField(field=Field.CUR_PROFFESION, name="obecna profesja")
-    @DatabaseField()
-    private String curProffesion;
+    @PersonField(field=Field.CUR_CAREER, name="obecna profesja")
+    @DatabaseField(foreign = true, foreignAutoRefresh=true)
+    private Career curCareer;
 
-    @PersonField(field=Field.PREV_PROFFESION, name="poprzednia profesja")
-    @DatabaseField()
-    private String prevProffesion;
+    @PersonField(field=Field.PREV_CAREER, name="poprzednia profesja")
+    @DatabaseField(foreign = true, foreignAutoRefresh=true)
+    private Career prevCareer;
 
 
     @ForeignCollectionField(eager = false)
@@ -285,24 +284,24 @@ public class Person {
         this.breed = breed;
     }
 
-    @PersonMethod(forField=Field.CUR_PROFFESION, type=GETTER)
-    public String getCurProffesion() {
-        return curProffesion;
+    @PersonMethod(forField=Field.CUR_CAREER, type=GETTER)
+    public Career getCurCareer() {
+        return curCareer;
     }
 
-    @PersonMethod(forField=Field.CUR_PROFFESION, type=SETTER)
-    public void setCurProffesion(String curProffesion) {
-        this.curProffesion = curProffesion;
+    @PersonMethod(forField=Field.CUR_CAREER, type=SETTER)
+    public void setCurCareer(Career curCareer) {
+        this.curCareer = curCareer;
     }
 
-    @PersonMethod(forField=Field.PREV_PROFFESION, type=GETTER)
-    public String getPrevProffesion() {
-        return prevProffesion;
+    @PersonMethod(forField=Field.PREV_CAREER, type=GETTER)
+    public Career getPrevCareer() {
+        return prevCareer;
     }
 
-    @PersonMethod(forField=Field.PREV_PROFFESION, type=SETTER)
-    public void setPrevProffesion(String prevProffesion) {
-        this.prevProffesion = prevProffesion;
+    @PersonMethod(forField=Field.PREV_CAREER, type=SETTER)
+    public void setPrevCareer(Career prevCareer) {
+        this.prevCareer = prevCareer;
     }
 
     @PersonMethod(forField=Field.AGE, type=GETTER)

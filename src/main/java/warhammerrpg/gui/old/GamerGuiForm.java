@@ -53,8 +53,10 @@ public class GamerGuiForm {
 
         person.setName(nameTextField.getText());
         person.setBreed(breedTextField.getText());
-        person.setCurProffesion(curProffesionTextField.getText());
-        person.setPrevProffesion(prevProffesionTextField.getText());
+
+        // kod się zdezaktualizował
+        //person.setCurCareer(curProffesionTextField.getText());
+        //person.setPrevCareer(prevProffesionTextField.getText());
 
         person.setAge(ageTextField.getText());
         person.setSex(sexTextField.getText());

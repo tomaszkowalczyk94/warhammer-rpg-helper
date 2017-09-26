@@ -8,6 +8,7 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import warhammerrpg.database.entity.*;
 import warhammerrpg.database.exception.*;
+import warhammerrpg.database.manager.CareerManager;
 import warhammerrpg.database.manager.PersonManager;
 import warhammerrpg.network.client.Client;
 import warhammerrpg.network.client.observer.PersonChangeDataObserver;
@@ -145,6 +146,17 @@ public class Database {
             personManager.setDao((BaseDaoImpl) DaoManager.createDao(this.conn, Person.class));
 
             return personManager;
+        } catch (SQLException e) {
+            throw new DatabaseCreateManagerException(e);
+        }
+    }
+
+    public CareerManager getCareerManager() throws DatabaseCreateManagerException {
+        try {
+            CareerManager careerManager = new CareerManager();
+            careerManager.setDao((BaseDaoImpl) DaoManager.createDao(this.conn, Career.class));
+
+            return careerManager;
         } catch (SQLException e) {
             throw new DatabaseCreateManagerException(e);
         }

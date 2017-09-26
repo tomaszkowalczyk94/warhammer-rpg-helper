@@ -38,14 +38,6 @@ public class PersonManager extends AbstractManager<Person, Integer>{
         }
     }
 
-    public List getAll() throws DatabaseSqlException {
-        try {
-            return dao.queryForAll();
-        } catch (SQLException e) {
-            throw new DatabaseSqlException(e);
-        }
-    }
-
     public String updateStringField(Person person, Person.Field field, String newValue) throws DatabaseSqlException {
 
         if(newValue == null) {

@@ -5,6 +5,7 @@ import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.gui.server.MasterGuiManager;
+import warhammerrpg.gui.server.gameNotificationTable.NotificationTableManager;
 import warhammerrpg.network.pack.ChangeDataEventPack;
 
 public class OnUserChangeDataServerGuiObserver extends AbstractServerGuiObserver implements Observer {
@@ -26,7 +27,9 @@ public class OnUserChangeDataServerGuiObserver extends AbstractServerGuiObserver
                 String nameUpdatedField = person.getNameField(changeDataEventPack.updatedField);
 
                 System.out.println("OnUserChangeDataServerGuiObserver - wywoluje się");
-                masterGuiManager.addNotice("Gracz: "+username+" zmienił '"+nameUpdatedField+"' wartość z '"+changeDataEventPack.oldValue+"' na '"+changeDataEventPack.newValue+"'" );
+                ;
+                String msg = "zmieniono pole '"+nameUpdatedField+"' z '"+changeDataEventPack.oldValue+"' na '"+changeDataEventPack.newValue+"'";
+                masterGuiManager.getNotificationTableManager().addNotification(username, msg, NotificationTableManager.Type.INFO);
                 break;
         }
 

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 /**
  * Hello world!
- *
+ * @todo usunać
  */
 public class App 
 {

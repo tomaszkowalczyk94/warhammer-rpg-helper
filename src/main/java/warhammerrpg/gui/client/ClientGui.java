@@ -4,15 +4,19 @@ import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
 import warhammerrpg.database.Database;
+import warhammerrpg.database.entity.Career;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
+import warhammerrpg.gui.swingModule.AutoCompletion;
 import warhammerrpg.gui.client.observer.ClientSetPersonDataEventContainer;
 import warhammerrpg.network.client.Client;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import static warhammerrpg.database.entity.Person.Field.*;
 
@@ -41,8 +45,7 @@ public class ClientGui  implements Observable {
     private JFormattedTextField specialSignsTextField;
 
     private JLabel imageLogo;
-
-
+    private JComboBox<Career> myCombo;
 
     JFrame frame;
     Client client;
@@ -80,6 +83,8 @@ public class ClientGui  implements Observable {
         createStringEditableField(siblingsTextField , SIBLINGS);
         createStringEditableField(birthPlaceTextField , BIRTH_PLACE);
         createStringEditableField(specialSignsTextField , SPECIAL_SIGNS);
+
+        createListEditableField(myCombo, SPECIAL_SIGNS);
 
         fillIn(this.getPerson());
     }
@@ -122,6 +127,25 @@ public class ClientGui  implements Observable {
         });
     }
 
+    private void createListEditableField(final JComboBox field, final Person.Field personField) {
+        field.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                System.out.println("zapisuje");
+                // saveStringField(field, personField); @todo
+            }
+        });
+        // wcisniecie entera
+        field.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("zapisuje");
+                // saveStringField(field, personField); @todo
+            }
+        });
+    }
+
     private void saveStringField(final JFormattedTextField field, Person.Field nameField) {
 
         try {
@@ -148,8 +172,6 @@ public class ClientGui  implements Observable {
         } catch (DatabaseException e) {
             JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
         }
-        //zapis do bazy
-        //jak się powiódł to wysyłamy do GM
     }
 
     public void open() {
@@ -162,6 +184,24 @@ public class ClientGui  implements Observable {
 
     private void createUIComponents() {
         imageLogo = new JLabel(new ImageIcon("person.PNG"));
+
+        createComboBoxes();
+
+
+    }
+
+    private void createComboBoxes() {
+        try {
+            database = new Database();
+
+            List<Career> all = database.getCareerManager().getAll();
+            myCombo = new JComboBox<Career>(new Vector<Career>(all) );
+
+            database.closeConnection();
+        } catch (DatabaseException e) {
+            JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
     }
 
     public Person getPerson() {

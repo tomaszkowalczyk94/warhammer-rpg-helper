@@ -323,4 +323,9 @@ public class Career {
     public void setAvaibleTalents(String avaibleTalents) {
         this.avaibleTalents = avaibleTalents;
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

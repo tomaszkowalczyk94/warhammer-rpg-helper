@@ -5,6 +5,7 @@ import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.DatabaseSqlException;
 
 import java.sql.SQLException;
+import java.util.List;
 
 abstract class AbstractManager<T, PK>  {
     protected BaseDaoImpl dao;
@@ -28,6 +29,14 @@ abstract class AbstractManager<T, PK>  {
     public T getById(PK pk) throws DatabaseSqlException {
         try {
             return (T) dao.queryForId(pk);
+        } catch (SQLException e) {
+            throw new DatabaseSqlException(e);
+        }
+    }
+
+    public List<T> getAll() throws DatabaseSqlException {
+        try {
+            return dao.queryForAll();
         } catch (SQLException e) {
             throw new DatabaseSqlException(e);
         }

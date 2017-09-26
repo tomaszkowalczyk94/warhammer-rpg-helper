@@ -8,7 +8,6 @@ import warhammerrpg.database.entity.Career;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
 import warhammerrpg.database.manager.PersonManager;
-import warhammerrpg.gui.swingModule.AutoCompletion;
 import warhammerrpg.gui.client.observer.ClientSetPersonDataEventContainer;
 import warhammerrpg.network.client.Client;
 
@@ -27,38 +26,40 @@ import static warhammerrpg.database.entity.Person.Field.*;
  */
 public class ClientGui  implements Observable {
 
-    private JPanel panel;
-    private JFormattedTextField nameTextField;
-    private JFormattedTextField breedTextField;
-    private JFormattedTextField curProffesionTextField;
-    private JFormattedTextField prevProffesionTextField;
+    protected JPanel panel;
 
-    private JFormattedTextField ageTextField;
-    private JFormattedTextField sexTextField;
-    private JFormattedTextField eyesColourTextField;
-    private JFormattedTextField hairColourTextField;
-    private JFormattedTextField starSignTextField;
-    private JFormattedTextField weightTextField;
-    private JFormattedTextField heightTextField;
-    private JFormattedTextField siblingsTextField;
-    private JFormattedTextField birthPlaceTextField;
-    private JFormattedTextField specialSignsTextField;
+    protected JFormattedTextField nameTextField;
+    protected JFormattedTextField breedTextField;
+    protected JComboBox curCareer;
+    protected JComboBox prevCareer;
 
-    private JLabel imageLogo;
-    private JComboBox<Career> myCombo;
+    protected JFormattedTextField ageTextField;
+    protected JFormattedTextField sexTextField;
+    protected JFormattedTextField eyesColourTextField;
+    protected JFormattedTextField hairColourTextField;
+    protected JFormattedTextField starSignTextField;
+    protected JFormattedTextField weightTextField;
+    protected JFormattedTextField heightTextField;
+    protected JFormattedTextField siblingsTextField;
+    protected JFormattedTextField birthPlaceTextField;
+    protected JFormattedTextField specialSignsTextField;
+
+    protected JLabel imageLogo;
 
     JFrame frame;
     Client client;
 
-    private Database database;
-    private Person person;
-    private int personId;
+    protected Database database;
+    protected Person person;
+    protected int personId;
+    protected ClientGuiHelper clientGuiHelper;
 
     public ClientGui(JFrame frame, Client client, int personId) {
 
         this.frame = frame;
         this.client = client;
         this.personId = personId;
+        this.clientGuiHelper = new ClientGuiHelper(this);
 
         this.observerList = new ArrayList<>();
 
@@ -68,111 +69,33 @@ public class ClientGui  implements Observable {
             JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
         }
 
-        createStringEditableField(nameTextField, NAME);
-        createStringEditableField(breedTextField, BREED);
-        createStringEditableField(curProffesionTextField, CUR_PROFFESION);
-        createStringEditableField(prevProffesionTextField, PREV_PROFFESION);
+        clientGuiHelper.createStringEditableField(nameTextField, NAME);
+        clientGuiHelper.createStringEditableField(breedTextField, BREED);
 
-        createStringEditableField(ageTextField , AGE);
-        createStringEditableField(sexTextField , SEX);
-        createStringEditableField(eyesColourTextField , EYES_COLOUR);
-        createStringEditableField(hairColourTextField , HAIR_COLOUR);
-        createStringEditableField(starSignTextField , STAR_SIGN);
-        createStringEditableField(weightTextField , WEIGHT);
-        createStringEditableField(heightTextField , HEIGHT);
-        createStringEditableField(siblingsTextField , SIBLINGS);
-        createStringEditableField(birthPlaceTextField , BIRTH_PLACE);
-        createStringEditableField(specialSignsTextField , SPECIAL_SIGNS);
+        clientGuiHelper.createStringEditableField(ageTextField , AGE);
+        clientGuiHelper.createStringEditableField(sexTextField , SEX);
+        clientGuiHelper.createStringEditableField(eyesColourTextField , EYES_COLOUR);
+        clientGuiHelper.createStringEditableField(hairColourTextField , HAIR_COLOUR);
+        clientGuiHelper.createStringEditableField(starSignTextField , STAR_SIGN);
+        clientGuiHelper.createStringEditableField(weightTextField , WEIGHT);
+        clientGuiHelper.createStringEditableField(heightTextField , HEIGHT);
+        clientGuiHelper.createStringEditableField(siblingsTextField , SIBLINGS);
+        clientGuiHelper.createStringEditableField(birthPlaceTextField , BIRTH_PLACE);
+        clientGuiHelper.createStringEditableField(specialSignsTextField , SPECIAL_SIGNS);
 
-        createListEditableField(myCombo, SPECIAL_SIGNS);
+        clientGuiHelper.createJComboBoxEditableField(curCareer, CUR_CAREER);
+        clientGuiHelper.createJComboBoxEditableField(prevCareer, PREV_CAREER);
 
-        fillIn(this.getPerson());
+        fillIn(clientGuiHelper.getPerson());
     }
 
     private void fillIn(Person person) {
         nameTextField.setText(person.getName());
         breedTextField.setText(person.getBreed());
-        curProffesionTextField.setText(person.getCurProffesion());
-        prevProffesionTextField.setText(person.getPrevProffesion());
+        curCareer.setSelectedItem(person.getCurCareer());
+        prevCareer.setSelectedItem(person.getPrevCareer());
     }
 
-    private void createStringEditableField(final JFormattedTextField field, final Person.Field personField) {
-
-        field.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                field.setEditable(true);
-                field.requestFocus();
-                field.getCaret().setVisible(true);
-            }
-        });
-        field.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                field.setEditable(false);
-                field.getCaret().setVisible(false);
-                saveStringField(field, personField);
-            }
-        });
-        // wcisniecie entera
-        field.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                field.setEditable(false);
-                field.getCaret().setVisible(false);
-                saveStringField(field, personField);
-            }
-        });
-    }
-
-    private void createListEditableField(final JComboBox field, final Person.Field personField) {
-        field.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                System.out.println("zapisuje");
-                // saveStringField(field, personField); @todo
-            }
-        });
-        // wcisniecie entera
-        field.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("zapisuje");
-                // saveStringField(field, personField); @todo
-            }
-        });
-    }
-
-    private void saveStringField(final JFormattedTextField field, Person.Field nameField) {
-
-        try {
-            PersonManager personManager = database.getPersonManager();
-
-            String newValue =  field.getText();
-            String oldValue = personManager.updateStringField(getPerson(), nameField, newValue);
-
-            if(oldValue == null) {
-                oldValue = "";
-            }
-            if(newValue == null) {
-                newValue = "";
-            }
-
-            if(!oldValue.equals(newValue)) {
-                ClientSetPersonDataEventContainer clientSetPersonDataEventContainer = new ClientSetPersonDataEventContainer();
-                clientSetPersonDataEventContainer.field = nameField;
-                clientSetPersonDataEventContainer.oldValue = oldValue;
-                clientSetPersonDataEventContainer.newValue = newValue;
-
-                this.notifyObservers(Event.CLIENT_SET_PERSON_DATA, clientSetPersonDataEventContainer, null);
-            }
-        } catch (DatabaseException e) {
-            JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
-        }
-    }
 
     public void open() {
         JFrame frame = new JFrame("Player GUI Form");
@@ -186,8 +109,6 @@ public class ClientGui  implements Observable {
         imageLogo = new JLabel(new ImageIcon("person.PNG"));
 
         createComboBoxes();
-
-
     }
 
     private void createComboBoxes() {
@@ -195,7 +116,8 @@ public class ClientGui  implements Observable {
             database = new Database();
 
             List<Career> all = database.getCareerManager().getAll();
-            myCombo = new JComboBox<Career>(new Vector<Career>(all) );
+            curCareer = new JComboBox<Career>(new Vector<Career>(all) );
+            prevCareer = new JComboBox<Career>(new Vector<Career>(all) );
 
             database.closeConnection();
         } catch (DatabaseException e) {
@@ -204,14 +126,7 @@ public class ClientGui  implements Observable {
         }
     }
 
-    public Person getPerson() {
-        try {
-            return database.getPersonManager().getById(personId);
-        } catch (DatabaseException e) {
-            JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
-        }
-        return null;
-    }
+
 
 
     protected ArrayList<Observer> observerList;

@@ -1,6 +1,5 @@
 package warhammerrpg.database.entity;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -19,7 +18,7 @@ public class PersonTest {
     public Person.Field field;
 
     @Parameterized.Parameter(value = 1)
-    public String fieldValue;
+    public Object fieldValue;
 
     @Parameterized.Parameter(value = 2)
     public String fieldName;
@@ -31,7 +30,7 @@ public class PersonTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                 {Person.Field.NAME, "Alex", "imię" },
-                {Person.Field.CUR_PROFFESION, "test", "obecna profesja" },
+                {Person.Field.CUR_CAREER, new Career(), "obecna profesja" },
                 {Person.Field.SPECIAL_SIGNS, "test xxx", "znaki szczególne" }
         });
     }

@@ -7,7 +7,7 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable()
-public class Career {
+public class Career implements Fieldable {
 
     public Career() {
     }
@@ -327,5 +327,20 @@ public class Career {
     @Override
     public String toString() {
         return getName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Career career = (Career) o;
+
+        return id == career.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 }

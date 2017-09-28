@@ -5,6 +5,7 @@ import com.j256.ormlite.stmt.QueryBuilder;
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
+import warhammerrpg.database.entity.Fieldable;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.DatabaseRecordAlreadyExistException;
 import warhammerrpg.database.exception.DatabaseSqlException;
@@ -52,9 +53,23 @@ public class PersonManager extends AbstractManager<Person, Integer>{
         if(!oldValue.equals(newValue)) {
             person.setField(field, newValue);
             this.update(person);
-            return oldValue;
         }
         return oldValue;
+    }
+
+    public Fieldable updateObjectField(Person person, Person.Field field, Fieldable newValue) throws DatabaseSqlException {
+        Fieldable oldValue = (Fieldable) person.getField(field);
+
+        if(oldValue == null && newValue == null) {
+            return null;
+        }
+
+        if(!newValue.equals(oldValue)) {
+            person.setField(field, newValue);
+            this.update(person);
+        }
+        return oldValue;
+
     }
 
 }

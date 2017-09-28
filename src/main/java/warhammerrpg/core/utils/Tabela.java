@@ -2,7 +2,7 @@
 package warhammerrpg.core.utils;
 import javax.swing.*;
 
-public class OknoZTabela extends JApplet{
+public class Tabela extends JApplet{
     
     public void init() {
         try{

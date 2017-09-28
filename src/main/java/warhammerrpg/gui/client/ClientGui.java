@@ -7,12 +7,12 @@ import warhammerrpg.database.Database;
 import warhammerrpg.database.entity.Career;
 import warhammerrpg.database.entity.Person;
 import warhammerrpg.database.exception.*;
-import warhammerrpg.database.manager.PersonManager;
-import warhammerrpg.gui.client.observer.ClientSetPersonDataEventContainer;
+import warhammerrpg.gui.client.characterProfileTable.CharacterProfileRenderer;
+import warhammerrpg.gui.client.characterProfileTable.CharacterProfileTable;
 import warhammerrpg.network.client.Client;
 
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -45,6 +45,7 @@ public class ClientGui  implements Observable {
     protected JFormattedTextField specialSignsTextField;
 
     protected JLabel imageLogo;
+    private JTable characterProfile;
 
     JFrame frame;
     Client client;
@@ -109,6 +110,7 @@ public class ClientGui  implements Observable {
         imageLogo = new JLabel(new ImageIcon("person.PNG"));
 
         createComboBoxes();
+        createCharacterProfileTable();
     }
 
     private void createComboBoxes() {
@@ -124,6 +126,28 @@ public class ClientGui  implements Observable {
             JOptionPane.showMessageDialog(panel, "Błąd bazy danych", "błąd", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
+    }
+
+    private void createCharacterProfileTable() {
+
+        String[] columnNames = {"First Name",
+                "Last Name",
+                "Sport",
+                "# of Years",
+                "Vegetarian"};
+
+        Object[][] data = {
+                {"Cechy główne:", "WW", "US", "K", "Odp", "Zr", "Int", "SW", "Ogd"},
+
+                {"Początkowa",  1, 2, 3, 4, 5, 6, 7, 9},
+                {"Schemat rozwoju", 1, 2, 3, 4, 5, 6, 7, 9},
+                {"Aktualna", 1, 2, 3, 4, 5, 6, 7, 9},
+        };
+
+        characterProfile = new CharacterProfileTable(data, columnNames);
+        characterProfile.setDefaultRenderer(Object.class, new CharacterProfileRenderer());
+        characterProfile.setShowGrid(false);
+        characterProfile.setIntercellSpacing(new Dimension(0,0));
     }
 
 

@@ -1,5 +1,5 @@
 //jeszcze do dopracowania :P
-//27.09.17 - ja dalej nad tym pracuje
+//28.09.17 - jeszcze do sprawdzenia ;p
 package warhammerrpg.core.utils;
 import com.j256.ormlite.dao.ForeignCollection;
 import warhammerrpg.database.Database;
@@ -104,22 +104,40 @@ public class Tabela extends JApplet{
             x++;
         }
 
-        String[] colHeads = {"Nazwa", "Opis", "WW", "US", "K", "Odp", "ZR", "INT", "SW",
+        String[] colHeads = {"ID","Nazwa", "Opis", "WW", "US", "K", "Odp", "ZR", "INT", "SW",
             "ODG", "A", "Zyw", "S", "Wt", "Sz", "Mag", "PO", "PP", "Umiejętności", "Zdolności", "Wyposażenie",
             "Profesje wyjściowe", "Profesja zaawansowana"};
 
 
-        Object[][] data = new Object[112][23];
-        /*
+        Object[][] data = new Object[112][24];
 
-        tu mi wywala jakiś błąd, ale nia mam głowy do tego, aby teraz to rozwiazac ;p
-        ogarne to jutro ;p
         x=0;
         for(x=0;x<112;x++){
-            data[x] = {id[x], name[x], description[x], weaponSkill[x], ballisticSkill[x], strength[x], toughness[x], agility[x], intelligence[x],
-                    willPower[x], fellowship[x], attack[x], wounds[x], strengthBonus[x], toughnessBonus[x], movement[x], magic[x],
-                    insanityPoints[x], fatePoints[x], avaibleSkills[x], avaibleTalents[x], equipments[x], carrersExit[x], isAdvanced[x]};
-        }*/
+            data[x][0] = id[x];
+            data[x][1] = name[x];
+            data[x][2] = description[x];
+            data[x][3] = weaponSkill[x];
+            data[x][4] = ballisticSkill[x];
+            data[x][5] = strength[x];
+            data[x][6] = toughness[x];
+            data[x][7] = agility[x];
+            data[x][8] = intelligence[x];
+            data[x][9] = willPower[x];
+            data[x][10] = fellowship[x];
+            data[x][11] = attack[x];
+            data[x][12] = wounds[x];
+            data[x][13] = strengthBonus[x];
+            data[x][14] = toughnessBonus[x];
+            data[x][15] = movement[x];
+            data[x][16] = magic[x];
+            data[x][17] = insanityPoints[x];
+            data[x][18] = fatePoints[x];
+            data[x][19] = avaibleSkills[x];
+            data[x][20] = avaibleTalents[x];
+            data[x][21] = equipments[x];
+            data[x][22] = carrersExit[x];
+            data[x][23] = isAdvanced[x];
+        }
     
     JTable table = new JTable(data, colHeads);
     JScrollPane jsp = new JScrollPane(table);

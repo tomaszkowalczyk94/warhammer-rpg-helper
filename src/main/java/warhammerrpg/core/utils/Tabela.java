@@ -27,30 +27,30 @@ public class Tabela {
 
         List<Career> all = careerManager.getAll();
 
-       Integer[] id = new Integer[112];
-       String[] name = new String[112];
-       String[] description = new String[112];
-       Integer[] weaponSkill = new Integer[112];
-       Integer[] ballisticSkill = new Integer[112];
-       Integer[] strength = new Integer[112];
-       Integer[] toughness = new Integer[112];
-       Integer[] agility = new Integer[112];
-       Integer[] intelligence = new Integer[112];
-       Integer[] willPower = new Integer[112];
-       Integer[] fellowship = new Integer[112];
-       Integer[] attack = new Integer[112];
-       Integer[] wounds = new Integer[112];
-       Integer[] strengthBonus = new Integer[112];
-       Integer[] toughnessBonus = new Integer[112];
-       Integer[] movement = new Integer[112];
-       Integer[] magic = new Integer[112];
-       Integer[] insanityPoints = new Integer[112];
-       Integer[] fatePoints = new Integer[112];
-       String[] avaibleSkills = new String[112];
-       String[] avaibleTalents = new String[112];
-       String[] equipments = new String[112];
-       ForeignCollection<CareerExit>[] carrersExit = new ForeignCollection[112];
-       Boolean[] isAdvanced = new Boolean[112];
+       Integer[] id = new Integer[113];
+       String[] name = new String[113];
+       String[] description = new String[113];
+       Integer[] weaponSkill = new Integer[113];
+       Integer[] ballisticSkill = new Integer[113];
+       Integer[] strength = new Integer[113];
+       Integer[] toughness = new Integer[113];
+       Integer[] agility = new Integer[113];
+       Integer[] intelligence = new Integer[113];
+       Integer[] willPower = new Integer[113];
+       Integer[] fellowship = new Integer[113];
+       Integer[] attack = new Integer[113];
+       Integer[] wounds = new Integer[113];
+       Integer[] strengthBonus = new Integer[113];
+       Integer[] toughnessBonus = new Integer[113];
+       Integer[] movement = new Integer[113];
+       Integer[] magic = new Integer[113];
+       Integer[] insanityPoints = new Integer[113];
+       Integer[] fatePoints = new Integer[113];
+       String[] avaibleSkills = new String[113];
+       String[] avaibleTalents = new String[113];
+       String[] equipments = new String[113];
+       ForeignCollection<CareerExit>[] carrersExit = new ForeignCollection[113];
+       Boolean[] isAdvanced = new Boolean[113];
 
        int x=0;
 
@@ -87,10 +87,10 @@ public class Tabela {
             "Profesje wyjściowe", "Profesja zaawansowana"};
 
 
-        Object[][] data = new Object[112][24];
+        Object[][] data = new Object[113][24];
 
         x=0;
-        for(x=0;x<112;x++){
+        for(x=0;x<113;x++){
             data[x][0] = id[x];
             data[x][1] = name[x];
             data[x][2] = description[x];

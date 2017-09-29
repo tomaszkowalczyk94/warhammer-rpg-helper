@@ -10,6 +10,7 @@ import warhammerrpg.database.exception.DatabaseOpenConnectionException;
 import warhammerrpg.database.exception.DatabaseSqlException;
 import warhammerrpg.database.manager.CareerManager;
 
+import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ public class Tabela {
     Tabela() throws DatabaseCreateManagerException, DatabaseCreateTablesException, DatabaseOpenConnectionException, DatabaseSqlException {
 
         JFrame jfrm = new JFrame("Profesje");
-        jfrm.setSize(800, 900);
+        jfrm.setSize(700, 800);
         jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Database database = new Database();
@@ -77,7 +78,7 @@ public class Tabela {
             avaibleSkills[x] = career.getAvaibleSkills();
             avaibleTalents[x] = career.getAvaibleTalents();
             equipments[x] = career.getEquipments();
-            carrersExit[x] = career.getCarrersExit();
+            carrersExit[x] = career.getCarrersExit(); //co by wyswietlalo liste profesji a nie to cos dziwnego
             isAdvanced[x] = career.getAdvanced();
             x++;
         }
@@ -119,7 +120,9 @@ public class Tabela {
     
     JTable table = new JTable(data, colHeads);
     JScrollPane jsp = new JScrollPane(table);
+    JScrollBar jsb = new JScrollBar(Adjustable.HORIZONTAL,30,20,0,3000);
     jfrm.add(jsp);
+    jfrm.add(jsb, BorderLayout.SOUTH); //cos zdzialac, co by wyswietlalo cala zawartosc komorek, a suwak przesuwal okno :P
     jfrm.setVisible(true);
 }
 

@@ -1,5 +1,4 @@
 //jeszcze do dopracowania :P
-//28.09.17 - jeszcze do sprawdzenia ;p
 package warhammerrpg.core.utils;
 import com.j256.ormlite.dao.ForeignCollection;
 import warhammerrpg.database.Database;
@@ -15,34 +14,13 @@ import java.util.List;
 
 import javax.swing.*;
 
-public class Tabela extends JApplet{
+public class Tabela {
     
-    public void init() {
-        try{
-            SwingUtilities.invokeAndWait(
-               new Runnable(){
-                   public void run(){
-                       try {
-                           makeGUI();
-                       } catch (DatabaseCreateManagerException e) {
-                           e.printStackTrace();
-                       } catch (DatabaseOpenConnectionException e) {
-                           e.printStackTrace();
-                       } catch (DatabaseCreateTablesException e) {
-                           e.printStackTrace();
-                       } catch (DatabaseSqlException e) {
-                           e.printStackTrace();
-                       }
-                   }
-               }
-            );
-        }catch(Exception exc){
-            System.out.println(exc);
-        }
-        
-    }
-    
-    private void makeGUI() throws DatabaseCreateManagerException, DatabaseCreateTablesException, DatabaseOpenConnectionException, DatabaseSqlException {
+    Tabela() throws DatabaseCreateManagerException, DatabaseCreateTablesException, DatabaseOpenConnectionException, DatabaseSqlException {
+
+        JFrame jfrm = new JFrame("Profesje");
+        jfrm.setSize(800, 900);
+        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Database database = new Database();
         CareerManager careerManager = database.getCareerManager();
@@ -141,7 +119,27 @@ public class Tabela extends JApplet{
     
     JTable table = new JTable(data, colHeads);
     JScrollPane jsp = new JScrollPane(table);
-    add(jsp);
+    jfrm.add(jsp);
+    jfrm.setVisible(true);
 }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                try {
+                    new Tabela();
+                } catch (DatabaseCreateManagerException e) {
+                    e.printStackTrace();
+                } catch (DatabaseCreateTablesException e) {
+                    e.printStackTrace();
+                } catch (DatabaseOpenConnectionException e) {
+                    e.printStackTrace();
+                } catch (DatabaseSqlException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     
 }

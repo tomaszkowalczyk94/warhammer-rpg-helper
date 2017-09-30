@@ -10,9 +10,14 @@ import warhammerrpg.database.exception.DatabaseOpenConnectionException;
 import warhammerrpg.database.exception.DatabaseSqlException;
 import warhammerrpg.database.manager.CareerManager;
 
+import java.awt.*;
+import java.util.EventObject;
 import java.util.List;
 
 import javax.swing.*;
+import javax.swing.event.CellEditorListener;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellEditor;
 
 public class Tabela {
     
@@ -117,7 +122,8 @@ public class Tabela {
         }
     
     JTable table = new JTable(data, colHeads);
-    table.setRowHeight(50);
+
+    table.setRowHeight(70);
     table.getColumn("ID").setPreferredWidth(10);
     table.getColumn("Nazwa").setPreferredWidth(100);
     table.getColumn("Opis").setPreferredWidth(300); //dodac scrollbar
@@ -143,6 +149,17 @@ public class Tabela {
     table.getColumn("Wyjściowe").setPreferredWidth(70); //dodac scrollbar
     table.getColumn("Zaawansowana?").setPreferredWidth(80);
 
+    table.getColumnModel().getColumn(2).setCellRenderer(new CustomCellRenderer());
+    table.getColumnModel().getColumn(2).setCellEditor(new CustomEditor());
+    table.getColumnModel().getColumn(19).setCellRenderer(new CustomCellRenderer());
+    table.getColumnModel().getColumn(19).setCellEditor(new CustomEditor());
+    table.getColumnModel().getColumn(20).setCellRenderer(new CustomCellRenderer());
+    table.getColumnModel().getColumn(20).setCellEditor(new CustomEditor());
+    table.getColumnModel().getColumn(21).setCellRenderer(new CustomCellRenderer());
+    table.getColumnModel().getColumn(21).setCellEditor(new CustomEditor());
+    table.getColumnModel().getColumn(22).setCellRenderer(new CustomCellRenderer());
+    table.getColumnModel().getColumn(22).setCellEditor(new CustomEditor());
+
     JScrollPane jsp = new JScrollPane(table);
     jfrm.add(jsp);
     jfrm.setVisible(true);
@@ -167,4 +184,74 @@ public class Tabela {
         });
     }
     
+}
+
+class CustomCellRenderer extends DefaultTableCellRenderer {
+
+    private JTextArea textArea;
+    private JScrollPane scrollPane;
+
+    public CustomCellRenderer() {
+        textArea = new JTextArea();
+        scrollPane = new JScrollPane(textArea);
+    }
+
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value,boolean isSelected, boolean hasFocus, int row, int column) {
+
+        if(null != value)
+            textArea.setText(value.toString());
+
+        return scrollPane;
+    }
+}
+
+class CustomEditor implements TableCellEditor {
+
+    private JTextArea textArea;
+    private JScrollPane scrollPane;
+
+    public CustomEditor() {
+        textArea = new JTextArea();
+        scrollPane = new JScrollPane(textArea);
+    }
+
+    @Override
+    public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        if(null != value)
+            textArea.setText(value.toString());
+
+        return scrollPane;
+    }
+
+    @Override
+    public void addCellEditorListener(CellEditorListener arg0) {
+
+    }
+    @Override
+    public void cancelCellEditing() {
+
+    }
+    @Override
+    public Object getCellEditorValue() {
+        return textArea.getText();
+    }
+    @Override
+    public boolean isCellEditable(EventObject arg0) {
+        return true;
+    }
+    @Override
+    public void removeCellEditorListener(CellEditorListener arg0) {
+
+    }
+    @Override
+    public boolean shouldSelectCell(EventObject arg0) {
+
+        return true;
+    }
+    @Override
+    public boolean stopCellEditing() {
+
+        return true;
+    }
 }

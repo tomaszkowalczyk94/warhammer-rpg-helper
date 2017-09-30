@@ -126,7 +126,7 @@ public class Tabela {
     table.setRowHeight(70);
     table.getColumn("ID").setPreferredWidth(10);
     table.getColumn("Nazwa").setPreferredWidth(100);
-    table.getColumn("Opis").setPreferredWidth(300); //dodac scrollbar
+    table.getColumn("Opis").setPreferredWidth(300);
     table.getColumn("WW").setPreferredWidth(10);
     table.getColumn("US").setPreferredWidth(10);
     table.getColumn("K").setPreferredWidth(10);
@@ -143,10 +143,10 @@ public class Tabela {
     table.getColumn("Mag").setPreferredWidth(10);
     table.getColumn("PO").setPreferredWidth(10);
     table.getColumn("PP").setPreferredWidth(10);
-    table.getColumn("Umiejętności").setPreferredWidth(100);//dodac scrollbar
-    table.getColumn("Zdolności").setPreferredWidth(100); //dodac scrollbar
-    table.getColumn("Wyposażenie").setPreferredWidth(100); //dodac scrollbar
-    table.getColumn("Wyjściowe").setPreferredWidth(70); //dodac scrollbar
+    table.getColumn("Umiejętności").setPreferredWidth(100);
+    table.getColumn("Zdolności").setPreferredWidth(100);
+    table.getColumn("Wyposażenie").setPreferredWidth(100);
+    table.getColumn("Wyjściowe").setPreferredWidth(70);
     table.getColumn("Zaawansowana?").setPreferredWidth(80);
 
     table.getColumnModel().getColumn(2).setCellRenderer(new CustomCellRenderer());

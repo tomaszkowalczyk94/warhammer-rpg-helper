@@ -10,7 +10,6 @@ import warhammerrpg.database.exception.DatabaseOpenConnectionException;
 import warhammerrpg.database.exception.DatabaseSqlException;
 import warhammerrpg.database.manager.CareerManager;
 
-import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
@@ -20,7 +19,7 @@ public class Tabela {
     Tabela() throws DatabaseCreateManagerException, DatabaseCreateTablesException, DatabaseOpenConnectionException, DatabaseSqlException {
 
         JFrame jfrm = new JFrame("Profesje");
-        jfrm.setSize(700, 800);
+        jfrm.setSize(1600, 850);
         jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Database database = new Database();
@@ -85,7 +84,7 @@ public class Tabela {
 
         String[] colHeads = {"ID","Nazwa", "Opis", "WW", "US", "K", "Odp", "ZR", "INT", "SW",
             "ODG", "A", "Zyw", "S", "Wt", "Sz", "Mag", "PO", "PP", "Umiejętności", "Zdolności", "Wyposażenie",
-            "Profesje wyjściowe", "Profesja zaawansowana"};
+            "Wyjściowe", "Zaawansowana?"};
 
 
         Object[][] data = new Object[113][24];
@@ -119,10 +118,34 @@ public class Tabela {
         }
     
     JTable table = new JTable(data, colHeads);
+    table.setRowHeight(50);
+    table.getColumn("ID").setPreferredWidth(10);
+    table.getColumn("Nazwa").setPreferredWidth(100);
+    table.getColumn("Opis").setPreferredWidth(300); //dodac scrollbar
+    table.getColumn("WW").setPreferredWidth(10);
+    table.getColumn("US").setPreferredWidth(10);
+    table.getColumn("K").setPreferredWidth(10);
+    table.getColumn("Odp").setPreferredWidth(10);
+    table.getColumn("ZR").setPreferredWidth(10);
+    table.getColumn("INT").setPreferredWidth(10);
+    table.getColumn("SW").setPreferredWidth(10);
+    table.getColumn("ODG").setPreferredWidth(10);
+    table.getColumn("A").setPreferredWidth(10);
+    table.getColumn("Zyw").setPreferredWidth(10);
+    table.getColumn("S").setPreferredWidth(10);
+    table.getColumn("Wt").setPreferredWidth(10);
+    table.getColumn("Sz").setPreferredWidth(10);
+    table.getColumn("Mag").setPreferredWidth(10);
+    table.getColumn("PO").setPreferredWidth(10);
+    table.getColumn("PP").setPreferredWidth(10);
+    table.getColumn("Umiejętności").setPreferredWidth(100);//dodac scrollbar
+    table.getColumn("Zdolności").setPreferredWidth(100); //dodac scrollbar
+    table.getColumn("Wyposażenie").setPreferredWidth(100); //dodac scrollbar
+    table.getColumn("Wyjściowe").setPreferredWidth(70); //dodac scrollbar
+    table.getColumn("Zaawansowana?").setPreferredWidth(80);
+
     JScrollPane jsp = new JScrollPane(table);
-    JScrollBar jsb = new JScrollBar(Adjustable.HORIZONTAL,30,20,0,3000);
     jfrm.add(jsp);
-    jfrm.add(jsb, BorderLayout.SOUTH); //cos zdzialac, co by wyswietlalo cala zawartosc komorek, a suwak przesuwal okno :P
     jfrm.setVisible(true);
 }
 

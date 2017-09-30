@@ -53,7 +53,6 @@ public class Tabela {
        Boolean[] isAdvanced = new Boolean[113];
 
        int x=0;
-
         for(Career career : all) {
             id[x] = career.getId();
             name[x] = career.getName();

@@ -1,5 +1,6 @@
 //jeszcze do dopracowania :P
 package warhammerrpg.core.utils;
+import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
 import warhammerrpg.database.Database;
 import warhammerrpg.database.entity.Career;
@@ -11,6 +12,7 @@ import warhammerrpg.database.exception.DatabaseSqlException;
 import warhammerrpg.database.manager.CareerManager;
 
 import java.awt.*;
+import java.sql.ResultSet;
 import java.util.EventObject;
 import java.util.List;
 
@@ -54,7 +56,7 @@ public class Tabela {
        String[] avaibleSkills = new String[113];
        String[] avaibleTalents = new String[113];
        String[] equipments = new String[113];
-       ForeignCollection<CareerExit>[] carrersExit = new ForeignCollection[113];
+       String[] careersExit = new String[113];
        Boolean[] isAdvanced = new Boolean[113];
 
        int x=0;
@@ -81,7 +83,12 @@ public class Tabela {
             avaibleSkills[x] = career.getAvaibleSkills();
             avaibleTalents[x] = career.getAvaibleTalents();
             equipments[x] = career.getEquipments();
-            carrersExit[x] = career.getCarrersExit(); //co by wyswietlalo liste profesji a nie to cos dziwnego
+            ForeignCollection<CareerExit> fc = career.getCarrersExit();
+            careersExit[x] = "";
+            CloseableIterator<CareerExit> iter = fc.iterator(ResultSet.TYPE_SCROLL_SENSITIVE); //no i co tu zrobić, żeby wyświetlilo to :P
+            while(iter.hasNext()){
+                careersExit[x] = careersExit[x] + ", " + iter.next().getCareerExit().getName();
+            }
             isAdvanced[x] = career.getAdvanced();
             x++;
         }
@@ -117,7 +124,7 @@ public class Tabela {
             data[x][19] = avaibleSkills[x];
             data[x][20] = avaibleTalents[x];
             data[x][21] = equipments[x];
-            data[x][22] = carrersExit[x];
+            data[x][22] = careersExit[x];
             data[x][23] = isAdvanced[x];
         }
     

@@ -84,11 +84,13 @@ public class Tabela {
             avaibleTalents[x] = career.getAvaibleTalents();
             equipments[x] = career.getEquipments();
             ForeignCollection<CareerExit> fc = career.getCarrersExit();
+
             careersExit[x] = "";
-            CloseableIterator<CareerExit> iter = fc.iterator(ResultSet.TYPE_SCROLL_SENSITIVE); //no i co tu zrobić, żeby wyświetlilo to :P
-            while(iter.hasNext()){
-                careersExit[x] = careersExit[x] + ", " + iter.next().getCareerExit().getName();
+            for(CareerExit ce : fc) {
+
+                careersExit[x] = careersExit[x] + ", " + ce.getCareer().getName();
             }
+
             isAdvanced[x] = career.getAdvanced();
             x++;
         }

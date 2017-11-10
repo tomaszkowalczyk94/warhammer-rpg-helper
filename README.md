@@ -11,6 +11,10 @@ podstawowy podręcznik do niej ma prawie 300 stron
 (https://www.pdf-archive.com/2016/07/14/warhammer-2-0-podr-cznik-gry-pl/warhammer-2-0-podr-cznik-gry-pl.pdf). 
 Aplikacja ma za zadanie usprawnić taką grę, wyręczając nas z obliczeń, pilnować aby nie zrobić prostych błędów. 
 
+![image 2](https://user-images.githubusercontent.com/3757641/32662980-a777966e-c62c-11e7-944b-0b52386621cf.png)
+![image 1](https://user-images.githubusercontent.com/3757641/32662982-a9b0cd24-c62c-11e7-8b70-13b3dd730a88.png)
+![image](https://user-images.githubusercontent.com/3757641/32662985-aafbb0d6-c62c-11e7-825e-aa41b0073749.png)
+
 
 ## Aktualnie mamy
 

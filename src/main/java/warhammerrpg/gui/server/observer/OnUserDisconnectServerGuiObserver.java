@@ -1,6 +1,5 @@
 package warhammerrpg.gui.server.observer;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import warhammerrpg.core.Observable;
 import warhammerrpg.core.Observer;
 import warhammerrpg.core.exception.UnknowObserableEventException;
